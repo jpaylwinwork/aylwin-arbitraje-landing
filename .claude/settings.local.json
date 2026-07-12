@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:hermes-agent.nousresearch.com)",
+      "Read(//Users/juan.aylwin/**)",
+      "Read(//Users/juan.aylwin/.ssh/**)",
+      "Bash(rm -f /private/tmp/claude-501/-Users-juan-aylwin-Documents-Claude-Code-Courses-hermes-test/9dfa8ce4-dd80-485b-9748-232dede3500d/scratchpad/copyid.exp)",
+      "Bash(ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -i ~/.ssh/id_ed25519 root@74.208.149.35 \"echo CONNECTED && hostnamectl 2>/dev/null | head -5\")",
+      "Bash(ssh *)",
+      "WebSearch",
+      "Bash(curl -fsSL https://composio.dev/install -o /tmp/composio_install_inspect.sh)",
+      "Bash(echo \"--- exit code: $? ---\")",
+      "Read(//tmp/**)",
+      "WebFetch(domain:docs.composio.dev)"
+    ]
+  }
+}
