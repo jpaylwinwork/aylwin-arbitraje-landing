@@ -11,7 +11,11 @@
       "Bash(curl -fsSL https://composio.dev/install -o /tmp/composio_install_inspect.sh)",
       "Bash(echo \"--- exit code: $? ---\")",
       "Read(//tmp/**)",
-      "WebFetch(domain:docs.composio.dev)"
+      "WebFetch(domain:docs.composio.dev)",
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Add Google Tag Manager \\(GTM-TCSWRPF7\\) + lead conversion events *)",
+      "Bash(git push *)"
     ]
   }
 }
