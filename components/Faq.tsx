@@ -30,7 +30,7 @@ export default function Faq() {
   return (
     <section id="faq" className="bg-surface">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 py-20 sm:py-24">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-navy-900">
+        <h2 className="text-3xl sm:text-4xl font-semibold text-ink-900">
           Preguntas frecuentes
         </h2>
         <div className="mt-10 space-y-4">
@@ -39,14 +39,14 @@ export default function Faq() {
               key={faq.question}
               className="group rounded-lg border border-line bg-white p-6 open:shadow-sm"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-navy-900 font-serif">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-ink-900 font-serif">
                 {faq.question}
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  className="h-5 w-5 shrink-0 text-gold-600 transition-transform duration-200 group-open:rotate-180"
+                  className="h-5 w-5 shrink-0 text-brand-600 transition-transform duration-200 group-open:rotate-180"
                   aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />

@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-navy-900/95 backdrop-blur border-b border-white/10">
+    <header className="sticky top-0 z-50 bg-ink-900/95 backdrop-blur border-b border-white/10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 flex items-center justify-between h-16">
         <a href="#inicio" className="flex items-baseline gap-2 text-white">
           <span className="font-serif text-xl font-semibold tracking-wide">
@@ -26,7 +26,7 @@ export default function Header() {
         </nav>
         <a
           href="#contacto"
-          className="rounded-md bg-gold-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-gold-500 transition-colors"
+          className="rounded-md bg-brand-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-brand-500 transition-colors"
         >
           Agendar consulta
         </a>

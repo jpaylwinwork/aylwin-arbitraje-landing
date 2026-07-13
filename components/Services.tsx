@@ -45,7 +45,7 @@ export default function Services() {
   return (
     <section id="servicios" className="bg-surface">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-navy-900 text-balance">
+        <h2 className="text-3xl sm:text-4xl font-semibold text-ink-900 text-balance">
           Especialistas en controversias de construcción
         </h2>
         <p className="mt-4 max-w-2xl text-muted leading-relaxed">
@@ -58,8 +58,8 @@ export default function Services() {
               key={service.title}
               className="rounded-lg border border-line bg-white p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
             >
-              <div className="text-gold-600">{service.icon}</div>
-              <h3 className="mt-5 text-xl font-semibold text-navy-900">
+              <div className="text-brand-600">{service.icon}</div>
+              <h3 className="mt-5 text-xl font-semibold text-ink-900">
                 {service.title}
               </h3>
               <p className="mt-3 text-sm text-muted leading-relaxed">

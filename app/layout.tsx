@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { EB_Garamond, Lato } from "next/font/google";
+import { Bodoni_Moda, Poppins } from "next/font/google";
 import "./globals.css";
 
-const ebGaramond = EB_Garamond({
-  variable: "--font-eb-garamond",
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const lato = Lato({
-  variable: "--font-lato",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300", "400", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -72,7 +72,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${ebGaramond.variable} ${lato.variable} h-full antialiased`}
+      className={`${bodoni.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <script

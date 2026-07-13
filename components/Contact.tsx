@@ -5,7 +5,7 @@ export default function Contact() {
     <section id="contacto" className="bg-white border-t border-line">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24 grid grid-cols-1 lg:grid-cols-5 gap-12">
         <div className="lg:col-span-2">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-navy-900 text-balance">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-ink-900 text-balance">
             Evaluemos su caso
           </h2>
           <p className="mt-4 text-muted leading-relaxed">
@@ -14,17 +14,17 @@ export default function Contact() {
           </p>
           <dl className="mt-10 space-y-6 text-sm">
             <div>
-              <dt className="font-bold text-navy-900 uppercase tracking-wide text-xs">
+              <dt className="font-bold text-ink-900 uppercase tracking-wide text-xs">
                 Teléfono
               </dt>
               <dd className="mt-1">
-                <a href="tel:+56222280890" className="text-navy-700 hover:text-navy-600 font-bold text-base">
+                <a href="tel:+56222280890" className="text-ink-700 hover:text-ink-600 font-bold text-base">
                   (+56 2) 2228 0890
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="font-bold text-navy-900 uppercase tracking-wide text-xs">
+              <dt className="font-bold text-ink-900 uppercase tracking-wide text-xs">
                 Dirección
               </dt>
               <dd className="mt-1 text-muted">
@@ -34,7 +34,7 @@ export default function Contact() {
               </dd>
             </div>
             <div>
-              <dt className="font-bold text-navy-900 uppercase tracking-wide text-xs">
+              <dt className="font-bold text-ink-900 uppercase tracking-wide text-xs">
                 Estudio
               </dt>
               <dd className="mt-1 text-muted">
@@ -43,7 +43,7 @@ export default function Contact() {
                   href="https://aylwin.cl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-navy-700 underline hover:text-navy-600"
+                  className="text-ink-700 underline hover:text-ink-600"
                 >
                   Aylwin Abogados
                 </a>
