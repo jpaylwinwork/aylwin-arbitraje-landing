@@ -5,6 +5,7 @@ import { useEffect, useState, type FormEvent } from "react";
 type Status = "idle" | "sending" | "success" | "error";
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term"] as const;
+const CLICK_ID_KEYS = ["gclid", "wbraid", "gbraid"] as const;
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -20,6 +21,16 @@ export default function ContactForm() {
         sessionStorage.setItem(key, value);
       }
     }
+    // Click ID persists in localStorage (90-day attribution window outlives the session)
+    for (const key of CLICK_ID_KEYS) {
+      const fresh = params.get(key);
+      if (fresh) {
+        localStorage.setItem("click_id", `${key}:${fresh}`);
+        break;
+      }
+    }
+    const clickId = localStorage.getItem("click_id");
+    if (clickId) captured.click_id = clickId;
     setUtm(captured);
   }, []);
 

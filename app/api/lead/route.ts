@@ -14,6 +14,7 @@ const CREATE_TABLE = `
     utm_medium TEXT,
     utm_campaign TEXT,
     utm_term TEXT,
+    click_id TEXT,
     status TEXT NOT NULL DEFAULT 'nuevo',
     notified_at TIMESTAMPTZ
   )
@@ -39,6 +40,7 @@ async function sendTelegramAlert(lead: Record<string, string>) {
     lead.company && `Empresa: ${lead.company}`,
     `Mensaje: ${lead.message}`,
     lead.utm_source && `Fuente: ${lead.utm_source} / ${lead.utm_medium ?? "-"} / ${lead.utm_campaign ?? "-"}`,
+    lead.click_id && `Ref: ${lead.click_id}`,
   ].filter(Boolean);
 
   await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
@@ -76,6 +78,7 @@ export async function POST(request: Request) {
     utm_medium: body.utm_medium?.slice(0, 100) ?? "",
     utm_campaign: body.utm_campaign?.slice(0, 100) ?? "",
     utm_term: body.utm_term?.slice(0, 100) ?? "",
+    click_id: body.click_id?.slice(0, 200) ?? "",
   };
 
   let stored = false;
@@ -84,8 +87,8 @@ export async function POST(request: Request) {
       const sql = neon(process.env.DATABASE_URL);
       await ensureTable(sql);
       await sql.query(
-        `INSERT INTO leads (name, email, phone, company, message, utm_source, utm_medium, utm_campaign, utm_term)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
+        `INSERT INTO leads (name, email, phone, company, message, utm_source, utm_medium, utm_campaign, utm_term, click_id)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
         [
           lead.name,
           lead.email,
@@ -96,6 +99,7 @@ export async function POST(request: Request) {
           lead.utm_medium || null,
           lead.utm_campaign || null,
           lead.utm_term || null,
+          lead.click_id || null,
         ],
       );
       stored = true;

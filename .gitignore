@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Business/ads strategy docs — not site code, keep out of the deployed repo
+ads/

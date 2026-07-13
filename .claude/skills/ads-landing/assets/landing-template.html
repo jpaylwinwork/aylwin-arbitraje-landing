@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>{{TITULO_SEO}}</title>
+<style>
+  :root{--azul:#1f3864;--acento:#0e7a5f;--gris:#f5f6f8;--texto:#22242a;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--texto);line-height:1.6;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+  header{background:var(--azul);color:#fff;padding:14px 0;font-weight:600;}
+  .hero{padding:48px 0 40px;background:var(--gris);}
+  .hero h1{font-size:1.9rem;line-height:1.25;color:var(--azul);margin-bottom:14px;}
+  .hero p.sub{font-size:1.1rem;margin-bottom:22px;}
+  .descarte{font-size:.95rem;color:#555;margin-top:18px;border-left:3px solid var(--azul);padding-left:12px;}
+  .btn-wsp{display:inline-block;background:var(--acento);color:#fff;font-size:1.15rem;font-weight:700;
+    padding:16px 28px;border-radius:8px;text-decoration:none;}
+  .btn-wsp:focus{outline:3px solid var(--azul);}
+  .resp{display:block;font-size:.9rem;margin-top:8px;color:#444;}
+  section{padding:36px 0;}
+  section h2{color:var(--azul);font-size:1.35rem;margin-bottom:16px;}
+  .pasos{display:grid;gap:14px;}
+  .paso{background:var(--gris);padding:16px;border-radius:8px;}
+  .paso b{color:var(--azul);}
+  .conf{background:var(--gris);border-radius:8px;padding:20px;font-size:.98rem;}
+  .faq details{border-bottom:1px solid #ddd;padding:12px 0;}
+  .faq summary{font-weight:600;cursor:pointer;}
+  form{display:grid;gap:12px;margin-top:10px;}
+  label{font-weight:600;font-size:.95rem;}
+  input,textarea{width:100%;padding:12px;border:1px solid #bbb;border-radius:6px;font-size:1rem;}
+  button[type=submit]{background:var(--azul);color:#fff;padding:14px;border:none;border-radius:8px;
+    font-size:1.05rem;font-weight:700;cursor:pointer;}
+  footer{padding:26px 0;font-size:.85rem;color:#666;text-align:center;}
+  .sticky{position:fixed;bottom:0;left:0;right:0;background:#fff;box-shadow:0 -2px 10px rgba(0,0,0,.12);
+    padding:10px;text-align:center;display:none;}
+  @media(max-width:640px){.sticky{display:block;}.hero h1{font-size:1.5rem;}body{padding-bottom:78px;}}
+</style>
+</head>
+<body>
+<header><div class="wrap">Aylwin Matta Abogados</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>{{H1_PROBLEMA}}</h1>
+  <p class="sub">{{SUBTITULO_JURISDICCION_Y_VIA}}</p>
+  <a class="btn-wsp js-wsp" href="#" rel="noopener">{{CTA_WHATSAPP}}</a>
+  <span class="resp">{{COMPROMISO_RESPUESTA}} · Consulta confidencial desde el primer mensaje.</span>
+  <p class="descarte">{{LINEA_DESCARTE}}</p>
+</div></div>
+
+<section><div class="wrap">
+  <h2>Cómo trabajamos</h2>
+  <div class="pasos">
+    <div class="paso"><b>1. Contacto confidencial.</b> {{PASO1}}</div>
+    <div class="paso"><b>2. Reunión de diagnóstico.</b> {{PASO2}}</div>
+    <div class="paso"><b>3. Propuesta clara.</b> {{PASO3}}</div>
+  </div>
+</div></section>
+
+<section style="background:var(--gris)"><div class="wrap">
+  <h2>Experiencia en {{MATERIA}}</h2>
+  {{BLOQUE_EXPERIENCIA_ANONIMIZADA}}
+</div></section>
+
+<section><div class="wrap">
+  <h2>Quién responde su consulta</h2>
+  {{BIO_MAF}}
+</div></section>
+
+<section><div class="wrap">
+  <div class="conf"><b>Confidencialidad.</b> Su consulta queda amparada por el deber de confidencialidad
+  profesional del abogado desde el primer contacto, aun cuando no contrate nuestros servicios. El contacto
+  inicial no constituye patrocinio ni asesoría definitiva. Sus datos se utilizan únicamente para evaluar su caso.</div>
+</div></section>
+
+<section style="background:var(--gris)"><div class="wrap">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">{{FAQ_DETAILS}}</div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Cuéntenos su caso</h2>
+  <a class="btn-wsp js-wsp" href="#" rel="noopener">{{CTA_WHATSAPP}}</a>
+  <p style="margin:18px 0 4px;font-weight:600">O déjenos sus datos:</p>
+  <form id="lead-form" action="{{FORM_ACTION}}" method="POST">
+    <div><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" required></div>
+    <div><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa"></div>
+    <div><label for="f-fono">Teléfono</label><input id="f-fono" name="telefono" type="tel" required></div>
+    <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
+    <div><label for="f-caso">Describa brevemente su conflicto</label><textarea id="f-caso" name="caso" rows="4" required></textarea></div>
+    <input type="hidden" name="click_id" id="f-clickid">
+    <button type="submit">Enviar consulta confidencial</button>
+  </form>
+</div></section>
+
+<footer><div class="wrap">Aylwin Matta Abogados · {{DIRECCION}} · {{EMAIL_CONTACTO}}</div></footer>
+<div class="sticky"><a class="btn-wsp js-wsp" href="#" rel="noopener">{{CTA_WHATSAPP_CORTO}}</a></div>
+
+<script>
+(function(){
+  var NUMERO_WSP="{{NUMERO_WSP_SOLO_DIGITOS}}"; // ej: 56912345678
+  var MSG_BASE="{{MSG_WSP_BASE}}"; // ej: Hola, necesito orientación sobre un arbitraje.
+  var COOKIE="am_click_id", DIAS=90;
+
+  function getParam(n){var m=new RegExp('[?&]'+n+'=([^&#]*)').exec(location.search);return m?decodeURIComponent(m[1]):null;}
+  function setCookie(v){var d=new Date();d.setTime(d.getTime()+DIAS*864e5);
+    document.cookie=COOKIE+"="+encodeURIComponent(v)+";expires="+d.toUTCString()+";path=/;SameSite=Lax";}
+  function getCookie(){var m=document.cookie.match('(^|;)\\s*'+COOKIE+'\\s*=\\s*([^;]+)');return m?decodeURIComponent(m[2]):null;}
+
+  // Captura gclid / wbraid / gbraid con prefijo para saber cuál es
+  var cid=null, tipos=["gclid","wbraid","gbraid"];
+  for(var i=0;i<tipos.length;i++){var v=getParam(tipos[i]);if(v){cid=tipos[i]+":"+v;break;}}
+  if(cid){setCookie(cid);}else{cid=getCookie();}
+  var ref=cid||("directo-"+Date.now().toString(36)); // fallback: marca temporal si no hay click id
+
+  // Campo oculto del formulario
+  var f=document.getElementById("f-clickid"); if(f){f.value=ref;}
+
+  // Botones WhatsApp: href se arma al cargar y se refresca al hacer clic
+  function wspHref(){return "https://wa.me/"+NUMERO_WSP+"?text="+encodeURIComponent(MSG_BASE+" Ref: "+ref);}
+  var btns=document.querySelectorAll(".js-wsp");
+  btns.forEach(function(b){
+    b.setAttribute("href",wspHref());
+    b.addEventListener("click",function(){
+      b.setAttribute("href",wspHref());
+      // Punto de disparo de conversión online Lead_WhatsApp:
+      // si hay gtag/GTM instalado, descomentar y ajustar:
+      // gtag('event','conversion',{'send_to':'AW-XXXXXXX/XXXXXXX'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
