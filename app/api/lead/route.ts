@@ -15,6 +15,7 @@ const CREATE_TABLE = `
     utm_campaign TEXT,
     utm_term TEXT,
     click_id TEXT,
+    materia TEXT,
     status TEXT NOT NULL DEFAULT 'nuevo',
     notified_at TIMESTAMPTZ
   )
@@ -33,7 +34,7 @@ async function sendTelegramAlert(lead: Record<string, string>) {
   if (!token || !chatId) return;
 
   const lines = [
-    "🆕 Nuevo lead — Arbitraje de Construcción",
+    `🆕 Nuevo lead${lead.materia ? ` — ${lead.materia}` : ""}`,
     `Nombre: ${lead.name}`,
     `Email: ${lead.email}`,
     lead.phone && `Teléfono: ${lead.phone}`,
@@ -79,6 +80,7 @@ export async function POST(request: Request) {
     utm_campaign: body.utm_campaign?.slice(0, 100) ?? "",
     utm_term: body.utm_term?.slice(0, 100) ?? "",
     click_id: body.click_id?.slice(0, 200) ?? "",
+    materia: body.materia?.slice(0, 100) ?? "",
   };
 
   let stored = false;
@@ -87,8 +89,8 @@ export async function POST(request: Request) {
       const sql = neon(process.env.DATABASE_URL);
       await ensureTable(sql);
       await sql.query(
-        `INSERT INTO leads (name, email, phone, company, message, utm_source, utm_medium, utm_campaign, utm_term, click_id)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+        `INSERT INTO leads (name, email, phone, company, message, utm_source, utm_medium, utm_campaign, utm_term, click_id, materia)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
         [
           lead.name,
           lead.email,
@@ -100,6 +102,7 @@ export async function POST(request: Request) {
           lead.utm_campaign || null,
           lead.utm_term || null,
           lead.click_id || null,
+          lead.materia || null,
         ],
       );
       stored = true;
