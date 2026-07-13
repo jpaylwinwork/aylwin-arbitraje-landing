@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CampaignLanding, { type CampaignContent } from "@/components/campaign/CampaignLanding";
 
 export const metadata: Metadata = {
-  title: "Abogados de Arbitraje Comercial en Santiago | Aylwin Matta",
+  title: "Arbitrajes de construcción y claims de obra | Aylwin Matta",
   description:
     "Representación de empresas en arbitrajes comerciales: conflictos societarios, incumplimiento de contratos, CAM Santiago. Consulta confidencial.",
   robots: { index: false, follow: false },
