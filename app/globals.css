@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Trust & Authority palette — Legal Services (ui-ux-pro-max: navy + gold) */
+  --navy-900: #0f172a;
+  --navy-800: #1e293b;
+  --navy-700: #1e3a8a;
+  --navy-600: #1e40af;
+  --gold-600: #b45309;
+  --gold-500: #d97706;
+  --gold-100: #fef3c7;
+  --surface: #f8fafc;
+  --panel: #e9eef5;
+  --muted: #64748b;
+  --border: #cbd5e1;
+  --error: #dc2626;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+  --color-gold-600: var(--gold-600);
+  --color-gold-500: var(--gold-500);
+  --color-gold-100: var(--gold-100);
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+  --color-error: var(--error);
+  --font-serif: var(--font-eb-garamond);
+  --font-sans: var(--font-lato);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface);
+  color: var(--navy-900);
+  font-family: var(--font-lato), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-eb-garamond), Georgia, serif;
 }
