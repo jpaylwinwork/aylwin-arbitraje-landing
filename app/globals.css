@@ -60,3 +60,22 @@ h2,
 h3 {
   font-family: var(--font-eb-garamond), Georgia, serif;
 }
+
+/* Scroll reveal (ui-ux-pro-max motion: subtle, 350ms, 12px rise) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.35s ease-out,
+    transform 0.35s ease-out;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
