@@ -44,7 +44,7 @@ export default async function DashboardPage(props: PageProps<"/dashboard">) {
         <DateRangeFilter range={range} materia={materia} status={status} />
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <TrafficFunnel data={traffic} neonLeadCount={commercial.total} />
+          <TrafficFunnel data={traffic} />
           <CommercialFunnel data={commercial} />
         </div>
 

@@ -9,11 +9,6 @@ export default function CommercialFunnel({ data }: { data: CommercialFunnelData 
         <h2 className="font-serif text-xl font-semibold text-ink-900">Funnel comercial</h2>
         <p className="text-xs text-muted">{data.total} leads en el período</p>
       </div>
-      <p className="mt-1 text-xs text-muted">
-        Cada barra cuenta leads que llegaron a esa etapa o más allá (aproximación desde el estado
-        actual — no hay historial de cambios de estado).
-      </p>
-
       <div className="mt-6 space-y-4">
         {data.stages.map((stage, i) => (
           <div key={stage.status}>
@@ -46,8 +41,7 @@ export default function CommercialFunnel({ data }: { data: CommercialFunnelData 
       <div className="mt-6 rounded-lg bg-surface px-4 py-3 text-sm">
         <span className="font-bold text-ink-700">Descartados:</span>{" "}
         <span className="text-muted">
-          {data.descartado.count} ({data.descartado.pctOfTotal}% del total) — no incluidos en el funnel
-          porque no sabemos en qué etapa se perdieron
+          {data.descartado.count} ({data.descartado.pctOfTotal}% del total)
         </span>
       </div>
     </div>
