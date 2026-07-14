@@ -1,48 +1,11 @@
-import { neon } from "@neondatabase/serverless";
-import Link from "next/link";
 import StatusSelect from "@/components/dashboard/StatusSelect";
-import { MATERIA_OPTIONS, STATUS_OPTIONS, type Lead } from "@/lib/dashboard";
+import DateRangeFilter from "@/components/dashboard/DateRangeFilter";
+import CommercialFunnel from "@/components/dashboard/CommercialFunnel";
+import TrafficFunnel from "@/components/dashboard/TrafficFunnel";
+import { getCommercialFunnel, getLeadsTable, type Range } from "@/lib/dashboard";
+import { getTrafficFunnel } from "@/lib/ga4";
 
 export const dynamic = "force-dynamic";
-
-async function getData(materia: string | undefined, status: string | undefined) {
-  const sql = neon(process.env.DATABASE_URL!);
-
-  const leadsPromise = sql.query(
-    `SELECT id, created_at, name, email, phone, company, message,
-            utm_source, utm_medium, utm_campaign, utm_term, click_id, materia, status
-     FROM leads
-     WHERE ($1::text IS NULL OR materia = $1)
-       AND ($2::text IS NULL OR status = $2)
-     ORDER BY created_at DESC
-     LIMIT 200`,
-    [materia ?? null, status ?? null],
-  );
-  const totalPromise = sql.query("SELECT COUNT(*)::int AS n FROM leads");
-  const weekPromise = sql.query(
-    "SELECT COUNT(*)::int AS n FROM leads WHERE created_at >= now() - interval '7 days'",
-  );
-  const byStatusPromise = sql.query("SELECT status, COUNT(*)::int AS n FROM leads GROUP BY status");
-  const byMateriaPromise = sql.query(
-    "SELECT materia, COUNT(*)::int AS n FROM leads WHERE materia IS NOT NULL GROUP BY materia",
-  );
-
-  const [leadsRes, totalRes, weekRes, byStatusRes, byMateriaRes] = await Promise.all([
-    leadsPromise,
-    totalPromise,
-    weekPromise,
-    byStatusPromise,
-    byMateriaPromise,
-  ]);
-
-  return {
-    leads: leadsRes as unknown as Lead[],
-    total: (totalRes[0] as { n: number })?.n ?? 0,
-    week: (weekRes[0] as { n: number })?.n ?? 0,
-    byStatus: byStatusRes as unknown as { status: string; n: number }[],
-    byMateria: byMateriaRes as unknown as { materia: string; n: number }[],
-  };
-}
 
 function fmtDate(iso: string) {
   return new Date(iso).toLocaleString("es-CL", {
@@ -52,12 +15,21 @@ function fmtDate(iso: string) {
   });
 }
 
+function parseRange(value: unknown): Range {
+  return value === "today" || value === "yesterday" || value === "30d" ? value : "7d";
+}
+
 export default async function DashboardPage(props: PageProps<"/dashboard">) {
   const params = await props.searchParams;
+  const range = parseRange(params.range);
   const materia = typeof params.materia === "string" && params.materia ? params.materia : undefined;
   const status = typeof params.status === "string" && params.status ? params.status : undefined;
 
-  const { leads, total, week, byStatus, byMateria } = await getData(materia, status);
+  const [commercial, leads, traffic] = await Promise.all([
+    getCommercialFunnel(range, materia),
+    getLeadsTable(range, materia, status),
+    getTrafficFunnel(range, materia).catch(() => null),
+  ]);
 
   return (
     <div className="min-h-full bg-surface text-ink-900">
@@ -69,92 +41,15 @@ export default async function DashboardPage(props: PageProps<"/dashboard">) {
       </header>
 
       <main className="mx-auto max-w-6xl px-5 sm:px-6 py-8 sm:py-10">
-        {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="rounded-xl border border-line bg-white p-5">
-            <p className="text-xs font-bold uppercase tracking-wide text-muted">Total leads</p>
-            <p className="mt-1 font-serif text-3xl font-semibold text-ink-900">{total}</p>
-          </div>
-          <div className="rounded-xl border border-line bg-white p-5">
-            <p className="text-xs font-bold uppercase tracking-wide text-muted">Últimos 7 días</p>
-            <p className="mt-1 font-serif text-3xl font-semibold text-ink-900">{week}</p>
-          </div>
-          {byMateria.map((m) => (
-            <div key={m.materia} className="rounded-xl border border-line bg-white p-5">
-              <p className="text-xs font-bold uppercase tracking-wide text-muted">{m.materia}</p>
-              <p className="mt-1 font-serif text-3xl font-semibold text-ink-900">{m.n}</p>
-            </div>
-          ))}
-        </div>
+        <DateRangeFilter range={range} materia={materia} status={status} />
 
-        {/* Status breakdown */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {STATUS_OPTIONS.map((s) => {
-            const count = byStatus.find((b) => b.status === s.value)?.n ?? 0;
-            return (
-              <span
-                key={s.value}
-                className="rounded-full border border-line bg-white px-3 py-1 text-xs font-bold text-ink-700"
-              >
-                {s.label}: {count}
-              </span>
-            );
-          })}
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <TrafficFunnel data={traffic} />
+          <CommercialFunnel data={commercial} />
         </div>
-
-        {/* Filters */}
-        <form method="get" className="mt-8 flex flex-wrap items-end gap-4">
-          <div>
-            <label htmlFor="materia" className="block text-xs font-bold uppercase tracking-wide text-muted">
-              Materia
-            </label>
-            <select
-              id="materia"
-              name="materia"
-              defaultValue={materia ?? ""}
-              className="mt-1 rounded-md border border-line bg-white px-3 h-10 text-sm"
-            >
-              <option value="">Todas</option>
-              {MATERIA_OPTIONS.map((m) => (
-                <option key={m} value={m}>
-                  {m}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label htmlFor="status" className="block text-xs font-bold uppercase tracking-wide text-muted">
-              Estado
-            </label>
-            <select
-              id="status"
-              name="status"
-              defaultValue={status ?? ""}
-              className="mt-1 rounded-md border border-line bg-white px-3 h-10 text-sm"
-            >
-              <option value="">Todos</option>
-              {STATUS_OPTIONS.map((s) => (
-                <option key={s.value} value={s.value}>
-                  {s.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <button
-            type="submit"
-            className="h-10 rounded-md bg-ink-700 px-5 text-sm font-bold text-white hover:bg-ink-600 transition-colors"
-          >
-            Filtrar
-          </button>
-          {(materia || status) && (
-            <Link href="/dashboard" className="h-10 flex items-center text-sm font-bold text-brand-600 hover:text-brand-500">
-              Limpiar filtros
-            </Link>
-          )}
-        </form>
 
         {/* Table */}
-        <div className="mt-6 overflow-x-auto rounded-xl border border-line bg-white">
+        <div className="mt-8 overflow-x-auto rounded-xl border border-line bg-white">
           <table className="w-full text-left text-sm">
             <thead className="bg-panel text-xs font-bold uppercase tracking-wide text-muted">
               <tr>
@@ -184,7 +79,7 @@ export default async function DashboardPage(props: PageProps<"/dashboard">) {
                     {lead.phone && <p className="text-xs text-muted">{lead.phone}</p>}
                     {lead.company && <p className="text-xs text-muted">{lead.company}</p>}
                   </td>
-                  <td className="px-4 py-3 whitespace-nowrap">{lead.materia ?? "—"}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{lead.materia ?? "Home"}</td>
                   <td className="px-4 py-3 max-w-xs">
                     <p className="line-clamp-3 text-xs text-ink-700">{lead.message}</p>
                   </td>
@@ -203,7 +98,7 @@ export default async function DashboardPage(props: PageProps<"/dashboard">) {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-muted">Mostrando hasta 200 leads más recientes.</p>
+        <p className="mt-3 text-xs text-muted">Mostrando hasta 200 leads más recientes del período.</p>
       </main>
     </div>
   );

@@ -15,7 +15,15 @@
       "Bash(npm run *)",
       "Bash(git add *)",
       "Bash(git commit -q -m 'Add Google Tag Manager \\(GTM-TCSWRPF7\\) + lead conversion events *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(curl -s -m 5 https://aylwin-arbitraje-landing.vercel.app/)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node verify-gtm.js)",
+      "Bash(npx playwright *)",
+      "Bash(node verify-gtm2.js)",
+      "Bash(node verify-gtm3.js)"
     ]
   }
 }
