@@ -9,7 +9,13 @@ function pct(part: number, whole: number) {
   return whole > 0 ? Math.round((part / whole) * 100) : 0;
 }
 
-export default function TrafficFunnel({ data }: { data: TrafficFunnelData | null }) {
+export default function TrafficFunnel({
+  data,
+  neonLeadCount,
+}: {
+  data: TrafficFunnelData | null;
+  neonLeadCount: number;
+}) {
   if (!data) {
     return (
       <div className="rounded-xl border border-line bg-white p-6">
@@ -17,7 +23,7 @@ export default function TrafficFunnel({ data }: { data: TrafficFunnelData | null
         <p className="mt-3 text-sm text-muted">
           Tráfico: pendiente de configurar GA4. Una vez enlazada la API de Google Analytics
           (GA4_SERVICE_ACCOUNT_KEY_BASE64 + GA4_PROPERTY_ID en Vercel), este panel mostrará
-          sesiones, scroll, inicio de formulario y leads generados.
+          sesiones, inicio de formulario y leads generados.
         </p>
       </div>
     );
@@ -25,7 +31,6 @@ export default function TrafficFunnel({ data }: { data: TrafficFunnelData | null
 
   const steps = [
     { label: "Sesiones", count: data.sessions },
-    { label: "Hicieron scroll", count: data.scroll },
     { label: "Iniciaron formulario", count: data.formStart },
     { label: "Generaron lead", count: data.generateLead },
   ];
@@ -60,6 +65,13 @@ export default function TrafficFunnel({ data }: { data: TrafficFunnelData | null
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-4 rounded-lg bg-surface px-4 py-3 text-xs text-muted leading-relaxed">
+        <span className="font-bold text-ink-700">Leads en la base de datos (Neon) del mismo período: {neonLeadCount}.</span>{" "}
+        Puede no coincidir con &quot;Generaron lead&quot; de GA4: WhatsApp cuenta como lead generado
+        aunque la persona no complete el formulario (no queda registrado en Neon), y leads cargados
+        por prueba o de forma manual no disparan el evento de GA4.
       </div>
 
       {data.generateLeadByChannel.length > 0 && (

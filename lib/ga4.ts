@@ -4,22 +4,24 @@ import type { Range } from "@/lib/dashboard";
 
 export type TrafficFunnel = {
   sessions: number;
-  scroll: number;
   formStart: number;
   generateLead: number;
   generateLeadByChannel: { channel: string; count: number }[];
   byMateria: { materia: string; sessions: number; generateLead: number }[];
 };
 
+// Only these are real marketing pages — /dashboard, /api/*, etc. are internal
+// tooling and must never count toward funnel metrics.
 const PAGE_TO_MATERIA: Record<string, string> = {
   "/": "home",
   "/arbitraje": "Arbitraje",
   "/reclamo-ilegalidad": "Reclamo de ilegalidad",
 };
+const MARKETING_PAGES = Object.keys(PAGE_TO_MATERIA);
 
-function pageToMateria(pagePath: string): string {
+function pageToMateria(pagePath: string): string | null {
   const path = pagePath.split("?")[0];
-  return PAGE_TO_MATERIA[path] ?? path;
+  return PAGE_TO_MATERIA[path] ?? null;
 }
 
 function getClient() {
@@ -57,11 +59,17 @@ async function fetchTrafficFunnelUncached(range: Range, materia?: string): Promi
   const dateRanges = [rangeToGa4DateRange(range)];
   const property = `properties/${propertyId}`;
 
+  const pagePathFilter = {
+    fieldName: "pagePath",
+    inListFilter: { values: MARKETING_PAGES },
+  };
+
   const [sessionsResp] = await client.runReport({
     property,
     dateRanges,
     dimensions: [{ name: "pagePath" }],
     metrics: [{ name: "sessions" }],
+    dimensionFilter: { filter: pagePathFilter },
   });
 
   const [eventsResp] = await client.runReport({
@@ -70,9 +78,11 @@ async function fetchTrafficFunnelUncached(range: Range, materia?: string): Promi
     dimensions: [{ name: "eventName" }, { name: "pagePath" }],
     metrics: [{ name: "eventCount" }],
     dimensionFilter: {
-      filter: {
-        fieldName: "eventName",
-        inListFilter: { values: ["scroll", "form_start", "generate_lead"] },
+      andGroup: {
+        expressions: [
+          { filter: { fieldName: "eventName", inListFilter: { values: ["form_start", "generate_lead"] } } },
+          { filter: pagePathFilter },
+        ],
       },
     },
   });
@@ -104,24 +114,24 @@ async function fetchTrafficFunnelUncached(range: Range, materia?: string): Promi
   const byMateriaMap = new Map<string, { sessions: number; generateLead: number }>();
   for (const [page, sessions] of bySessionsPage) {
     const m = pageToMateria(page);
+    if (!m) continue; // defensive: query already restricts to marketing pages
     const entry = byMateriaMap.get(m) ?? { sessions: 0, generateLead: 0 };
     entry.sessions += sessions;
     byMateriaMap.set(m, entry);
   }
 
   let sessions = 0;
-  let scroll = 0;
   let formStart = 0;
   let generateLead = 0;
   for (const row of rowsOf(eventsResp)) {
     const eventName = row.dimensionValues?.[0]?.value ?? "";
     const page = row.dimensionValues?.[1]?.value ?? "";
     const value = Number(row.metricValues?.[0]?.value ?? 0);
-    if (eventName === "scroll") scroll += value;
-    else if (eventName === "form_start") formStart += value;
+    if (eventName === "form_start") formStart += value;
     else if (eventName === "generate_lead") {
       generateLead += value;
       const m = pageToMateria(page);
+      if (!m) continue;
       const entry = byMateriaMap.get(m) ?? { sessions: 0, generateLead: 0 };
       entry.generateLead += value;
       byMateriaMap.set(m, entry);
@@ -140,7 +150,6 @@ async function fetchTrafficFunnelUncached(range: Range, materia?: string): Promi
 
   const result: TrafficFunnel = {
     sessions,
-    scroll,
     formStart,
     generateLead,
     generateLeadByChannel,
