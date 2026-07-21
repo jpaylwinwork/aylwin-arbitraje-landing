@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { pushDataLayerEvent } from "@/lib/gtm";
 
 export type CampaignContent = {
   materia: string;
@@ -84,11 +85,13 @@ function WspButton({
   label,
   msgBase,
   clickId,
+  materia,
   size = "lg",
 }: {
   label: string;
   msgBase: string;
   clickId?: string;
+  materia: string;
   size?: "lg" | "sticky";
 }) {
   const base =
@@ -98,7 +101,12 @@ function WspButton({
     sticky: "w-full px-6 py-3.5 text-base",
   };
   return (
-    <a href={whatsAppHref(msgBase, clickId)} rel="noopener" className={`${base} ${sizes[size]}`}>
+    <a
+      href={whatsAppHref(msgBase, clickId)}
+      rel="noopener"
+      className={`${base} ${sizes[size]}`}
+      onClick={() => pushDataLayerEvent("generate_lead", { lead_channel: "whatsapp", lead_materia: materia })}
+    >
       <WspIcon />
       {label}
     </a>
@@ -149,6 +157,7 @@ export default function CampaignLanding({ content }: { content: CampaignContent 
         body: JSON.stringify({ ...data, ...tracking, consent: "on", materia: content.materia }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      pushDataLayerEvent("generate_lead", { lead_channel: "formulario", lead_materia: content.materia });
       setStatus("success");
       form.reset();
     } catch {
@@ -189,7 +198,7 @@ export default function CampaignLanding({ content }: { content: CampaignContent 
             {content.subtitulo}
           </p>
           <div className="mt-9 flex flex-col items-start gap-3">
-            <WspButton label={content.ctaWhatsApp} msgBase={content.msgWhatsAppBase} clickId={tracking.click_id} />
+            <WspButton label={content.ctaWhatsApp} msgBase={content.msgWhatsAppBase} clickId={tracking.click_id} materia={content.materia} />
             <p className="flex items-center gap-2 text-sm text-white/70">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2m6-2a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z" />
@@ -345,7 +354,7 @@ export default function CampaignLanding({ content }: { content: CampaignContent 
               {RESPUESTA}. La vía más rápida es WhatsApp:
             </p>
             <div className="mt-5">
-              <WspButton label={content.ctaWhatsApp} msgBase={content.msgWhatsAppBase} clickId={tracking.click_id} />
+              <WspButton label={content.ctaWhatsApp} msgBase={content.msgWhatsAppBase} clickId={tracking.click_id} materia={content.materia} />
             </div>
 
             {status === "success" ? (
@@ -421,6 +430,7 @@ export default function CampaignLanding({ content }: { content: CampaignContent 
           label={content.ctaWhatsAppCorto}
           msgBase={content.msgWhatsAppBase}
           clickId={tracking.click_id}
+          materia={content.materia}
           size="sticky"
         />
       </div>

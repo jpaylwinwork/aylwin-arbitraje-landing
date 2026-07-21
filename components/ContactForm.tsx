@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { pushDataLayerEvent } from "@/lib/gtm";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -46,6 +47,7 @@ export default function ContactForm() {
         body: JSON.stringify({ ...data, ...utm }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      pushDataLayerEvent("generate_lead", { lead_channel: "formulario", lead_materia: "home" });
       setStatus("success");
       form.reset();
     } catch {
