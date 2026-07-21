@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const content: CampaignContent = {
   materia: "Arbitraje",
-  h1: "¿Un conflicto societario o de contrato amenaza la continuidad de su empresa?",
+  h1: "¿Una disputa en su contrato de construcción o un claim de obra amenaza el avance del proyecto?",
   subtitulo:
     "Representamos a empresas en arbitrajes comerciales en Santiago: disputas entre socios, incumplimiento de contratos y controversias con cláusula arbitral. Evaluamos su caso en forma confidencial.",
   ctaWhatsApp: "Hablar por WhatsApp ahora",
