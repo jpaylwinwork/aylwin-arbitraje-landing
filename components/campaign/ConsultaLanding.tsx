@@ -17,6 +17,11 @@ import { pushDataLayerEvent } from "@/lib/gtm";
 const MATERIA = "Construcción e inmobiliario";
 const RESPUESTA = "Respuesta en 24 horas hábiles";
 
+// Placeholder hasta que MAF entregue el número corporativo (solo dígitos, ej. 569XXXXXXXX)
+const NUMERO_WSP = "XXXXXXXXXXX";
+const MSG_WSP =
+  "Hola, tengo un conflicto de obra o de contrato de construcción/inmobiliario y quiero una evaluación confidencial de mi caso.";
+
 const CLICK_ID_KEYS = ["gclid", "wbraid", "gbraid"] as const;
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term"] as const;
 
@@ -72,6 +77,38 @@ function CtaLink({ label, className }: { label: string; className?: string }) {
     <a href="#consulta" className={className ?? ArrowCta}>
       {label}
       <span aria-hidden="true">→</span>
+    </a>
+  );
+}
+
+// WhatsApp — canal paralelo al formulario. Inyecta "Ref: <click_id>" en el
+// mensaje prellenado para el tracking de conversiones offline de Google Ads.
+function whatsAppHref(ref: string | undefined) {
+  const msg = ref ? `${MSG_WSP} Ref: ${ref}` : MSG_WSP;
+  return `https://wa.me/${NUMERO_WSP}?text=${encodeURIComponent(msg)}`;
+}
+
+function WspIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z" />
+    </svg>
+  );
+}
+
+function WspButton({ label, clickId, size = "lg" }: { label: string; clickId?: string; size?: "lg" | "sticky" }) {
+  const base =
+    "inline-flex items-center justify-center gap-2.5 rounded-lg bg-[#0e7a5f] font-bold text-white shadow-[0_4px_14px_rgba(14,122,95,0.35)] hover:bg-[#0c6a52] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus-visible:outline-3 focus-visible:outline-brand-500";
+  const sizes = { lg: "px-8 py-4 text-base", sticky: "flex-1 px-4 py-3.5 text-sm" };
+  return (
+    <a
+      href={whatsAppHref(clickId)}
+      rel="noopener"
+      className={`${base} ${sizes[size]}`}
+      onClick={() => pushDataLayerEvent("generate_lead", { lead_channel: "whatsapp", lead_materia: MATERIA })}
+    >
+      <WspIcon />
+      {label}
     </a>
   );
 }
@@ -281,8 +318,9 @@ export default function ConsultaLanding() {
           <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/85 leading-relaxed">
             Reviso tu caso, te digo con franqueza qué tan sólida es tu posición y cuánto te conviene pelear, antes de que gastes un peso en litigar.
           </p>
-          <div className="mt-9">
+          <div className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
             <CtaLink label="Revisar mi caso" />
+            <WspButton label="Consultar por WhatsApp" clickId={tracking.click_id} />
           </div>
           <p className="mt-6 flex items-start gap-2 text-sm text-white/70 leading-relaxed">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true">
@@ -638,8 +676,9 @@ export default function ConsultaLanding() {
           <p className="mt-4 text-base text-ink-800 leading-relaxed">
             Una conversación de 45 minutos no te compromete a nada y puede ahorrarte una decisión cara.
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
             <CtaLink label="Revisar mi caso" />
+            <WspButton label="Consultar por WhatsApp" clickId={tracking.click_id} />
           </div>
         </div>
       </section>
@@ -650,9 +689,15 @@ export default function ConsultaLanding() {
         <p className="mt-1">[CORREO] · [TELÉFONO] · Política de privacidad</p>
       </footer>
 
-      {/* Sticky móvil — misma salida única al formulario */}
+      {/* Sticky móvil — formulario (principal) + WhatsApp en paralelo */}
       <div className="fixed bottom-0 left-0 right-0 border-t border-line bg-white/95 backdrop-blur p-3 sm:hidden">
-        <CtaLink label="Revisar mi caso" className={`${ArrowCta} w-full`} />
+        <div className="flex gap-2">
+          <CtaLink
+            label="Revisar mi caso"
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-3.5 text-sm font-bold text-white transition-colors duration-200 hover:bg-brand-500"
+          />
+          <WspButton label="WhatsApp" clickId={tracking.click_id} size="sticky" />
+        </div>
       </div>
     </div>
   );
