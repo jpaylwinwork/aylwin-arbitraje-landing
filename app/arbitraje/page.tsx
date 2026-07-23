@@ -15,7 +15,7 @@ const schema = legalServiceSchema({
 });
 
 export const metadata: Metadata = {
-  title: "Arbitrajes de construcción y claims de obra | Aylwin Matta",
+  title: "Arbitrajes en construcción | Aylwin Matta",
   description:
     "Representación de empresas en arbitrajes comerciales: conflictos societarios, incumplimiento de contratos, CAM Santiago. Consulta confidencial.",
   robots: { index: false, follow: false },
