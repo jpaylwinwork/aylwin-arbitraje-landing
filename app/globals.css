@@ -68,6 +68,68 @@ strong {
   font-weight: 600;
 }
 
+/* Article typography for /recursos (markdown-rendered content) */
+.article-body {
+  line-height: 1.75;
+  font-size: 1rem;
+}
+.article-body h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2.25rem 0 0.75rem;
+}
+.article-body h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.5rem;
+}
+.article-body p {
+  margin: 0.9rem 0;
+}
+.article-body ul,
+.article-body ol {
+  margin: 0.9rem 0 0.9rem 1.5rem;
+}
+.article-body ul {
+  list-style: disc;
+}
+.article-body ol {
+  list-style: decimal;
+}
+.article-body li {
+  margin: 0.35rem 0;
+}
+.article-body a {
+  color: var(--brand-600);
+  font-weight: 500;
+  text-decoration: underline;
+}
+.article-body a:hover {
+  color: var(--brand-500);
+}
+.article-body blockquote {
+  border-left: 3px solid var(--brand-600);
+  padding-left: 1rem;
+  color: var(--muted);
+  margin: 1.25rem 0;
+}
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+}
+.article-body th,
+.article-body td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.article-body th {
+  background: var(--panel);
+  font-weight: 600;
+}
+
 /* Scroll reveal (ui-ux-pro-max motion: subtle, 350ms, 12px rise) */
 [data-reveal] {
   opacity: 0;

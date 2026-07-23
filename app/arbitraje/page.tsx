@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
 import CampaignLanding, { type CampaignContent } from "@/components/campaign/CampaignLanding";
+import { JsonLd, legalServiceSchema } from "@/lib/schema";
+
+const schema = legalServiceSchema({
+  name: "Aylwin Matta Abogados — Arbitraje Comercial",
+  description:
+    "Representación de empresas en arbitrajes comerciales: conflictos societarios, incumplimiento de contratos y controversias con cláusula arbitral.",
+  knowsAbout: [
+    "Arbitraje comercial",
+    "Conflictos societarios",
+    "Cláusulas compromisorias",
+    "Arbitraje CAM Santiago",
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Arbitrajes de construcción y claims de obra | Aylwin Matta",
@@ -57,5 +70,10 @@ const content: CampaignContent = {
 };
 
 export default function Page() {
-  return <CampaignLanding content={content} />;
+  return (
+    <>
+      <JsonLd data={schema} />
+      <CampaignLanding content={content} />
+    </>
+  );
 }

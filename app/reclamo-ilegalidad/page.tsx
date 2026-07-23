@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
 import CampaignLanding, { type CampaignContent } from "@/components/campaign/CampaignLanding";
+import { JsonLd, legalServiceSchema } from "@/lib/schema";
+
+const schema = legalServiceSchema({
+  name: "Aylwin Matta Abogados — Reclamo de Ilegalidad",
+  description:
+    "Impugnación de decretos alcaldicios y resoluciones municipales ilegales que afectan a empresas.",
+  knowsAbout: [
+    "Reclamo de ilegalidad municipal",
+    "Derecho administrativo",
+    "Impugnación de actos municipales",
+    "Patentes comerciales",
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Reclamo de Ilegalidad Municipal | Aylwin Matta Abogados",
@@ -57,5 +70,10 @@ const content: CampaignContent = {
 };
 
 export default function Page() {
-  return <CampaignLanding content={content} />;
+  return (
+    <>
+      <JsonLd data={schema} />
+      <CampaignLanding content={content} />
+    </>
+  );
 }

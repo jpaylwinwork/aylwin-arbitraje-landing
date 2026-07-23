@@ -38,35 +38,6 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  name: "Arbitraje de Construcción — Aylwin",
-  description:
-    "Práctica especializada en arbitraje y resolución de disputas de construcción, respaldada por Aylwin Abogados.",
-  areaServed: { "@type": "Country", name: "Chile" },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Av. Apoquindo 3910, Piso 3",
-    addressLocality: "Las Condes",
-    addressRegion: "Región Metropolitana",
-    addressCountry: "CL",
-  },
-  telephone: "+56222280890",
-  email: "contacto@aylwin.cl",
-  parentOrganization: {
-    "@type": "Organization",
-    name: "Aylwin Abogados",
-    url: "https://aylwin.cl",
-  },
-  knowsAbout: [
-    "Arbitraje de construcción",
-    "Claims y reclamaciones contractuales",
-    "Término anticipado de contratos de obra",
-    "Mediación y dispute boards",
-  ],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,10 +61,6 @@ export default function RootLayout({
             title="gtm"
           />
         </noscript>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         {children}
       </body>
     </html>
