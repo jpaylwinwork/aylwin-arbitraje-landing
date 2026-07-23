@@ -3,7 +3,7 @@ title: "Arbitraje o juicio ordinario: cuándo conviene cada vía"
 description: "Comparación práctica entre resolver un conflicto comercial en sede arbitral o ante los tribunales ordinarios: diferencias de procedimiento, confidencialidad y especialización."
 date: "2026-07-15"
 materia: "Arbitraje"
-draft: false
+draft: true
 ---
 
 Si su empresa enfrenta un conflicto comercial, la primera decisión estratégica no es qué alegar,
