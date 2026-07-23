@@ -31,9 +31,16 @@ visitas que NO contratan. Prioridad estricta de contenido:
 
 ## Reglas operativas
 
-1. **Cero alucinación — crítica en contenido legal.** Plazos, normas y procedimientos citados en
-   artículos: verificados por MAF antes de publicar (marcar "Verificar vigencia/texto exacto" en
-   borradores). Experiencia y credenciales: solo hechos confirmados.
+1. **Cero alucinación — crítica en contenido legal, y esto aplica ANTES de redactar, no solo
+   antes de publicar.** Este skill no origina temas ni hechos desde conocimiento general: el
+   punto de partida de cada artículo es material real que el usuario o MAF ya tienen (documentos
+   de `ads/investigacion/`, contenido de aylwin.cl, casos reales, notas de MAF, conversaciones
+   previas). Si no hay material de partida para un tema, NO redactar de todos modos rellenando
+   con conocimiento jurídico general — preguntar primero qué fuente usar o proponer el tema como
+   pendiente de material. El trabajo del skill es investigar keywords, estructurar, optimizar
+   para SEO y ejecutar el pipeline técnico — no inventar el contenido legal desde cero. Plazos,
+   normas y procedimientos citados: verificados por MAF antes de publicar (marcar "Verificar
+   vigencia/texto exacto" en borradores). Experiencia y credenciales: solo hechos confirmados.
 2. **Ética CEP 2011** (`references/etica-cep2011.md`): el contenido orgánico ES publicidad de
    servicios legales. Mismo checklist que los anuncios pagados.
 3. **Publicación SIEMPRE vía branch + aprobación humana** (`references/publicacion-git.md`).
@@ -49,14 +56,16 @@ arquitectura de dos audiencias de ads-campana (mismo lenguaje, distinto canal).
 
 ### Paso 2 — Plan de contenido
 Leer `references/contenido-practicas.md`. Proponer calendario priorizado (fondo del funnel
-primero) con título, keyword objetivo, audiencia y tipo de pieza por artículo. MAF aprueba el
-plan antes de redactar.
+primero) con título, keyword objetivo, audiencia y **la fuente concreta de material real para
+cada artículo** (qué documento, caso o nota de MAF lo respalda). Un artículo sin fuente identificada
+queda marcado "pendiente de material", no se redacta todavía. MAF aprueba el plan antes de redactar.
 
 ### Paso 3 — Redacción
-Artículos en markdown para `/recursos` (formato en `references/publicacion-git.md`): título que
-responde la búsqueda, respuesta directa en el primer párrafo (featured snippet / cita de LLM),
-desarrollo sobrio, FAQ con preguntas reales de clientes, enlaces internos a la landing de la
-materia y a artículos relacionados, CTA discreto al final.
+Solo con material de partida ya identificado (Paso 2). Artículos en markdown para `/recursos`
+(formato en `references/publicacion-git.md`): título que responde la búsqueda, respuesta directa
+en el primer párrafo (featured snippet / cita de LLM), desarrollo sobrio basado en el material
+real, FAQ con preguntas reales de clientes, enlaces internos a la landing de la materia y a
+artículos relacionados, CTA discreto al final.
 
 ### Paso 4 — Checkpoint ético + verificación normativa
 Checklist de `references/etica-cep2011.md` + lista de normas citadas para verificación de MAF.
