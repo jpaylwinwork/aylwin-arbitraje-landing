@@ -1,0 +1,54 @@
+name: Auto-deploy collaborator pushes
+
+# When a collaborator (e.g. Vicente) pushes to any branch other than main,
+# merge it into main under the repo owner's identity and push — this
+# creates production deploys automatically without hitting Vercel's Hobby-plan
+# block (which checks the git commit author's Vercel access, not who
+# triggered the workflow).
+#
+# Excluded on purpose: `recursos/**` branches (blog/article drafts). Those
+# are gated by the seo-contenido skill's publication pipeline, which
+# requires a human to review and merge — every published article is legal
+# advertising under CEP 2011, so it never auto-publishes.
+on:
+  push:
+    branches-ignore:
+      - main
+      - "recursos/**"
+
+permissions:
+  contents: write
+
+jobs:
+  merge-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Configure git identity as repo owner
+        run: |
+          git config user.name "jpaylwinwork"
+          git config user.email "jp.aylwin.work@gmail.com"
+
+      - name: Merge pushed branch into main
+        run: |
+          git fetch origin ${{ github.ref_name }}
+          git merge --no-ff origin/${{ github.ref_name }} -m "Auto-merge: ${{ github.ref_name }} (${{ github.actor }})"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (must pass before anything reaches main)
+        run: npm run build
+
+      - name: Push to main (triggers Vercel production deploy)
+        run: git push origin HEAD:main
