@@ -9,13 +9,13 @@ export default function Hero() {
           Respaldados por Aylwin Abogados · Desde 1974
         </p>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight max-w-3xl text-balance">
-          Disputas de construcción resueltas con medio siglo de tradición
-          jurídica
+          Controversias comerciales y administrativas resueltas con medio
+          siglo de tradición jurídica
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/80 leading-relaxed">
-          Representamos a mandantes, constructoras y proveedores en arbitrajes,
-          claims y controversias contractuales de obra. Estrategia jurídica con
-          conocimiento real de la industria de la construcción.
+          Representamos a empresas en arbitrajes comerciales y en reclamos de
+          ilegalidad contra decisiones municipales y de otros órganos de la
+          administración. Estrategia jurídica directa, atendida por los socios.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4">
           <a

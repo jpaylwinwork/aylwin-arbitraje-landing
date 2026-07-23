@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Arbitraje de construcción",
+    title: "Arbitraje comercial",
     description:
-      "Representación en arbitrajes ante el CAM Santiago y tribunales arbitrales ad hoc: controversias de contratos de obra, ingeniería y suministro.",
+      "Representación de empresas en arbitrajes comerciales en Santiago: disputas entre socios, incumplimiento de contratos y controversias con cláusula arbitral, ante el CAM Santiago y tribunales arbitrales ad hoc.",
     href: "/arbitraje",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-8 w-8" aria-hidden="true">
@@ -13,35 +13,13 @@ const services = [
     ),
   },
   {
-    title: "Claims y reclamaciones contractuales",
+    title: "Reclamo de ilegalidad",
     description:
-      "Preparación y defensa de claims por mayores costos, aumentos de plazo, obras extraordinarias e interferencias durante la ejecución.",
+      "Impugnación de decretos alcaldicios, resoluciones municipales y otros actos administrativos ilegales que afectan a su empresa. Los plazos de reclamo son breves — evaluamos su caso de inmediato.",
     href: "/reclamo-ilegalidad",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-8 w-8" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6M7 3h7l5 5v13H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm7 0v5h5" />
-      </svg>
-    ),
-  },
-  {
-    title: "Término anticipado y liquidación",
-    description:
-      "Asesoría estratégica en términos anticipados de contrato, liquidaciones de obra, cobros de boletas de garantía y medidas de resguardo.",
-    href: null,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-8 w-8" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4m0 4h.01M4.5 19.5h15a1.5 1.5 0 0 0 1.3-2.25l-7.5-13a1.5 1.5 0 0 0-2.6 0l-7.5 13a1.5 1.5 0 0 0 1.3 2.25Z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Prevención y dispute boards",
-    description:
-      "Revisión preventiva de contratos de construcción, gestión temprana de controversias, mediación y paneles técnicos de expertos.",
-    href: null,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-8 w-8" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.96 11.96 0 0 1 3.6 6c-.3 1-.6 2.3-.6 3.6 0 5.6 3.8 10.3 9 11.6 5.2-1.3 9-6 9-11.6 0-1.3-.3-2.6-.6-3.6a11.96 11.96 0 0 1-8.4-3.286Z" />
       </svg>
     ),
   },
@@ -52,47 +30,34 @@ export default function Services() {
     <section id="servicios" className="bg-surface">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24">
         <h2 className="text-3xl sm:text-4xl font-semibold text-ink-900 text-balance">
-          Especialistas en controversias de construcción
+          Nuestras áreas de práctica
         </h2>
         <p className="mt-4 max-w-2xl text-muted leading-relaxed">
-          Un equipo dedicado exclusivamente a disputas del sector construcción
-          e infraestructura, en todas las etapas del conflicto.
+          Dos materias, atendidas directamente por los socios del estudio, con
+          el respaldo institucional de Aylwin Abogados desde 1974.
         </p>
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {services.map((service) => {
-            const card = (
-              <>
-                <div className="text-brand-600">{service.icon}</div>
-                <h3 className="mt-5 text-xl font-semibold text-ink-900">
-                  {service.title}
-                </h3>
-                <p className="mt-3 text-sm text-muted leading-relaxed">
-                  {service.description}
-                </p>
-                {service.href && (
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand-600">
-                    Ver más
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                  </span>
-                )}
-              </>
-            );
-
-            const className =
-              "rounded-lg border border-line bg-white p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200";
-
-            return service.href ? (
-              <Link key={service.title} href={service.href} className={`block ${className} focus-visible:outline-2 focus-visible:outline-brand-600`}>
-                {card}
-              </Link>
-            ) : (
-              <article key={service.title} className={className}>
-                {card}
-              </article>
-            );
-          })}
+          {services.map((service) => (
+            <Link
+              key={service.title}
+              href={service.href}
+              className="block rounded-lg border border-line bg-white p-8 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-brand-600"
+            >
+              <div className="text-brand-600">{service.icon}</div>
+              <h3 className="mt-5 text-xl font-semibold text-ink-900">
+                {service.title}
+              </h3>
+              <p className="mt-3 text-sm text-muted leading-relaxed">
+                {service.description}
+              </p>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand-600">
+                Ver más
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

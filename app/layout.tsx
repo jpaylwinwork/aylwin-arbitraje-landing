@@ -18,21 +18,20 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Arbitraje de Construcción — Aylwin | Resolución de disputas en Chile",
+  title: "Aylwin Matta Abogados | Arbitraje Comercial y Derecho Administrativo",
   description:
-    "Práctica especializada en arbitraje de construcción, claims y disputas contractuales de obra. Respaldada por la tradición de Aylwin Abogados, desde 1974. Santiago, Chile.",
+    "Arbitraje comercial y reclamos de ilegalidad, con el respaldo de la tradición jurídica de Aylwin Abogados desde 1974. Santiago, Chile.",
   keywords: [
-    "arbitraje de construcción",
-    "disputas de construcción",
-    "claims construcción",
-    "abogado arbitraje Chile",
-    "término anticipado contrato de obra",
-    "liquidación contrato construcción",
+    "arbitraje comercial chile",
+    "reclamo de ilegalidad municipal",
+    "abogado arbitraje santiago",
+    "derecho administrativo empresas",
+    "cláusula compromisoria",
   ],
   openGraph: {
-    title: "Arbitraje de Construcción — Aylwin",
+    title: "Aylwin Matta Abogados",
     description:
-      "Resolución de disputas de construcción con el respaldo de 50 años de tradición jurídica. Santiago, Chile.",
+      "Arbitraje comercial y reclamos de ilegalidad, con el respaldo de 50 años de tradición jurídica. Santiago, Chile.",
     locale: "es_CL",
     type: "website",
   },

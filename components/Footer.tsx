@@ -4,11 +4,12 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm">
         <div>
           <p className="font-serif text-lg font-semibold text-white">
-            AYLWIN <span className="text-white/60 font-sans text-xs uppercase tracking-[0.2em]">Arbitraje de Construcción</span>
+            AYLWIN <span className="text-white/60 font-sans text-xs uppercase tracking-[0.2em]">Arbitraje y Derecho Administrativo</span>
           </p>
           <p className="mt-2 max-w-md leading-relaxed">
-            Práctica especializada en resolución de disputas de construcción,
-            respaldada por Aylwin Abogados — tradición jurídica desde 1974.
+            Práctica especializada en arbitraje comercial y reclamos de
+            ilegalidad, respaldada por Aylwin Abogados — tradición jurídica
+            desde 1974.
           </p>
         </div>
         <div className="text-center sm:text-right space-y-1">

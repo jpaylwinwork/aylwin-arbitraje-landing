@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
@@ -9,15 +10,21 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { JsonLd, legalServiceSchema } from "@/lib/schema";
 
-const schema = legalServiceSchema({
-  name: "Arbitraje de Construcción — Aylwin",
+export const metadata: Metadata = {
+  title: "Aylwin Matta Abogados | Arbitraje Comercial y Derecho Administrativo",
   description:
-    "Práctica especializada en arbitraje y resolución de disputas de construcción, respaldada por Aylwin Abogados.",
+    "Representamos empresas en arbitraje comercial y reclamos de ilegalidad, con el respaldo de Aylwin Abogados desde 1974. Santiago, Chile.",
+};
+
+const schema = legalServiceSchema({
+  name: "Aylwin Matta Abogados",
+  description:
+    "Práctica especializada en arbitraje comercial y reclamos de ilegalidad, respaldada por Aylwin Abogados.",
   knowsAbout: [
-    "Arbitraje de construcción",
-    "Claims y reclamaciones contractuales",
-    "Término anticipado de contratos de obra",
-    "Mediación y dispute boards",
+    "Arbitraje comercial",
+    "Conflictos societarios",
+    "Reclamo de ilegalidad municipal",
+    "Derecho administrativo",
   ],
 });
 

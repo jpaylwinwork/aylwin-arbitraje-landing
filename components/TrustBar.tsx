@@ -5,7 +5,7 @@ const items = [
   },
   {
     stat: "Best Lawyers",
-    label: "reconocimiento del estudio en Construction Law",
+    label: "reconocimiento profesional del estudio",
   },
   {
     stat: "Santiago",

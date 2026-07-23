@@ -2,12 +2,12 @@ const team = [
   {
     name: "Miguel Aylwin Fernández",
     role: "Socio",
-    bio: "Abogado de Aylwin Abogados, con práctica en resolución de controversias y cumplimiento regulatorio en proyectos de construcción e infraestructura.",
+    bio: "Abogado de Aylwin Abogados, con práctica en resolución de controversias comerciales y derecho administrativo.",
   },
   {
     name: "Vicente Aylwin Fernández",
     role: "Socio",
-    bio: "Abogado especializado en disputas contractuales del sector construcción. [Biografía por confirmar]",
+    bio: "Abogado del estudio. [Biografía por confirmar]",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Team() {
         <p className="mt-8 text-sm text-muted max-w-3xl border-l-4 border-brand-600 pl-4">
           Con el respaldo de <strong className="text-ink-900">Miguel Aylwin Oyarzún</strong>,
           abogado del estudio desde 1977 y referente en resolución de
-          controversias del sector construcción.
+          controversias.
         </p>
       </div>
     </section>

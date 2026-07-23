@@ -7,7 +7,7 @@ export default function Header() {
             AYLWIN
           </span>
           <span className="hidden sm:inline text-xs uppercase tracking-[0.2em] text-white/70">
-            Arbitraje de Construcción
+            Arbitraje y Derecho Administrativo
           </span>
         </a>
         <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 text-sm text-white/80">

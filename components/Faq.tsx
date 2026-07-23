@@ -1,23 +1,23 @@
 const faqs = [
   {
-    question: "¿Qué es el arbitraje de construcción?",
+    question: "¿Qué es el arbitraje comercial?",
     answer:
-      "Es un mecanismo de resolución de disputas en que un árbitro —generalmente experto en la materia— resuelve controversias derivadas de contratos de obra, en forma más rápida y especializada que la justicia ordinaria. En Chile es la vía habitual para conflictos de construcción de mediana y gran envergadura, frecuentemente ante el CAM Santiago.",
+      "Es un mecanismo de resolución de disputas en que un árbitro —generalmente experto en la materia— resuelve controversias comerciales en forma más rápida y confidencial que la justicia ordinaria. En Chile es la vía habitual para conflictos societarios y contractuales de mediana y gran envergadura, frecuentemente ante el CAM Santiago.",
   },
   {
-    question: "¿Cuándo conviene presentar un claim?",
+    question: "¿Qué es un reclamo de ilegalidad?",
     answer:
-      "Idealmente durante la ejecución de la obra, apenas se produce el hecho que genera mayores costos o plazos (interferencias, modificaciones, aumentos de obra). La documentación oportuna del claim es decisiva: mientras antes se estructure, mayores son las probabilidades de éxito en una negociación o arbitraje posterior.",
+      "Es la vía para impugnar decretos alcaldicios, resoluciones municipales u otros actos de la administración que sean ilegales y afecten a su empresa (por ejemplo, rechazo de una patente o una multa). Los plazos de caducidad son breves, por lo que conviene evaluar el caso apenas se conoce el acto.",
   },
   {
-    question: "¿Cuánto demora un arbitraje de construcción en Chile?",
+    question: "¿Cuánto demora un arbitraje comercial?",
     answer:
-      "Depende de la complejidad del caso y del procedimiento pactado, pero típicamente entre 12 y 24 meses. Una estrategia bien planteada desde el inicio —incluyendo la prueba pericial— puede acortar significativamente los plazos.",
+      "Depende de la complejidad del caso y del procedimiento pactado, pero típicamente entre 12 y 24 meses. Una estrategia bien planteada desde el inicio puede acortar significativamente los plazos.",
   },
   {
-    question: "¿Qué pasa si mi contrato no tiene cláusula arbitral?",
+    question: "¿Qué plazo tengo para reclamar una decisión municipal?",
     answer:
-      "Las partes siempre pueden acordar someter la disputa a arbitraje una vez surgido el conflicto. Si no hay acuerdo, la controversia se tramita ante tribunales ordinarios, donde también litigamos. Evaluamos el escenario y recomendamos la vía más conveniente.",
+      "Los plazos de caducidad del reclamo de ilegalidad son breves y se cuentan desde la publicación o notificación del acto. Escríbanos con la fecha del decreto o resolución y confirmamos el plazo aplicable a su situación.",
   },
   {
     question: "¿Cómo se estructuran los honorarios?",
