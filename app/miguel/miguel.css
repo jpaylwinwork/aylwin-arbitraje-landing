@@ -1,0 +1,154 @@
+/*
+ * Design system for miguelaylwin.com — deliberately isolated from the firm
+ * site's globals.css/Tailwind theme (@theme inline is global by nature in
+ * Tailwind v4, so new tokens defined there would leak). Everything here is
+ * scoped under .site-miguel and only ever imported by app/miguel/layout.tsx.
+ *
+ * Spec source: CONTENIDO/03_LANDING_ADS.md "Nota de dirección de arte" +
+ * CONTENIDO/02_WEB_SEO.md "Nota de diseño (ejecutable)".
+ */
+
+.site-miguel {
+  --miguel-bg: #faf9f6;
+  --miguel-text: #1a1a1a;
+  --miguel-accent: #1f3a34;
+  --miguel-accent-hover: #16302b;
+  --miguel-muted: #5f5f5f;
+  --miguel-line: #e2ddd3;
+  --miguel-panel: #f1efe9;
+  --miguel-font: var(--font-source-serif), Georgia, serif;
+
+  background: var(--miguel-bg);
+  color: var(--miguel-text);
+  font-family: var(--miguel-font);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.site-miguel h1,
+.site-miguel h2,
+.site-miguel h3 {
+  font-family: var(--miguel-font);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.site-miguel a {
+  color: inherit;
+}
+
+.site-miguel .miguel-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-miguel .miguel-body {
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.site-miguel .miguel-body p {
+  margin: 1.1rem 0;
+}
+
+.site-miguel .miguel-body h2 {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem;
+}
+
+.site-miguel .miguel-body h3 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.site-miguel .miguel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--miguel-accent);
+  color: #fff;
+  font-family: var(--font-poppins, system-ui), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1rem 1.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+  min-height: 44px;
+}
+
+.site-miguel .miguel-btn:hover {
+  background: var(--miguel-accent-hover);
+}
+
+.site-miguel .miguel-btn-outline {
+  background: transparent;
+  color: var(--miguel-accent);
+  border: 1px solid var(--miguel-accent);
+}
+
+.site-miguel .miguel-kicker {
+  font-family: var(--font-poppins, system-ui), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--miguel-accent);
+}
+
+.site-miguel .miguel-card {
+  background: #fff;
+  border: 1px solid var(--miguel-line);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.site-miguel .miguel-placeholder {
+  display: inline-block;
+  border: 1px dashed var(--miguel-accent);
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+  font-family: var(--font-poppins, system-ui), sans-serif;
+  font-size: 0.85em;
+  color: var(--miguel-accent);
+  background: color-mix(in srgb, var(--miguel-accent) 8%, transparent);
+}
+
+.site-miguel table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-family: var(--font-poppins, system-ui), sans-serif;
+  font-size: 0.92rem;
+}
+
+.site-miguel th,
+.site-miguel td {
+  border: 1px solid var(--miguel-line);
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+
+.site-miguel th {
+  background: var(--miguel-panel);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .site-miguel .miguel-body {
+    font-size: 18px;
+  }
+}
+
+/* Sticky mobile CTA on /consulta — hidden on desktop, spec is mobile-only */
+.site-miguel .miguel-sticky-cta {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .site-miguel .miguel-sticky-cta {
+    display: flex;
+  }
+}
