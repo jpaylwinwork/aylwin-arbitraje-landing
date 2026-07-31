@@ -237,7 +237,7 @@ export default function Consulta() {
       </p>
       <p>
         <strong>Sobre 8.000 UF</strong> opera todo lo descrito arriba, con dedicación personal. Tomo{" "}
-        <Placeholder label="CUPOS" /> casos nuevos al mes en esta modalidad. No es técnica de venta:
+        tres casos nuevos al mes en esta modalidad. No es técnica de venta:
         es la consecuencia de que el que revisa el caso sea el mismo que lo lleva.
       </p>
       <p>

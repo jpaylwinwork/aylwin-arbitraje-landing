@@ -24,7 +24,7 @@ export default function Contacto() {
       <ol>
         <li>Completas el formulario. Toma dos minutos.</li>
         <li>
-          Te respondo en un plazo de 3 días hábiles. Si el caso no es de
+          Te respondo en un plazo de 24 horas hábiles. Si el caso no es de
           mi especialidad, te lo digo y, si puedo, te derivo.
         </li>
         <li>Si corresponde, agendamos una reunión de 45 minutos para revisar tu situación.</li>
