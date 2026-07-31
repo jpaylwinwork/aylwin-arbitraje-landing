@@ -420,6 +420,42 @@
   margin-bottom: 0;
 }
 
+/* --- Aviso de confirmación -------------------------------------------
+ * El acuse de "mensaje recibido". Antes era una caja centrada y neutra que
+ * no hablaba el idioma del sitio; además el centrado se rompía contra la
+ * justificación del texto corrido. Ahora es un bloque alineado a la
+ * izquierda con el filete rojo de acento, etiqueta y título display. */
+.site-miguel .miguel-aviso {
+  background: #fff;
+  border: 1px solid var(--miguel-line);
+  border-left: 4px solid var(--miguel-accent);
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  text-align: left;
+}
+
+.site-miguel .miguel-aviso .miguel-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-miguel .miguel-aviso .miguel-display-title {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  margin: 0 0 1rem;
+}
+
+.site-miguel .miguel-aviso p {
+  text-align: left;
+  hyphens: manual;
+  margin: 0.85rem 0 0;
+}
+
+.site-miguel .miguel-aviso-nota {
+  color: var(--miguel-muted);
+  font-size: 0.9rem;
+}
+
 /* --- Boletín ---------------------------------------------------------- */
 .site-miguel .miguel-boletin-lista {
   list-style: none;
