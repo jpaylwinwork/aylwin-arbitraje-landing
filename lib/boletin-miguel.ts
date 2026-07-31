@@ -24,6 +24,10 @@ export type EntradaBoletin = {
   date: string;
   categoria: CategoriaBoletin;
   fuente: string;
+  fuenteUrl?: string;
+  imagen?: string;
+  imagenAlt?: string;
+  imagenCredito?: string;
   draft: boolean;
   html: string;
 };
@@ -54,6 +58,10 @@ export function getEntrada(slug: string): EntradaBoletin | null {
     date: data.date ?? "",
     categoria: (data.categoria as CategoriaBoletin) ?? "Institucional",
     fuente,
+    fuenteUrl: typeof data.fuenteUrl === "string" ? data.fuenteUrl : undefined,
+    imagen: typeof data.imagen === "string" ? data.imagen : undefined,
+    imagenAlt: typeof data.imagenAlt === "string" ? data.imagenAlt : undefined,
+    imagenCredito: typeof data.imagenCredito === "string" ? data.imagenCredito : undefined,
     draft: data.draft === true,
     html: marked.parse(content, { async: false }) as string,
   };

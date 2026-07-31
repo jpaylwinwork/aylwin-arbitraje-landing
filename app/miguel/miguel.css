@@ -511,6 +511,24 @@
   font-weight: 600;
 }
 
+.site-miguel .miguel-boletin-figura {
+  margin: 2rem 0;
+}
+
+.site-miguel .miguel-boletin-figura img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-miguel .miguel-boletin-figura figcaption {
+  font-family: var(--miguel-sans);
+  font-size: 0.8rem;
+  color: var(--miguel-muted);
+  margin-top: 0.6rem;
+  text-align: left;
+}
+
 /* La fuente siempre visible: es la garantía de que la novedad es verificable. */
 .site-miguel .miguel-boletin-fuente {
   margin-top: 2.5rem;
