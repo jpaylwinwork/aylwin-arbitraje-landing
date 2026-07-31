@@ -324,12 +324,12 @@
 }
 
 /* --- Cabecera --------------------------------------------------------- */
+/* No va fija: con el logotipo a dos líneas y el menú grande, el cabezal mide
+ * ~166px y pegado se comería una quinta parte de la pantalla durante toda la
+ * lectura. Como cabezal de entrada funciona; persiguiendo al lector, no. */
 .site-miguel .miguel-header {
   border-bottom: 1px solid var(--miguel-line);
   background: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 20;
 }
 
 .site-miguel .miguel-container.miguel-header-inner {
