@@ -39,8 +39,25 @@
   line-height: 1.25;
 }
 
+/* Los enlaces de "chrome" (logotipo, pie) heredan el color del texto. */
 .site-miguel a {
   color: inherit;
+}
+
+/* Pero dentro del cuerpo editorial los enlaces llevan el acento: la nota de
+ * diseño de 02_WEB_SEO.md pide "un solo color de acento, sobrio, para enlaces
+ * y CTA". Sin esto el hub no se distingue de un bloque de texto plano y sus
+ * cuatro rutas de entrada no se leen como navegables. Se excluyen los botones,
+ * que ya pintan su propio fondo. */
+.site-miguel .miguel-body a:not(.miguel-btn):not(.miguel-btn-outline) {
+  color: var(--miguel-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.site-miguel .miguel-body a:not(.miguel-btn):not(.miguel-btn-outline):hover {
+  color: var(--miguel-accent-hover);
 }
 
 .site-miguel .miguel-container {
