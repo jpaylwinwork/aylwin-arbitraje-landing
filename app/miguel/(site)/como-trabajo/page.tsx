@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
   title: "Cómo trabajo, según el tamaño y la urgencia del conflicto — Miguel Aylwin",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 
 export default function ComoTrabajo() {
   return (
+    <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <div className="miguel-page-title">
         <p className="miguel-label">Cómo trabajo</p>
@@ -82,5 +84,7 @@ export default function ComoTrabajo() {
         → <Link href="/contacto">Contacto</Link>
       </p>
     </div>
+      <MiguelCierreCta />
+    </>
   );
 }

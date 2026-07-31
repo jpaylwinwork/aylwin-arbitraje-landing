@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getEntrada, getEntradas, formatearFecha } from "@/lib/boletin-miguel";
 import { JsonLd, articleSchema } from "@/lib/schema";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 const MIGUEL_AUTHOR = {
   "@type": "Person" as const,
@@ -44,6 +45,7 @@ export default async function EntradaBoletinPage({
   });
 
   return (
+    <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <JsonLd data={schema} />
 
@@ -65,5 +67,7 @@ export default async function EntradaBoletinPage({
         <Link href="/boletin">← Volver al boletín</Link>
       </p>
     </div>
+      <MiguelCierreCta />
+    </>
   );
 }

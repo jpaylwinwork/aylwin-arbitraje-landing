@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JsonLd, faqPageSchema } from "@/lib/schema";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
   title: "Arbitraje inmobiliario y de construcción en Chile: preguntas frecuentes",
@@ -128,6 +129,7 @@ const faqs = [
 export default function PreguntasFrecuentes() {
   const schema = faqPageSchema(faqs);
   return (
+    <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <JsonLd data={schema} />
       <div className="miguel-page-title">
@@ -146,5 +148,7 @@ export default function PreguntasFrecuentes() {
         ))}
       </div>
     </div>
+      <MiguelCierreCta />
+    </>
   );
 }
