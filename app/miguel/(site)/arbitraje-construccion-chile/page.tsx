@@ -19,7 +19,7 @@ export default function PilarConstruccion() {
         <p className="miguel-label">Pilar · Construcción</p>
         <h1 className="miguel-display-title">Arbitraje en contratos de construcción</h1>
       </div>
-      <h2 style={{ fontSize: "1.2rem", fontWeight: 500 }}>
+      <h2 className="miguel-lead">
         Guía para quien tiene un conflicto de obra y todavía no sabe dónde va a terminar
       </h2>
 

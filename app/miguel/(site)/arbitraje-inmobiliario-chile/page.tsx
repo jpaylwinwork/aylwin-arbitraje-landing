@@ -19,7 +19,7 @@ export default function PilarInmobiliario() {
         <p className="miguel-label">Pilar · Inmobiliario</p>
         <h1 className="miguel-display-title">Arbitraje en conflictos inmobiliarios</h1>
       </div>
-      <h2 style={{ fontSize: "1.2rem", fontWeight: 500 }}>
+      <h2 className="miguel-lead">
         La materia más arbitrada de Chile, y la que peor se anticipa al firmar
       </h2>
 

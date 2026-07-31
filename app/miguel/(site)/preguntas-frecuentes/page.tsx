@@ -134,13 +134,13 @@ export default function PreguntasFrecuentes() {
         <p className="miguel-label">Preguntas frecuentes</p>
         <h1 className="miguel-display-title">Preguntas frecuentes</h1>
       </div>
-      <p style={{ color: "var(--miguel-muted)", fontSize: "0.9rem" }}>
+      <p className="miguel-nota">
         Arbitraje inmobiliario y de construcción en Chile.
       </p>
       <div style={{ marginTop: "2rem" }}>
         {faqs.map((f) => (
           <div key={f.pregunta} style={{ marginBottom: "1.75rem" }}>
-            <h2 style={{ fontSize: "1.05rem", fontWeight: 600 }}>{f.pregunta}</h2>
+            <h2 className="miguel-item-title">{f.pregunta}</h2>
             <p style={{ marginTop: "0.4rem" }}>{f.respuesta}</p>
           </div>
         ))}

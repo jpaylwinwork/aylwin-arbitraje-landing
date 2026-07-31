@@ -68,8 +68,12 @@
   padding: 0 20px;
 }
 
+/* Un solo tamaño de cuerpo (18px = 1.125rem) en todos los anchos: antes bajaba
+ * a 18px solo bajo 640px, dejando dos versiones del mismo párrafo. En rem,
+ * no en px, para que la jerarquía con los titulares se mantenga si cambia el
+ * tamaño de fuente raíz. */
 .site-miguel .miguel-body {
-  font-size: 19px;
+  font-size: 1.125rem;
   line-height: 1.7;
 }
 
@@ -97,14 +101,61 @@
   margin: 1.1rem 0;
 }
 
+/* Escala modular (18 cuerpo / 24 h3 / 32 h2) en vez de valores sueltos: antes
+ * h3 (1.2rem ≈ 19.2px) casi no se distinguía del cuerpo (19px). */
 .site-miguel .miguel-body h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 2.5rem 0 1rem;
 }
 
 .site-miguel .miguel-body h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin: 2rem 0 0.75rem;
+}
+
+/* Subtítulo reutilizable bajo un H1 (fuera del hero): antes cada página que
+ * lo necesitaba improvisaba su propio font-size inline. */
+.site-miguel .miguel-lead {
+  font-family: var(--miguel-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--miguel-text);
+  margin: 0.5rem 0 0;
+}
+
+/* Cuando .miguel-lead se usa en un <h2> dentro de .miguel-body (los
+ * subtítulos de los pilares), esta regla necesita ganarle a ".miguel-body h2"
+ * en especificidad (esa selecciona por elemento, no solo por clase). */
+.site-miguel .miguel-body h2.miguel-lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0;
+}
+
+/* Título de elemento de lista (boletín, FAQ): un escalón entre el cuerpo y
+ * h3, para listas con muchas entradas donde un h3/h2 completo pesa demasiado. */
+.site-miguel .miguel-item-title {
+  font-family: var(--miguel-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+/* Misma razón que h2.miguel-lead arriba: gana en especificidad a
+ * ".miguel-body h2" cuando esta clase se aplica sobre un <h2>. */
+.site-miguel .miguel-body h2.miguel-item-title {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Texto pequeño y apagado para notas al pie / fuentes — antes cada página
+ * improvisaba su propio inline style (0.85rem, 0.9rem, sin relación entre sí). */
+.site-miguel .miguel-nota {
+  color: var(--miguel-muted);
+  font-size: 0.875rem;
 }
 
 .site-miguel .miguel-btn {
@@ -136,7 +187,7 @@
 
 .site-miguel .miguel-kicker {
   font-family: var(--font-poppins, system-ui), sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -166,7 +217,7 @@
   border-collapse: collapse;
   margin: 1.5rem 0;
   font-family: var(--font-poppins, system-ui), sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.875rem;
 }
 
 .site-miguel th,
@@ -179,12 +230,6 @@
 .site-miguel th {
   background: var(--miguel-panel);
   font-weight: 600;
-}
-
-@media (max-width: 640px) {
-  .site-miguel .miguel-body {
-    font-size: 18px;
-  }
 }
 
 /* ---------------------------------------------------------------------------
@@ -219,7 +264,7 @@
  * Es el "01/" de aylwin.cl. */
 .site-miguel .miguel-label {
   font-family: var(--miguel-sans);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -236,7 +281,10 @@
 .site-miguel .miguel-display-title {
   font-family: var(--miguel-display);
   font-weight: 700;
-  font-size: clamp(1.75rem, 3.6vw, 2.6rem);
+  /* El mínimo sube de 1.75rem (28px) a 2.25rem (36px): con el nuevo h2 en
+   * 2rem (32px), el H1 tenía que quedar por encima incluso en el extremo
+   * angosto del clamp, no solo en el ancho. */
+  font-size: clamp(2.25rem, 4vw, 2.75rem);
   line-height: 1.15;
   margin: 0 0 1.25rem;
 }
@@ -253,7 +301,9 @@
   font-family: var(--miguel-sans);
   font-weight: 600;
   text-transform: uppercase;
-  font-size: clamp(1.7rem, 4.1vw, 3rem);
+  /* Mismo ajuste que .miguel-display-title, y se mantiene por encima de ese
+   * H1 interior en todo el rango: el hero es el titular más grande del sitio. */
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
   line-height: 1.12;
   letter-spacing: -0.01em;
   margin: 0;
@@ -305,7 +355,7 @@
   gap: 0.75rem;
   padding: 1rem 0;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 1.125rem;
 }
 
 .site-miguel .miguel-rutas a:hover {
@@ -324,12 +374,18 @@
 }
 
 /* --- Cabecera --------------------------------------------------------- */
-/* No va fija: con el logotipo a dos líneas y el menú grande, el cabezal mide
- * ~166px y pegado se comería una quinta parte de la pantalla durante toda la
- * lectura. Como cabezal de entrada funciona; persiguiendo al lector, no. */
+/* Fija arriba (position: sticky) y oscura: el blanco sobre el fondo hueso
+ * casi no se distinguía (#fff vs #f9f9f9, solo un filete gris de por medio).
+ * Usa el mismo --miguel-ink que el pie para un efecto de "sujetalibros"
+ * oscuro/claro/oscuro. El padding baja de 26px a 16px porque, ya fija,
+ * ocuparía demasiada pantalla durante toda la lectura si mantuviera el
+ * tamaño de cabezal de portada. */
 .site-miguel .miguel-header {
-  border-bottom: 1px solid var(--miguel-line);
-  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--miguel-ink);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .site-miguel .miguel-container.miguel-header-inner {
@@ -339,8 +395,8 @@
   justify-content: space-between;
   gap: 1.5rem;
   flex-wrap: wrap;
-  padding-top: 26px;
-  padding-bottom: 26px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 /* Logotipo a dos tonos y dos líneas, con el mismo recurso del bloque
@@ -355,7 +411,7 @@
   font-size: 1.28rem;
   line-height: 1.08;
   text-decoration: none;
-  color: var(--miguel-ink);
+  color: #fff;
   white-space: nowrap;
 }
 
@@ -364,14 +420,18 @@
   display: block;
 }
 
+/* El acento institucional (#a8000d) no llega a 4.5:1 sobre --miguel-ink: es
+ * un rojo demasiado oscuro para leerse como texto sobre fondo casi negro.
+ * El apellido pasa a blanco como el resto del logotipo; el "/" decorativo
+ * —un solo carácter, no contenido que deba leerse— conserva el acento. */
 .site-miguel .miguel-logo-apellido {
-  color: var(--miguel-accent);
+  color: #fff;
 }
 
 .site-miguel .miguel-logo-apellido::after {
   content: "/";
   margin-left: 0.12em;
-  color: var(--miguel-accent);
+  color: var(--miguel-accent-hover);
 }
 
 @media (max-width: 720px) {
@@ -387,23 +447,28 @@
   align-items: center;
   gap: 0.4rem;
   font-family: var(--miguel-sans);
-  font-size: 0.86rem;
+  font-size: 0.875rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
+/* Mismo problema de contraste que el logotipo: el texto de los enlaces se
+ * queda en blanco siempre (accesible), y el acento —que tampoco llega a
+ * 4.5:1 sobre el fondo oscuro— se reserva para el filete inferior de hover,
+ * un componente no textual que solo necesita 3:1. */
 .site-miguel .miguel-nav a {
   text-decoration: none;
-  color: var(--miguel-ink);
+  color: #fff;
+  opacity: 0.85;
   padding: 0.6rem 0.75rem;
   border-bottom: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: opacity 0.15s ease, border-color 0.15s ease;
 }
 
 .site-miguel .miguel-nav a:hover {
-  color: var(--miguel-accent);
-  border-bottom-color: var(--miguel-accent);
+  opacity: 1;
+  border-bottom-color: var(--miguel-accent-hover);
 }
 
 /* --- Bloque de título de página interior ------------------------------
@@ -453,7 +518,7 @@
 
 .site-miguel .miguel-aviso-nota {
   color: var(--miguel-muted);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
 /* --- Boletín ---------------------------------------------------------- */
@@ -474,7 +539,9 @@
 }
 
 .site-miguel .miguel-boletin-lista h2 {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
+  font-family: var(--miguel-display);
+  font-weight: 600;
   margin: 0.35rem 0 0.5rem;
 }
 
@@ -510,7 +577,7 @@
   border-left: 3px solid var(--miguel-accent);
   background: var(--miguel-panel);
   font-family: var(--miguel-sans);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   text-align: left;
 }
 

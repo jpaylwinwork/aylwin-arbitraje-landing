@@ -23,7 +23,7 @@ export default function Estadisticas() {
         <p className="miguel-label">Datos · CAM Santiago 2025</p>
         <h1 className="miguel-display-title">Cuánto y qué se arbitra en Chile</h1>
       </div>
-      <p style={{ color: "var(--miguel-muted)", fontSize: "0.9rem" }}>
+      <p className="miguel-nota">
         Fuente: Reporte Anual 2025 del CAM Santiago. Los números absolutos priman sobre los
         porcentajes del reporte en los tres puntos donde este es internamente inconsistente
         (señalados abajo como notas de fuente).
@@ -98,7 +98,7 @@ export default function Estadisticas() {
           <tr><td>350.001 y más</td><td>11</td><td>—</td><td>11</td><td>3,9%</td><td>100%</td></tr>
         </tbody>
       </table>
-      <p style={{ fontSize: "0.85rem", color: "var(--miguel-muted)" }}>(Los tramos informados suman 284 causas.)</p>
+      <p className="miguel-nota">(Los tramos informados suman 284 causas.)</p>
 
       <p>
         <strong>Hay dos circuitos y conviene saber en cuál cae tu caso.</strong> Los Árbitros
@@ -190,7 +190,7 @@ export default function Estadisticas() {
         <Link href="/cuanto-cuesta-arbitraje-chile">Cuánto cuesta y cuánto dura un arbitraje</Link> ·{" "}
         <Link href="/como-trabajo">Cómo trabajo</Link>
       </p>
-      <p style={{ fontSize: "0.85rem", color: "var(--miguel-muted)" }}>
+      <p className="miguel-nota">
         Fuente: Reporte Anual 2025, Centro de Arbitraje y Mediación de la Cámara de Comercio de
         Santiago.
       </p>
