@@ -9,14 +9,20 @@
  */
 
 .site-miguel {
-  --miguel-bg: #faf9f6;
+  /* Aire de familia con aylwin.cl: se conserva la base clara y sobria que pide
+   * la dirección de arte (fondo claro, cuerpo serif, un único acento), pero el
+   * acento pasa al rojo institucional del estudio y los titulares a Bodoni
+   * Moda, la display de aylwin.cl. Los grises se neutralizan —antes eran
+   * cálidos, de la paleta hueso— porque el beige riñe con el carmesí. */
+  --miguel-bg: #f9f9f9;
   --miguel-text: #1a1a1a;
-  --miguel-accent: #1f3a34;
-  --miguel-accent-hover: #16302b;
+  --miguel-accent: #a8000d;
+  --miguel-accent-hover: #c41320;
   --miguel-muted: #5f5f5f;
-  --miguel-line: #e2ddd3;
-  --miguel-panel: #f1efe9;
+  --miguel-line: #e3e0dd;
+  --miguel-panel: #f1f1f1;
   --miguel-font: var(--font-source-serif), Georgia, serif;
+  --miguel-display: var(--font-bodoni), "Bodoni Moda", Georgia, serif;
 
   background: var(--miguel-bg);
   color: var(--miguel-text);
@@ -28,7 +34,7 @@
 .site-miguel h1,
 .site-miguel h2,
 .site-miguel h3 {
-  font-family: var(--miguel-font);
+  font-family: var(--miguel-display);
   font-weight: 600;
   line-height: 1.25;
 }

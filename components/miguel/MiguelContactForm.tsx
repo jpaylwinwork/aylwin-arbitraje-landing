@@ -150,7 +150,7 @@ export default function MiguelContactForm() {
       </div>
 
       {status === "error" && (
-        <p role="alert" style={{ color: "#a8000d", fontSize: "0.9rem" }}>
+        <p role="alert" style={{ color: "var(--miguel-accent)", fontSize: "0.9rem" }}>
           No pudimos enviar tu mensaje. Intenta nuevamente o escribe a{" "}
           <a href="mailto:contacto@aylwin.cl">contacto@aylwin.cl</a>.
         </p>

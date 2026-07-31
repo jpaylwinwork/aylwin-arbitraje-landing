@@ -179,7 +179,7 @@ export default function ConsultaForm() {
       </div>
 
       {status === "error" && (
-        <p role="alert" style={{ color: "#a8000d", fontSize: "0.9rem" }}>
+        <p role="alert" style={{ color: "var(--miguel-accent)", fontSize: "0.9rem" }}>
           No pudimos enviar tu mensaje. Intenta nuevamente.
         </p>
       )}
