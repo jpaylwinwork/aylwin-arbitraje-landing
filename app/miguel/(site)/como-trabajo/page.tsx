@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Placeholder from "@/components/miguel/Placeholder";
 
 export const metadata: Metadata = {
   title: "Cómo trabajo, según el tamaño y la urgencia del conflicto — Miguel Aylwin",
@@ -58,7 +57,7 @@ export default function ComoTrabajo() {
         </li>
       </ul>
       <p>
-        Tomo <Placeholder label="CUPOS" /> casos nuevos al mes en esta modalidad. No es una técnica
+        Tomo tres casos nuevos al mes en esta modalidad. No es una técnica
         de venta: es la consecuencia de que el que revisa el caso sea el mismo que lo lleva.
       </p>
 
