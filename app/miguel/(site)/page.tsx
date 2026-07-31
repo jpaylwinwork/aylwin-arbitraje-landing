@@ -11,7 +11,16 @@ export default function MiguelHub() {
   return (
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <h1 style={{ fontSize: "2.1rem" }}>Conflictos inmobiliarios y de construcción</h1>
-      <h2 style={{ fontSize: "1.3rem", fontWeight: 500, marginTop: "0.5rem" }}>
+      <h2
+        style={{
+          fontSize: "1.25rem",
+          fontWeight: 400,
+          marginTop: "0.9rem",
+          marginBottom: "2rem",
+          color: "var(--miguel-muted)",
+          lineHeight: 1.45,
+        }}
+      >
         Cómo se resuelven en Chile, cuánto cuestan y qué conviene hacer antes de decidir
       </h2>
 
@@ -33,7 +42,7 @@ export default function MiguelHub() {
         que esa conversación sea más útil.
       </p>
 
-      <p style={{ marginTop: "1.5rem" }}>
+      <p style={{ marginTop: "1.5rem", lineHeight: 2.3 }}>
         <Link href="/arbitraje-construccion-chile">→ Si tu conflicto es de un contrato de construcción o de obra</Link>
         <br />
         <Link href="/arbitraje-inmobiliario-chile">→ Si tu conflicto es inmobiliario: promesas, vicios, terrenos, socios</Link>
