@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getSatelite, getSateliteSlugs } from "@/lib/satelites-miguel";
 import { JsonLd, articleSchema } from "@/lib/schema";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 const MIGUEL_AUTHOR = {
   "@type": "Person" as const,
@@ -43,6 +44,7 @@ export default async function SatelitePage({
   });
 
   return (
+    <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <JsonLd data={schema} />
       <div className="miguel-page-title">
@@ -53,5 +55,7 @@ export default async function SatelitePage({
       </div>
       <div dangerouslySetInnerHTML={{ __html: data.html }} />
     </div>
+      <MiguelCierreCta />
+    </>
   );
 }

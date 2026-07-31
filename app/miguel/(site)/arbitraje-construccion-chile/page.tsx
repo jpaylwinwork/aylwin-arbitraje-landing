@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getSatelitesByPilar, assertTransversalLinking } from "@/lib/satelites-miguel";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 assertTransversalLinking();
 
@@ -14,6 +15,7 @@ export default function PilarConstruccion() {
   const satelites = getSatelitesByPilar("construccion");
 
   return (
+    <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <div className="miguel-page-title">
         <p className="miguel-label">Pilar · Construcción</p>
@@ -186,5 +188,7 @@ export default function PilarConstruccion() {
         ))}
       </ul>
     </div>
+      <MiguelCierreCta />
+    </>
   );
 }
