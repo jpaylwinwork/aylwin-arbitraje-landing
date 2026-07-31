@@ -17,6 +17,7 @@ const MIGUEL_STATIC_PAGES = [
   "/como-trabajo",
   "/quien-soy",
   "/contacto",
+  "/politica-privacidad",
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

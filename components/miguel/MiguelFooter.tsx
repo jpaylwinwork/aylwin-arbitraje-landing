@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function MiguelFooter() {
   return (
     <footer className="miguel-footer">
@@ -18,6 +20,9 @@ export default function MiguelFooter() {
         <p style={{ opacity: 0.72 }}>
           <a href="tel:+56969080084">+56 9 6908 0084</a> ·{" "}
           <a href="mailto:mp@aylwin.cl">mp@aylwin.cl</a>
+        </p>
+        <p style={{ marginTop: "1.25rem", opacity: 0.72 }}>
+          <Link href="/politica-privacidad">Política de privacidad</Link>
         </p>
       </div>
     </footer>
