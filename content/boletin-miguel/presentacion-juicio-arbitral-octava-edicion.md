@@ -1,7 +1,7 @@
 ---
 title: "«El Juicio Arbitral» llega a su octava edición: la presentación en el CAM Santiago"
 description: "La obra que Patricio Aylwin Azócar escribió como memoria de pregrado en 1943 sigue vigente ochenta años después. Crónica de su presentación en el CAM Santiago."
-date: 2026-07-31
+date: "2026-07-31"
 categoria: Institucional
 fuente: "CAM Santiago, «Octava edición del libro El Juicio Arbitral se presenta en el CAM Santiago», 26 de mayo de 2026"
 fuenteUrl: "https://www.ccs.cl/camsantiago/el-juicio-arbitral-2026/"
