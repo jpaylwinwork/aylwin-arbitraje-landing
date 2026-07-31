@@ -35,7 +35,7 @@ export default function QuienSoy() {
       </p>
 
       <p>
-        <Placeholder label="AÑOS" /> años en esto me dejaron una convicción que ordena cómo
+        Veinte años en esto me dejaron una convicción que ordena cómo
         trabajo: <strong>ganar el juicio y salvar el negocio no son lo mismo.</strong> He visto
         empresas con razón obtener resultados favorables tarde, cuando el capital inmovilizado, las
         boletas vigentes y los proyectos perdidos ya habían hecho el daño que el fallo no podía

@@ -46,9 +46,9 @@ export default function Contacto() {
         <br />
         Socio de Aylwin Matta Abogados
         <br />
-        <Placeholder label="DIRECCIÓN" /> · Santiago, Chile
+        Av. Apoquindo 3910, piso 3, Las Condes · Santiago, Chile
         <br />
-        <Placeholder label="TELÉFONO" /> · <Placeholder label="CORREO" />
+        <Placeholder label="TELÉFONO" /> · <a href="mailto:mp@aylwin.cl">mp@aylwin.cl</a>
       </p>
     </div>
   );
