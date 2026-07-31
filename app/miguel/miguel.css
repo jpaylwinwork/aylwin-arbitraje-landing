@@ -621,8 +621,14 @@
   object-fit: cover;
 }
 
+/* grid-column: 2 fijo, no automático: cuando una entrada no trae imagen, el
+ * <span> de la foto no se renderiza y este es el único hijo del grid. Sin
+ * fijar la columna, el auto-placement de CSS Grid lo coloca en la primera
+ * columna (220px) en vez de la segunda (1fr) — el texto queda angosto y
+ * corrido a la izquierda, desalineado con las entradas que sí tienen foto. */
 .site-miguel .miguel-destacados-texto {
   display: block;
+  grid-column: 2;
 }
 
 .site-miguel .miguel-destacados-meta {
@@ -656,6 +662,12 @@
   .site-miguel .miguel-destacados a {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  /* El grid en móvil vuelve a una sola columna: fijarlo en 2 (como en
+   * escritorio) dejaría el texto en una columna que ya no existe. */
+  .site-miguel .miguel-destacados-texto {
+    grid-column: auto;
   }
 
   .site-miguel .miguel-destacados-foto img {
