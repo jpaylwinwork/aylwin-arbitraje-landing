@@ -11,7 +11,10 @@ export const metadata: Metadata = {
 export default function Contacto() {
   return (
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
-      <h1 style={{ fontSize: "1.9rem" }}>Conversemos sobre tu caso</h1>
+      <div className="miguel-page-title">
+        <p className="miguel-label">Contacto</p>
+        <h1 className="miguel-display-title">Conversemos sobre tu caso</h1>
+      </div>
 
       <p>
         Si tienes un conflicto en un contrato inmobiliario o de construcción y quieres una opinión

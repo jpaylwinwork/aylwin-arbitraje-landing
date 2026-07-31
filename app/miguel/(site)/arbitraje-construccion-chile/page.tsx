@@ -15,7 +15,10 @@ export default function PilarConstruccion() {
 
   return (
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
-      <h1 style={{ fontSize: "1.9rem" }}>Arbitraje en contratos de construcción</h1>
+      <div className="miguel-page-title">
+        <p className="miguel-label">Pilar · Construcción</p>
+        <h1 className="miguel-display-title">Arbitraje en contratos de construcción</h1>
+      </div>
       <h2 style={{ fontSize: "1.2rem", fontWeight: 500 }}>
         Guía para quien tiene un conflicto de obra y todavía no sabe dónde va a terminar
       </h2>

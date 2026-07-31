@@ -130,7 +130,10 @@ export default function PreguntasFrecuentes() {
   return (
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <JsonLd data={schema} />
-      <h1 style={{ fontSize: "1.9rem" }}>Preguntas frecuentes</h1>
+      <div className="miguel-page-title">
+        <p className="miguel-label">Preguntas frecuentes</p>
+        <h1 className="miguel-display-title">Preguntas frecuentes</h1>
+      </div>
       <p style={{ color: "var(--miguel-muted)", fontSize: "0.9rem" }}>
         Arbitraje inmobiliario y de construcción en Chile.
       </p>

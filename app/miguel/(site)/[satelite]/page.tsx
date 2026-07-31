@@ -45,7 +45,12 @@ export default async function SatelitePage({
   return (
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <JsonLd data={schema} />
-      <h1 style={{ fontSize: "1.8rem" }}>{data.title}</h1>
+      <div className="miguel-page-title">
+        <p className="miguel-label">
+          {data.pilares.includes("construccion") ? "Construcción" : "Inmobiliario"}
+        </p>
+        <h1 className="miguel-display-title">{data.title}</h1>
+      </div>
       <div dangerouslySetInnerHTML={{ __html: data.html }} />
     </div>
   );
