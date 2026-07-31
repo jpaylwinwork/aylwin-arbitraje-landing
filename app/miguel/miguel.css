@@ -253,6 +253,39 @@
   opacity: 0.8;
 }
 
+/* Portada a dos columnas: texto a la izquierda, retrato a la derecha, como
+ * el bloque rojo + imagen de aylwin.cl. En móvil se apila y la foto va
+ * después del texto, que es lo que importa leer primero. */
+.site-miguel .miguel-hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: end;
+}
+
+.site-miguel .miguel-hero-retrato {
+  margin: 0;
+  align-self: end;
+}
+
+.site-miguel .miguel-hero-retrato img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(1) contrast(1.05);
+  mix-blend-mode: luminosity;
+}
+
+@media (max-width: 820px) {
+  .site-miguel .miguel-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-miguel .miguel-hero-retrato {
+    max-width: 260px;
+  }
+}
+
 /* Botón oscuro de esquinas rectas, como "Hablemos de sus desafíos". */
 .site-miguel .miguel-btn-ink {
   background: var(--miguel-ink);
@@ -319,15 +352,42 @@
   padding-bottom: 16px;
 }
 
+/* Logotipo a dos tonos y dos líneas, con el mismo recurso del bloque
+ * "AYLWIN / MATTA" del estudio: nombre en negro, apellido en el rojo
+ * institucional, cerrado con la barra diagonal de la marca. */
 .site-miguel .miguel-logo {
+  display: inline-block;
   font-family: var(--miguel-sans);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  font-size: 1.28rem;
+  line-height: 1.08;
   text-decoration: none;
   color: var(--miguel-ink);
   white-space: nowrap;
+}
+
+.site-miguel .miguel-logo-nombre,
+.site-miguel .miguel-logo-apellido {
+  display: block;
+}
+
+.site-miguel .miguel-logo-apellido {
+  color: var(--miguel-accent);
+}
+
+.site-miguel .miguel-logo-apellido::after {
+  content: "/";
+  margin-left: 0.12em;
+  color: var(--miguel-accent);
+}
+
+@media (max-width: 720px) {
+  .site-miguel .miguel-logo {
+    font-size: 1.05rem;
+    letter-spacing: 0.16em;
+  }
 }
 
 .site-miguel .miguel-nav {

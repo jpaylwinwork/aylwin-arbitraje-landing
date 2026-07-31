@@ -17,8 +17,9 @@ export default function MiguelHeader() {
   return (
     <header className="miguel-header">
       <div className="miguel-container miguel-header-inner">
-        <Link href="/" className="miguel-logo">
-          Miguel Aylwin
+        <Link href="/" className="miguel-logo" aria-label="Miguel Aylwin Fernández — inicio">
+          <span className="miguel-logo-nombre">Miguel Aylwin</span>
+          <span className="miguel-logo-apellido">Fernández</span>
         </Link>
 
         <nav className="miguel-nav" aria-label="Principal">

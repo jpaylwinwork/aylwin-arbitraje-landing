@@ -297,7 +297,7 @@ export default function Consulta() {
       <p style={{ marginTop: "3rem", fontSize: "0.85rem", color: "var(--miguel-muted)" }}>
         Miguel Aylwin Fernández · Abogado · Aylwin Matta Abogados · Santiago, Chile
         <br />
-        <Placeholder label="TELÉFONO" /> · mp@aylwin.cl ·{" "}
+        +56 9 6908 0084 · mp@aylwin.cl ·{" "}
         <Placeholder label="POLÍTICA DE PRIVACIDAD" />
       </p>
     </div>
