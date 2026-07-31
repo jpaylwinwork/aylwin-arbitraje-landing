@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MiguelBoletinDestacado from "@/components/miguel/MiguelBoletinDestacado";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
@@ -178,6 +179,9 @@ export default function MiguelHub() {
           </p>
         </div>
       </section>
+
+      {/* Últimas del boletín — no se renderiza si aún no hay entradas */}
+      <MiguelBoletinDestacado />
 
       {/* Cierre */}
       <MiguelCierreCta />
