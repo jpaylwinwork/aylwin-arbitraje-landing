@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { JsonLd, personSchema } from "@/lib/schema";
-import Placeholder from "@/components/miguel/Placeholder";
 
 export const metadata: Metadata = {
   title: "Miguel Aylwin Fernández — Abogado, arbitraje inmobiliario y de construcción",
@@ -25,7 +25,14 @@ export default function QuienSoy() {
       <h1 style={{ fontSize: "1.9rem" }}>Miguel Aylwin Fernández</h1>
 
       <p style={{ marginTop: "1rem" }}>
-        <Placeholder label="FOTO — retrato profesional" />
+        <Image
+          src="/miguel/retrato-miguel-aylwin.jpg"
+          alt="Miguel Aylwin Fernández, abogado"
+          width={800}
+          height={1200}
+          priority
+          style={{ width: "min(280px, 60%)", height: "auto" }}
+        />
       </p>
 
       <p>

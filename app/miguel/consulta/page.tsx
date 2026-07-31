@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Placeholder from "@/components/miguel/Placeholder";
 import ConsultaForm from "@/components/miguel/ConsultaForm";
 import StickyCta from "@/components/miguel/StickyCta";
@@ -249,7 +250,13 @@ export default function Consulta() {
       {/* SECCIÓN 8 — Qué pasa si escribes */}
       <h2 style={{ marginTop: "4rem" }}>Qué pasa después de que envías el formulario</h2>
       <p style={{ marginTop: "1rem" }}>
-        <Placeholder label="FOTO — retrato de Miguel Aylwin" />
+        <Image
+          src="/miguel/retrato-miguel-aylwin.jpg"
+          alt="Miguel Aylwin Fernández, abogado"
+          width={800}
+          height={1200}
+          style={{ width: "min(260px, 55%)", height: "auto" }}
+        />
       </p>
       <p><strong>1. Te respondo yo, en 24 horas hábiles.</strong> No un formulario automático ni un asistente.</p>
       <p><strong>2. Si tu caso no es para mí, te lo digo de inmediato</strong> y, cuando puedo, te derivo a alguien que sí.</p>
