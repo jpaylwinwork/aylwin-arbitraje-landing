@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MiguelBoletinDestacado from "@/components/miguel/MiguelBoletinDestacado";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
-  title: "Arbitraje inmobiliario y de construcción en Chile — Miguel Aylwin",
+  title: "Arbitraje inmobiliario y de construcción en Chile",
   description:
-    "Cómo se resuelven los conflictos de contratos inmobiliarios y de construcción en Chile: arbitraje, cláusulas, cuantías, costos y qué hacer cuando el conflicto recién empieza.",
+    "Cómo se resuelven en Chile los conflictos de contratos inmobiliarios y de construcción: arbitraje, cláusulas, cuantías y costos reales.",
 };
 
 const RUTAS = [
@@ -178,23 +180,11 @@ export default function MiguelHub() {
         </div>
       </section>
 
+      {/* Últimas del boletín — no se renderiza si aún no hay entradas */}
+      <MiguelBoletinDestacado />
+
       {/* Cierre */}
-      <section className="miguel-band miguel-band--dark">
-        <div className="miguel-container miguel-wide">
-          <p className="miguel-label">Siguiente paso</p>
-          <h2 className="miguel-display-title" style={{ marginBottom: "1.5rem" }}>
-            ¿Tienes un conflicto en curso?
-          </h2>
-          <p style={{ maxWidth: "52ch", opacity: 0.85, margin: 0 }}>
-            Si quieres una opinión antes de decidir qué hacer, escríbeme y lo revisamos.
-          </p>
-          <p style={{ marginTop: "2rem" }}>
-            <Link href="/contacto" className="miguel-btn">
-              Conversemos sobre tu caso
-            </Link>
-          </p>
-        </div>
-      </section>
+      <MiguelCierreCta />
     </>
   );
 }

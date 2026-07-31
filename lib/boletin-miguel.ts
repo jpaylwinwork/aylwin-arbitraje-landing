@@ -24,9 +24,20 @@ export type EntradaBoletin = {
   date: string;
   categoria: CategoriaBoletin;
   fuente: string;
+  fuenteUrl?: string;
+  imagen?: string;
+  imagenAlt?: string;
+  imagenCredito?: string;
   draft: boolean;
   html: string;
 };
+
+function normalizarFecha(valor: unknown): string {
+  if (valor instanceof Date && !Number.isNaN(valor.getTime())) {
+    return valor.toISOString().slice(0, 10);
+  }
+  return typeof valor === "string" ? valor.trim() : "";
+}
 
 export function getBoletinSlugs(): string[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
@@ -51,9 +62,17 @@ export function getEntrada(slug: string): EntradaBoletin | null {
     slug,
     title: data.title ?? slug,
     description: data.description ?? "",
-    date: data.date ?? "",
+    // YAML convierte una fecha sin comillas (date: 2026-07-31) en un objeto
+    // Date, no en texto. Se normaliza acá para que el resto del código reciba
+    // siempre una cadena ISO: si el objeto llega hasta el JSX, React falla al
+    // renderizarlo y el build cae entero.
+    date: normalizarFecha(data.date),
     categoria: (data.categoria as CategoriaBoletin) ?? "Institucional",
     fuente,
+    fuenteUrl: typeof data.fuenteUrl === "string" ? data.fuenteUrl : undefined,
+    imagen: typeof data.imagen === "string" ? data.imagen : undefined,
+    imagenAlt: typeof data.imagenAlt === "string" ? data.imagenAlt : undefined,
+    imagenCredito: typeof data.imagenCredito === "string" ? data.imagenCredito : undefined,
     draft: data.draft === true,
     html: marked.parse(content, { async: false }) as string,
   };
@@ -71,8 +90,11 @@ export function hayBoletin(): boolean {
 }
 
 export function formatearFecha(iso: string): string {
-  if (!iso) return "";
-  const d = new Date(`${iso}T12:00:00`);
-  if (Number.isNaN(d.getTime())) return iso;
+  const texto = normalizarFecha(iso);
+  if (!texto) return "";
+  const d = new Date(`${texto}T12:00:00`);
+  // Devolver siempre una cadena: si la fecha no parsea, se muestra el valor
+  // crudo, nunca un objeto.
+  if (Number.isNaN(d.getTime())) return texto;
   return d.toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" });
 }

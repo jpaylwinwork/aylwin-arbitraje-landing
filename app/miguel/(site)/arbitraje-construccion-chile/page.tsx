@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getSatelitesByPilar, assertTransversalLinking } from "@/lib/satelites-miguel";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 assertTransversalLinking();
 
 export const metadata: Metadata = {
-  title: "Arbitraje en contratos de construcción en Chile: guía completa",
+  title: "Arbitraje en contratos de construcción en Chile",
   description:
-    "Cómo funciona el arbitraje en contratos de construcción en Chile: cláusula arbitral, tipos de árbitro, plazos, costos y qué hacer cuando el conflicto recién empieza.",
+    "Cómo funciona el arbitraje en contratos de construcción en Chile: cláusula arbitral, tipos de árbitro, plazos y costos.",
 };
 
 export default function PilarConstruccion() {
   const satelites = getSatelitesByPilar("construccion");
 
   return (
+    <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <div className="miguel-page-title">
         <p className="miguel-label">Pilar · Construcción</p>
@@ -186,5 +188,7 @@ export default function PilarConstruccion() {
         ))}
       </ul>
     </div>
+      <MiguelCierreCta />
+    </>
   );
 }

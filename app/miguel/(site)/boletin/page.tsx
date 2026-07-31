@@ -5,9 +5,9 @@ import { getEntradas, formatearFecha } from "@/lib/boletin-miguel";
 const entradas = getEntradas();
 
 export const metadata: Metadata = {
-  title: "Boletín de arbitraje — novedades legislativas y jurisprudenciales",
+  title: "Boletín: novedades, jurisprudencia y publicaciones",
   description:
-    "Novedades en arbitraje inmobiliario y de construcción en Chile: cambios normativos, jurisprudencia relevante y datos del CAM Santiago.",
+    "Jurisprudencia relevante, cambios normativos y publicaciones en arbitraje inmobiliario y de construcción, con la fuente siempre a la vista.",
   // Mientras no haya entradas la página es contenido delgado: no conviene que
   // la indexen. Se vuelve indexable sola en cuanto se publica la primera.
   robots: entradas.length === 0 ? { index: false, follow: false } : undefined,
@@ -18,12 +18,12 @@ export default function Boletin() {
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <div className="miguel-page-title">
         <p className="miguel-label">Boletín</p>
-        <h1 className="miguel-display-title">Novedades en arbitraje</h1>
+        <h1 className="miguel-display-title">Novedades y publicaciones</h1>
       </div>
 
       <p>
-        Cambios normativos, jurisprudencia relevante y datos del arbitraje chileno, con la fuente
-        siempre a la vista para que puedas ir al documento original.
+        Jurisprudencia relevante, cambios normativos y las publicaciones y actuaciones del estudio,
+        con la fuente siempre a la vista para que puedas ir al documento original.
       </p>
 
       {entradas.length === 0 ? (

@@ -26,7 +26,7 @@ información profesional y no puede inducir a error (arts. 5, 13 y 14).
 ---
 title: "Título de la entrada"
 description: "Una frase para el listado y la meta description."
-date: 2026-08-15
+date: "2026-08-15"
 categoria: Jurisprudencia    # Legislación | Jurisprudencia | Institucional
 fuente: "CS, rol 12.345-2026, sentencia de 3 de julio de 2026"
 draft: false
@@ -37,7 +37,12 @@ Cuerpo en markdown.
 
 - `draft: true` mantiene la entrada fuera del sitio y del sitemap.
 - Sin `fuente`, la entrada no se publica aunque `draft` sea `false`.
-- Las fechas van en ISO (`YYYY-MM-DD`).
+- Las fechas van en ISO (`YYYY-MM-DD`) **entre comillas**: sin ellas YAML las
+  convierte en un objeto `Date`. El código lo normaliza igual, pero conviene
+  escribirlas bien.
+- Campos opcionales: `fuenteUrl` para enlazar la fuente, e `imagen`,
+  `imagenAlt` e `imagenCredito` para la fotografía (la imagen se guarda en
+  `public/miguel/`).
 
 ## Publicación
 

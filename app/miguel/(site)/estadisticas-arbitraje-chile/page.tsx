@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd, datasetSchema } from "@/lib/schema";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
-  title: "Estadísticas del arbitraje en Chile: materias y cuantías (CAM Santiago)",
+  title: "Estadísticas del arbitraje en Chile: CAM Santiago 2025",
   description:
     "Qué materias concentran el arbitraje en Chile y cuáles son las cuantías reales de las causas, según la Memoria del CAM Santiago.",
 };
@@ -17,6 +18,7 @@ const schema = datasetSchema({
 
 export default function Estadisticas() {
   return (
+    <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <JsonLd data={schema} />
       <div className="miguel-page-title">
@@ -195,5 +197,7 @@ export default function Estadisticas() {
         Santiago.
       </p>
     </div>
+      <MiguelCierreCta />
+    </>
   );
 }

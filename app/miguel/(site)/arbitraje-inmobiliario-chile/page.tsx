@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getSatelitesByPilar, assertTransversalLinking } from "@/lib/satelites-miguel";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 assertTransversalLinking();
 
 export const metadata: Metadata = {
-  title: "Arbitraje en conflictos inmobiliarios en Chile: guía completa",
+  title: "Arbitraje en conflictos inmobiliarios en Chile",
   description:
-    "Cómo se resuelven los conflictos inmobiliarios en Chile: promesas de compraventa, vicios de construcción, compra de terrenos y disputas entre socios de proyectos.",
+    "Conflictos inmobiliarios en Chile: promesas de compraventa, vicios de construcción, terrenos y disputas entre socios de proyectos.",
 };
 
 export default function PilarInmobiliario() {
   const satelites = getSatelitesByPilar("inmobiliario");
 
   return (
+    <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <div className="miguel-page-title">
         <p className="miguel-label">Pilar · Inmobiliario</p>
@@ -122,5 +124,7 @@ export default function PilarInmobiliario() {
         ))}
       </ul>
     </div>
+      <MiguelCierreCta />
+    </>
   );
 }

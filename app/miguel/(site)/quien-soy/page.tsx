@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { JsonLd, personSchema } from "@/lib/schema";
+import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
-  title: "Miguel Aylwin Fernández — Abogado, arbitraje inmobiliario y de construcción",
+  title: "Miguel Aylwin Fernández — Abogado de arbitraje",
   description:
-    "Abogado especializado en conflictos de contratos inmobiliarios, de construcción e infraestructura, en arbitraje y en sede judicial. Socio de Aylwin Matta Abogados.",
+    "Abogado en conflictos de contratos inmobiliarios, de construcción e infraestructura, en arbitraje y en sede judicial. Socio de Aylwin Matta.",
 };
 
 // sameAs left empty until MAF supplies the real LinkedIn/ficha-profesional URLs —
@@ -20,6 +21,7 @@ const schema = personSchema({
 
 export default function QuienSoy() {
   return (
+    <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <JsonLd data={schema} />
       <div className="miguel-page-title">
@@ -81,5 +83,7 @@ export default function QuienSoy() {
         → <Link href="/como-trabajo">Cómo trabajo</Link> · <Link href="/contacto">Contacto</Link>
       </p>
     </div>
+      <MiguelCierreCta />
+    </>
   );
 }

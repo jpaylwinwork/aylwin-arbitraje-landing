@@ -232,6 +232,17 @@
   font-weight: 600;
 }
 
+/* Sin justificar en móvil: a 375px la columna es demasiado estrecha y la
+ * justificación abre huecos entre palabras que la partición no alcanza a
+ * compensar. El tamaño de cuerpo ya no varía por ancho (ver .miguel-body
+ * arriba, unificado a 1.125rem) — esta regla solo desactiva la justificación. */
+@media (max-width: 640px) {
+  .site-miguel .miguel-body p,
+  .site-miguel .miguel-body li {
+    text-align: left;
+  }
+}
+
 /* ---------------------------------------------------------------------------
  * Estructura editorial, tomada del lenguaje de aylwin.cl
  *
@@ -570,6 +581,106 @@
   font-weight: 600;
 }
 
+/* Últimas publicaciones en la portada: miniatura a la izquierda y texto a la
+ * derecha, separadas por filete. En móvil la foto va arriba. */
+.site-miguel .miguel-boletin-bajada {
+  max-width: 58ch;
+  color: var(--miguel-muted);
+  margin: 0;
+}
+
+.site-miguel .miguel-destacados {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-destacados li {
+  border-bottom: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-destacados a {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-miguel .miguel-destacados a:hover .miguel-destacados-titulo {
+  color: var(--miguel-accent);
+}
+
+.site-miguel .miguel-destacados-foto img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.site-miguel .miguel-destacados-texto {
+  display: block;
+}
+
+.site-miguel .miguel-destacados-meta {
+  display: block;
+  font-family: var(--miguel-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--miguel-accent);
+}
+
+.site-miguel .miguel-destacados-titulo {
+  display: block;
+  font-family: var(--miguel-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  margin: 0.5rem 0;
+  transition: color 0.15s ease;
+}
+
+.site-miguel .miguel-destacados-bajada {
+  display: block;
+  color: var(--miguel-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .site-miguel .miguel-destacados a {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .site-miguel .miguel-destacados-foto img {
+    height: 200px;
+  }
+}
+
+.site-miguel .miguel-boletin-figura {
+  margin: 2rem 0;
+}
+
+.site-miguel .miguel-boletin-figura img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-miguel .miguel-boletin-figura figcaption {
+  font-family: var(--miguel-sans);
+  font-size: 0.8rem;
+  color: var(--miguel-muted);
+  margin-top: 0.6rem;
+  text-align: left;
+}
+
 /* La fuente siempre visible: es la garantía de que la novedad es verificable. */
 .site-miguel .miguel-boletin-fuente {
   margin-top: 2.5rem;
@@ -601,17 +712,34 @@
 }
 
 @media (max-width: 720px) {
+  /* El menú envolvía en tres filas y el cabezal ocupaba ~460px de los 812 de
+   * un móvil: el 57% de la primera pantalla antes de ver contenido. Pasa a una
+   * sola fila desplazable horizontalmente, que deja los seis accesos
+   * alcanzables sin comerse la portada. */
   .site-miguel .miguel-container.miguel-header-inner {
     justify-content: flex-start;
+    gap: 0.75rem;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   .site-miguel .miguel-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
     gap: 0.15rem;
     font-size: 0.76rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-miguel .miguel-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .site-miguel .miguel-nav a {
     padding: 0.5rem 0.5rem;
+    white-space: nowrap;
   }
 }
 
