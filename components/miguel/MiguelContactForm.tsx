@@ -59,9 +59,27 @@ export default function MiguelContactForm() {
 
   if (status === "success") {
     return (
-      <div className="miguel-card" style={{ textAlign: "center" }}>
-        <h3 style={{ fontSize: "1.2rem" }}>Mensaje recibido</h3>
-        <p>Te respondo dentro del plazo indicado más arriba.</p>
+      <div className="miguel-aviso" role="status" aria-live="polite">
+        <p className="miguel-label">
+          <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path
+              d="M2 8.5l4 4 8-9"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="square"
+            />
+          </svg>
+          Consulta enviada
+        </p>
+        <h3 className="miguel-display-title">Mensaje recibido</h3>
+        <p>
+          Te respondo en un plazo de 24 horas hábiles. Si tu caso no es de mi especialidad, te lo
+          digo de inmediato y, si puedo, te derivo.
+        </p>
+        <p className="miguel-aviso-nota">
+          Desde tu mensaje rige el deber de secreto profesional, exista o no mandato.
+        </p>
       </div>
     );
   }
