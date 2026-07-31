@@ -1,15 +1,33 @@
 import Link from "next/link";
 
+// Cabecera con el patrón de aylwin.cl: logotipo en Poppins mayúscula con
+// tracking amplio a la izquierda y navegación en versalitas a la derecha.
+// Solo la usa el grupo (site) — /consulta va sin navegación por exigencia del
+// spec de la landing (cero salidas).
+const NAV = [
+  { href: "/arbitraje-construccion-chile", label: "Construcción" },
+  { href: "/arbitraje-inmobiliario-chile", label: "Inmobiliario" },
+  { href: "/estadisticas-arbitraje-chile", label: "Estadísticas" },
+  { href: "/como-trabajo", label: "Cómo trabajo" },
+  { href: "/quien-soy", label: "Quién soy" },
+  { href: "/contacto", label: "Contacto" },
+];
+
 export default function MiguelHeader() {
   return (
-    <header style={{ borderBottom: "1px solid var(--miguel-line)" }}>
-      <div className="miguel-container" style={{ padding: "20px 20px" }}>
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <span style={{ fontWeight: 600, fontSize: "1.05rem" }}>Miguel Aylwin Fernández</span>
-          <span className="miguel-kicker" style={{ marginLeft: 10 }}>
-            Abogado
-          </span>
+    <header className="miguel-header">
+      <div className="miguel-container miguel-header-inner">
+        <Link href="/" className="miguel-logo">
+          Miguel Aylwin
         </Link>
+
+        <nav className="miguel-nav" aria-label="Principal">
+          {NAV.map((item) => (
+            <Link key={item.href} href={item.href}>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );

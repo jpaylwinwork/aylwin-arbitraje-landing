@@ -22,7 +22,10 @@ export default function QuienSoy() {
   return (
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <JsonLd data={schema} />
-      <h1 style={{ fontSize: "1.9rem" }}>Miguel Aylwin Fernández</h1>
+      <div className="miguel-page-title">
+        <p className="miguel-label">Quién soy</p>
+        <h1 className="miguel-display-title">Miguel Aylwin Fernández</h1>
+      </div>
 
       <p style={{ marginTop: "1rem" }}>
         <Image

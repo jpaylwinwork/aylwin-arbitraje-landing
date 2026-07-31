@@ -11,7 +11,10 @@ export const metadata: Metadata = {
 export default function ComoTrabajo() {
   return (
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
-      <h1 style={{ fontSize: "1.9rem" }}>Cómo trabajo, según el tamaño y la urgencia del conflicto</h1>
+      <div className="miguel-page-title">
+        <p className="miguel-label">Cómo trabajo</p>
+        <h1 className="miguel-display-title">Cómo trabajo, según el tamaño y la urgencia del conflicto</h1>
+      </div>
 
       <p>
         No todos los conflictos requieren lo mismo, y cobrar lo mismo por todos sería un mal

@@ -19,7 +19,10 @@ export default function Estadisticas() {
   return (
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <JsonLd data={schema} />
-      <h1 style={{ fontSize: "1.9rem" }}>Cuánto y qué se arbitra en Chile</h1>
+      <div className="miguel-page-title">
+        <p className="miguel-label">Datos · CAM Santiago 2025</p>
+        <h1 className="miguel-display-title">Cuánto y qué se arbitra en Chile</h1>
+      </div>
       <p style={{ color: "var(--miguel-muted)", fontSize: "0.9rem" }}>
         Fuente: Reporte Anual 2025 del CAM Santiago. Los números absolutos priman sobre los
         porcentajes del reporte en los tres puntos donde este es internamente inconsistente

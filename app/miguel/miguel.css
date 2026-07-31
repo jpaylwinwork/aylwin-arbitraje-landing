@@ -21,8 +21,10 @@
   --miguel-muted: #5f5f5f;
   --miguel-line: #e3e0dd;
   --miguel-panel: #f1f1f1;
+  --miguel-ink: #131313;
   --miguel-font: var(--font-source-serif), Georgia, serif;
   --miguel-display: var(--font-bodoni), "Bodoni Moda", Georgia, serif;
+  --miguel-sans: var(--font-poppins, system-ui), sans-serif;
 
   background: var(--miguel-bg);
   color: var(--miguel-text);
@@ -96,7 +98,7 @@
   font-weight: 600;
   font-size: 1rem;
   padding: 1rem 1.75rem;
-  border-radius: 6px;
+  border-radius: 0;
   text-decoration: none;
   transition: background 0.15s ease;
   min-height: 44px;
@@ -124,7 +126,7 @@
 .site-miguel .miguel-card {
   background: #fff;
   border: 1px solid var(--miguel-line);
-  border-radius: 8px;
+  border-radius: 0;
   padding: 1.5rem;
 }
 
@@ -162,6 +164,233 @@
 @media (max-width: 640px) {
   .site-miguel .miguel-body {
     font-size: 18px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Estructura editorial, tomada del lenguaje de aylwin.cl
+ *
+ * El sitio era una sola columna centrada sin jerarquía: ni hero, ni bandas, ni
+ * títulos de sección. Se replica el patrón del estudio —banda a sangre
+ * completa → etiqueta pequeña en mayúsculas → título display en Bodoni— pero
+ * manteniendo la columna de lectura de 65-75 caracteres que exige la nota de
+ * diseño: las bandas van a sangre y el texto sigue acotado dentro.
+ * ------------------------------------------------------------------------- */
+
+/* Banda a sangre completa. El color lo pone el modificador. */
+.site-miguel .miguel-band {
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+}
+
+.site-miguel .miguel-band--tint {
+  background: #fff;
+}
+
+.site-miguel .miguel-band--dark {
+  background: var(--miguel-ink);
+  color: #fff;
+}
+
+.site-miguel .miguel-band--dark a {
+  color: #fff;
+}
+
+/* Etiqueta de sección: Poppins en mayúsculas con tracking, en el acento.
+ * Es el "01/" de aylwin.cl. */
+.site-miguel .miguel-label {
+  font-family: var(--miguel-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--miguel-accent);
+  margin-bottom: 0.9rem;
+}
+
+.site-miguel .miguel-band--dark .miguel-label {
+  color: #fff;
+  opacity: 0.75;
+}
+
+/* Título display en Bodoni, como los "Historia" / "Tradición jurídica". */
+.site-miguel .miguel-display-title {
+  font-family: var(--miguel-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.6vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+}
+
+/* Hero: bloque rojo a sangre, titular en Poppins mayúscula y bajada en Bodoni
+ * cursiva, igual que las portadas del estudio. */
+.site-miguel .miguel-hero {
+  background: var(--miguel-accent);
+  color: #fff;
+  padding: clamp(3.5rem, 9vw, 7rem) 0;
+}
+
+.site-miguel .miguel-hero h1 {
+  font-family: var(--miguel-sans);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(1.7rem, 4.1vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.site-miguel .miguel-hero .miguel-lead {
+  font-family: var(--miguel-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  margin: 1.5rem 0 0;
+  max-width: 46ch;
+}
+
+.site-miguel .miguel-hero .miguel-label {
+  color: #fff;
+  opacity: 0.8;
+}
+
+/* Botón oscuro de esquinas rectas, como "Hablemos de sus desafíos". */
+.site-miguel .miguel-btn-ink {
+  background: var(--miguel-ink);
+  color: #fff;
+}
+
+.site-miguel .miguel-btn-ink:hover {
+  background: #000;
+}
+
+/* Lista de accesos del hub: filas separadas por filete, no un párrafo con <br>. */
+.site-miguel .miguel-rutas {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-rutas li {
+  border-bottom: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-rutas a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.site-miguel .miguel-rutas a:hover {
+  color: var(--miguel-accent-hover);
+}
+
+.site-miguel .miguel-rutas .miguel-rutas-flecha {
+  font-family: var(--miguel-sans);
+  color: var(--miguel-accent);
+}
+
+/* Contenedor ancho para chrome y bandas de portada. La columna de lectura
+ * (720px) se mantiene para el texto corrido. */
+.site-miguel .miguel-container.miguel-wide {
+  max-width: 1080px;
+}
+
+/* --- Cabecera --------------------------------------------------------- */
+.site-miguel .miguel-header {
+  border-bottom: 1px solid var(--miguel-line);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.site-miguel .miguel-container.miguel-header-inner {
+  max-width: 1080px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.site-miguel .miguel-logo {
+  font-family: var(--miguel-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--miguel-ink);
+  white-space: nowrap;
+}
+
+.site-miguel .miguel-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+  font-family: var(--miguel-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.site-miguel .miguel-nav a {
+  text-decoration: none;
+  color: var(--miguel-muted);
+}
+
+.site-miguel .miguel-nav a:hover {
+  color: var(--miguel-accent);
+}
+
+/* --- Bloque de título de página interior ------------------------------
+ * Mismo lenguaje que el hub (etiqueta en mayúsculas sobre título display),
+ * cerrado con un filete. Da cabecera a cada página sin romper la columna
+ * de lectura. */
+.site-miguel .miguel-page-title {
+  margin: 0 0 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--miguel-accent);
+}
+
+.site-miguel .miguel-page-title .miguel-display-title {
+  margin-bottom: 0;
+}
+
+/* --- Pie oscuro, como el de aylwin.cl --------------------------------- */
+.site-miguel .miguel-footer {
+  background: var(--miguel-ink);
+  color: #fff;
+  margin-top: 5rem;
+}
+
+.site-miguel .miguel-footer a {
+  color: #fff;
+}
+
+.site-miguel .miguel-footer .miguel-footer-name {
+  font-family: var(--miguel-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 720px) {
+  .site-miguel .miguel-container.miguel-header-inner {
+    justify-content: flex-start;
+  }
+
+  .site-miguel .miguel-nav {
+    gap: 0.85rem;
+    font-size: 0.68rem;
   }
 }
 
