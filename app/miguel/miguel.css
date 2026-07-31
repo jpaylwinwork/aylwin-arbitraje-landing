@@ -185,6 +185,14 @@
   .site-miguel .miguel-body {
     font-size: 18px;
   }
+
+  /* Sin justificar en móvil: a 375px la columna es demasiado estrecha y la
+   * justificación abre huecos entre palabras. La partición no alcanza a
+   * compensarlo. */
+  .site-miguel .miguel-body p,
+  .site-miguel .miguel-body li {
+    text-align: left;
+  }
 }
 
 /* ---------------------------------------------------------------------------
@@ -534,17 +542,34 @@
 }
 
 @media (max-width: 720px) {
+  /* El menú envolvía en tres filas y el cabezal ocupaba ~460px de los 812 de
+   * un móvil: el 57% de la primera pantalla antes de ver contenido. Pasa a una
+   * sola fila desplazable horizontalmente, que deja los seis accesos
+   * alcanzables sin comerse la portada. */
   .site-miguel .miguel-container.miguel-header-inner {
     justify-content: flex-start;
+    gap: 0.75rem;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   .site-miguel .miguel-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
     gap: 0.15rem;
     font-size: 0.76rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-miguel .miguel-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .site-miguel .miguel-nav a {
     padding: 0.5rem 0.5rem;
+    white-space: nowrap;
   }
 }
 

@@ -3,9 +3,9 @@ import { JsonLd, faqPageSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
-  title: "Arbitraje inmobiliario y de construcción en Chile: preguntas frecuentes",
+  title: "Arbitraje de construcción: preguntas frecuentes",
   description:
-    "Respuestas directas sobre arbitraje en contratos de construcción e inmobiliarios en Chile: cláusula arbitral, costos, tipos de árbitro, plazos y arbitraje de emergencia.",
+    "Respuestas directas sobre arbitraje en construcción e inmobiliario: cláusula arbitral, costos, tipos de árbitro y plazos.",
 };
 
 const faqs = [
