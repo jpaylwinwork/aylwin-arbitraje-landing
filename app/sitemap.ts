@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { headers } from "next/headers";
 import { getArticulos } from "@/lib/recursos";
 import { getSateliteSlugs } from "@/lib/satelites-miguel";
+import { getEntradas } from "@/lib/boletin-miguel";
 
 const FIRM_BASE_URL = "https://aylwin-arbitraje-landing.vercel.app";
 const MIGUEL_BASE_URL = "https://miguelaylwin.com";
@@ -23,7 +24,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   if (MIGUEL_HOSTS.has(host.split(":")[0])) {
     const satelites = getSateliteSlugs().map((slug) => ({ url: `${MIGUEL_BASE_URL}/${slug}` }));
-    return [...MIGUEL_STATIC_PAGES.map((path) => ({ url: `${MIGUEL_BASE_URL}${path}` })), ...satelites];
+    // El boletín entra al sitemap solo cuando tiene entradas: mientras esté
+    // vacío la portada va noindex y no debe anunciarse.
+    const entradas = getEntradas();
+    const boletin = entradas.length
+      ? [
+          { url: `${MIGUEL_BASE_URL}/boletin` },
+          ...entradas.map((e) => ({
+            url: `${MIGUEL_BASE_URL}/boletin/${e.slug}`,
+            lastModified: e.date ? new Date(`${e.date}T12:00:00`) : undefined,
+          })),
+        ]
+      : [];
+    return [
+      ...MIGUEL_STATIC_PAGES.map((path) => ({ url: `${MIGUEL_BASE_URL}${path}` })),
+      ...satelites,
+      ...boletin,
+    ];
   }
 
   // Campaign landings are noindex on purpose — only truly indexable pages here
