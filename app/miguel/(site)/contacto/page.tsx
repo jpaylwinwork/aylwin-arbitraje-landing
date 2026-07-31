@@ -51,7 +51,8 @@ export default function Contacto() {
         <br />
         Av. Apoquindo 3910, piso 3, Las Condes · Santiago, Chile
         <br />
-        <Placeholder label="TELÉFONO" /> · <a href="mailto:mp@aylwin.cl">mp@aylwin.cl</a>
+        <a href="tel:+56969080084">+56 9 6908 0084</a> ·{" "}
+        <a href="mailto:mp@aylwin.cl">mp@aylwin.cl</a>
       </p>
     </div>
   );

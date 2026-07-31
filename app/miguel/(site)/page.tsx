@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -31,17 +32,30 @@ export default function MiguelHub() {
     <>
       {/* Portada: banda roja a sangre, con el patrón de aylwin.cl */}
       <section className="miguel-hero">
-        <div className="miguel-container miguel-wide">
-          <p className="miguel-label">Arbitraje inmobiliario y de construcción · Chile</p>
-          <h1>Conflictos inmobiliarios y de construcción</h1>
-          <p className="miguel-lead">
-            Cómo se resuelven en Chile, cuánto cuestan y qué conviene hacer antes de decidir.
-          </p>
-          <p style={{ marginTop: "2rem" }}>
-            <Link href="/contacto" className="miguel-btn miguel-btn-ink">
-              Conversemos sobre tu caso
-            </Link>
-          </p>
+        <div className="miguel-container miguel-wide miguel-hero-grid">
+          <div>
+            <p className="miguel-label">Arbitraje inmobiliario y de construcción · Chile</p>
+            <h1>Conflictos inmobiliarios y de construcción</h1>
+            <p className="miguel-lead">
+              Cómo se resuelven en Chile, cuánto cuestan y qué conviene hacer antes de decidir.
+            </p>
+            <p style={{ marginTop: "2rem", marginBottom: 0 }}>
+              <Link href="/contacto" className="miguel-btn miguel-btn-ink">
+                Conversemos sobre tu caso
+              </Link>
+            </p>
+          </div>
+
+          <figure className="miguel-hero-retrato">
+            <Image
+              src="/miguel/retrato-miguel-aylwin.jpg"
+              alt="Miguel Aylwin Fernández, abogado"
+              width={800}
+              height={1200}
+              priority
+              sizes="(max-width: 820px) 260px, 380px"
+            />
+          </figure>
         </div>
       </section>
 
