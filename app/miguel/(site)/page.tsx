@@ -3,9 +3,9 @@ import Link from "next/link";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
-  title: "Arbitraje inmobiliario y de construcción en Chile — Miguel Aylwin",
+  title: "Arbitraje inmobiliario y de construcción en Chile",
   description:
-    "Cómo se resuelven los conflictos de contratos inmobiliarios y de construcción en Chile: arbitraje, cláusulas, cuantías, costos y qué hacer cuando el conflicto recién empieza.",
+    "Cómo se resuelven en Chile los conflictos de contratos inmobiliarios y de construcción: arbitraje, cláusulas, cuantías y costos reales.",
 };
 
 const RUTAS = [

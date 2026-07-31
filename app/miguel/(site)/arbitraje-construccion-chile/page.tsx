@@ -6,9 +6,9 @@ import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 assertTransversalLinking();
 
 export const metadata: Metadata = {
-  title: "Arbitraje en contratos de construcción en Chile: guía completa",
+  title: "Arbitraje en contratos de construcción en Chile",
   description:
-    "Cómo funciona el arbitraje en contratos de construcción en Chile: cláusula arbitral, tipos de árbitro, plazos, costos y qué hacer cuando el conflicto recién empieza.",
+    "Cómo funciona el arbitraje en contratos de construcción en Chile: cláusula arbitral, tipos de árbitro, plazos y costos.",
 };
 
 export default function PilarConstruccion() {

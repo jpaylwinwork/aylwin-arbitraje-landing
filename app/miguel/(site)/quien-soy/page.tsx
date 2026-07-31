@@ -5,9 +5,9 @@ import { JsonLd, personSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
-  title: "Miguel Aylwin Fernández — Abogado, arbitraje inmobiliario y de construcción",
+  title: "Miguel Aylwin Fernández — Abogado de arbitraje",
   description:
-    "Abogado especializado en conflictos de contratos inmobiliarios, de construcción e infraestructura, en arbitraje y en sede judicial. Socio de Aylwin Matta Abogados.",
+    "Abogado en conflictos de contratos inmobiliarios, de construcción e infraestructura, en arbitraje y en sede judicial. Socio de Aylwin Matta.",
 };
 
 // sameAs left empty until MAF supplies the real LinkedIn/ficha-profesional URLs —
