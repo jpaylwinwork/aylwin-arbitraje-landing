@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Placeholder from "@/components/miguel/Placeholder";
 import ConsultaForm from "@/components/miguel/ConsultaForm";
 import StickyCta from "@/components/miguel/StickyCta";
 import { CASOS_PRUEBA, casosPruebaListos } from "@/lib/casos-prueba";
@@ -298,7 +297,8 @@ export default function Consulta() {
         Miguel Aylwin Fernández · Abogado · Aylwin Matta Abogados · Santiago, Chile
         <br />
         +56 9 6908 0084 · mp@aylwin.cl ·{" "}
-        <Placeholder label="POLÍTICA DE PRIVACIDAD" />
+        {/* Único enlace saliente que el spec de la landing autoriza. */}
+        <a href="/politica-privacidad">Política de privacidad</a>
       </p>
     </div>
   );
