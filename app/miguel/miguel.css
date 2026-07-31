@@ -420,6 +420,64 @@
   margin-bottom: 0;
 }
 
+/* --- Boletín ---------------------------------------------------------- */
+.site-miguel .miguel-boletin-lista {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+}
+
+.site-miguel .miguel-boletin-lista li {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--miguel-line);
+  text-align: left;
+}
+
+.site-miguel .miguel-boletin-lista li:last-child {
+  border-bottom: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-boletin-lista h2 {
+  font-size: 1.35rem;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.site-miguel .miguel-boletin-lista h2 a {
+  text-decoration: none;
+}
+
+.site-miguel .miguel-boletin-lista p {
+  margin: 0;
+  text-align: left;
+}
+
+.site-miguel .miguel-boletin-meta {
+  font-family: var(--miguel-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--miguel-muted);
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.site-miguel .miguel-boletin-categoria {
+  color: var(--miguel-accent);
+  font-weight: 600;
+}
+
+/* La fuente siempre visible: es la garantía de que la novedad es verificable. */
+.site-miguel .miguel-boletin-fuente {
+  margin-top: 2.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--miguel-accent);
+  background: var(--miguel-panel);
+  font-family: var(--miguel-sans);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
 /* --- Pie oscuro, como el de aylwin.cl --------------------------------- */
 .site-miguel .miguel-footer {
   background: var(--miguel-ink);

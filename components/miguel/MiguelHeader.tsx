@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { hayBoletin } from "@/lib/boletin-miguel";
 
 // Cabecera con el patrón de aylwin.cl: logotipo en Poppins mayúscula con
 // tracking amplio a la izquierda y navegación en versalitas a la derecha.
@@ -28,6 +29,9 @@ export default function MiguelHeader() {
               {item.label}
             </Link>
           ))}
+          {/* El boletín solo entra al menú cuando tiene al menos una entrada
+           * publicada: un enlace a una sección vacía resta más de lo que suma. */}
+          {hayBoletin() ? <Link href="/boletin">Boletín</Link> : null}
         </nav>
       </div>
     </header>
