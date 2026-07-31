@@ -13,10 +13,10 @@ export default function MiguelBoletinDestacado({ maximo = 3 }: { maximo?: number
     <section className="miguel-band miguel-band--tint">
       <div className="miguel-container miguel-wide">
         <p className="miguel-label">Boletín</p>
-        <h2 className="miguel-display-title">Novedades en arbitraje</h2>
+        <h2 className="miguel-display-title">Novedades y publicaciones</h2>
         <p className="miguel-boletin-bajada">
-          Cambios normativos, jurisprudencia y datos del arbitraje chileno, siempre con la fuente a
-          la vista.
+          Jurisprudencia, cambios normativos y las publicaciones del estudio, siempre con la fuente
+          a la vista.
         </p>
 
         <ul className="miguel-destacados">

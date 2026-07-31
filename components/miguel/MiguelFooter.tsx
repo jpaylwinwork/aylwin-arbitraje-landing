@@ -13,7 +13,7 @@ export default function MiguelFooter() {
         }}
       >
         <p className="miguel-footer-name">Miguel Aylwin Fernández</p>
-        <p style={{ marginTop: "0.5rem", opacity: 0.72 }}>Abogado · Aylwin Matta Abogados</p>
+        <p style={{ marginTop: "0.5rem", opacity: 0.72 }}>Socio · Aylwin Matta Abogados</p>
         <p style={{ marginTop: "1.25rem", opacity: 0.72 }}>
           Av. Apoquindo 3910, piso 3, Las Condes · Santiago, Chile
         </p>
