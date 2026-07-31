@@ -14,10 +14,10 @@ export default function MiguelFooter() {
       >
         <p>Miguel Aylwin Fernández · Abogado</p>
         <p style={{ marginTop: "0.35rem" }}>
-          <Placeholder label="DIRECCIÓN" /> · Santiago, Chile
+          Av. Apoquindo 3910, piso 3, Las Condes · Santiago, Chile
         </p>
         <p style={{ marginTop: "0.35rem" }}>
-          <Placeholder label="TELÉFONO" /> · <Placeholder label="CORREO" />
+          <Placeholder label="TELÉFONO" /> · <a href="mailto:mp@aylwin.cl">mp@aylwin.cl</a>
         </p>
         <p style={{ marginTop: "1rem" }}>Aylwin Matta Abogados</p>
       </div>

@@ -32,7 +32,6 @@ export default function ComoTrabajo() {
         sería un mal negocio para ti, y te lo diría igual.
       </p>
       <p>Lo que sí tienes garantizado en esta vía es saber de antemano cuánto vas a pagar y qué vas a recibir.</p>
-      <p><Placeholder label="PRECIO VÍA ACOTADA" /></p>
 
       <h2>Vía completa — conflictos sobre 8.000 UF</h2>
       <p>
@@ -70,7 +69,6 @@ export default function ComoTrabajo() {
         En 2025 el CAM resolvió estas solicitudes en 5,4 días corridos promedio, y acogió total o
         parcialmente tres de cada cuatro. → <Link href="/arbitraje-de-emergencia-chile">Arbitraje de emergencia</Link>
       </p>
-      <p><Placeholder label="HONORARIO URGENCIA" /></p>
 
       <h2>Bajo 1.000 UF</h2>
       <p>
