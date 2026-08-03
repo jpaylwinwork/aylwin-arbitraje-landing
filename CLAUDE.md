@@ -21,6 +21,24 @@ Landing pages + funnel de captación de clientes para **Aylwin Matta Abogados** 
 - **Tabla `leads`:** id, created_at, name, email, phone, company, message, utm_source/medium/campaign/term, click_id, materia, status ('nuevo'→'contactado'→…), notified_at.
 - **Env vars** (nombres; los valores viven en Vercel): `DATABASE_URL` (Neon, auto-provisionada), `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
 
+### Avisos de leads de miguelaylwin.com
+
+`app/api/miguel-lead/route.ts` guarda en la tabla `leads_miguelaylwin` y avisa por **dos canales independientes**: Telegram y correo. Van en paralelo con `Promise.allSettled` — que falle uno no impide el otro, y un fallo de base de datos nunca suprime el aviso. Solo se responde 502 si el lead no quedó en ninguna parte.
+
+Cada canal se activa solo si tiene sus variables; si faltan, no hace nada y el despliegue no falla.
+
+| Variable | Para qué |
+|---|---|
+| `RESEND_API_KEY` | Clave de API de Resend |
+| `LEAD_EMAIL_TO` | Destinatario(s), separados por coma |
+| `LEAD_EMAIL_FROM` | Remitente, p. ej. `Avisos <avisos@miguelaylwin.com>` |
+
+**Para activar el correo:** crear cuenta en Resend, verificar el dominio `miguelaylwin.com` con los registros DNS que indica (no tocar el DNS de aylwin.cl), y definir las tres variables en Vercel.
+
+**Al activarlo hay que actualizar `/politica-privacidad`**: la sección «Con quién se comparten» enumera los encargados de tratamiento y hoy no incluye al proveedor de correo. Los datos que viajan incluyen la descripción del conflicto.
+
+WhatsApp queda pendiente: requiere API de WhatsApp Business de Meta, número dedicado y **plantillas aprobadas** (los mensajes iniciados por la empresa no admiten texto libre fuera de la ventana de 24 horas).
+
 ## Sistema de diseño (de aylwin.cl — no desviarse)
 
 - **Tipografías:** Bodoni Moda (títulos, `font-serif`) + Poppins (cuerpo, peso base 300) vía next/font en `app/layout.tsx`.
