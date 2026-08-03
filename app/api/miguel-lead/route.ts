@@ -55,10 +55,13 @@ type Lead = {
   prioridad: string;
 };
 
-async function sendTelegramAlert(lead: Lead, stored: boolean) {
+// Devuelve true solo si el aviso se envió de verdad. Que la función termine
+// sin excepción no basta: si faltan las variables de entorno sale sin hacer
+// nada, y eso no puede contarse como lead entregado.
+async function sendTelegramAlert(lead: Lead, stored: boolean): Promise<boolean> {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (!token || !chatId) return;
+  if (!token || !chatId) return false;
 
   const prioridadEmoji = lead.prioridad === "urgente" ? "🔴 URGENTE" : lead.prioridad === "alta" ? "🟠 LEAD CALIENTE" : "";
   const tier = tierFromCuantia(lead.cuantia_tramo);
@@ -86,6 +89,112 @@ async function sendTelegramAlert(lead: Lead, stored: boolean) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ chat_id: chatId, text: lines.join("\n") }),
   });
+  return true;
+}
+
+// Aviso por correo, en paralelo al de Telegram. Se usa la API REST de Resend
+// con fetch —sin dependencia nueva—, igual que la alerta de Telegram.
+//
+// Si RESEND_API_KEY no está definida la función no hace nada: el canal se
+// activa solo cuando alguien con acceso a Vercel configure la clave, sin que
+// el despliegue falle mientras tanto.
+function escaparHtml(texto: string): string {
+  return texto
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const destino = process.env.LEAD_EMAIL_TO;
+  const remitente = process.env.LEAD_EMAIL_FROM;
+  if (!apiKey || !destino || !remitente) return false;
+
+  const tier = tierFromCuantia(lead.cuantia_tramo);
+  const prioridad =
+    lead.prioridad === "urgente"
+      ? "URGENTE"
+      : lead.prioridad === "alta"
+        ? "LEAD CALIENTE"
+        : "";
+
+  const filas: [string, string][] = [
+    ["Nombre", lead.nombre],
+    ["Empresa", lead.empresa],
+    ["Cargo", lead.cargo],
+    ["Correo", lead.correo],
+    ["Teléfono", lead.telefono],
+    ["Tipo de conflicto", lead.tipo_conflicto],
+    ["Cuantía", lead.cuantia_tramo ? `${lead.cuantia_tramo} → ${tier}` : ""],
+    ["Estado", lead.estado_conflicto],
+    ["Origen", lead.fuente],
+    [
+      "Campaña",
+      lead.utm_source ? `${lead.utm_source} / ${lead.utm_medium || "-"} / ${lead.utm_campaign || "-"}` : "",
+    ],
+    ["Ref", lead.click_id],
+  ].filter(([, v]) => v) as [string, string][];
+
+  // El asunto lleva la prioridad delante para que se vea en la notificación
+  // del teléfono sin abrir el correo.
+  const asunto = [prioridad && `[${prioridad}]`, "Nueva consulta —", lead.nombre, lead.empresa && `(${lead.empresa})`]
+    .filter(Boolean)
+    .join(" ");
+
+  const html = `
+    <div style="font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.6;color:#1a1a1a;max-width:640px">
+      <p style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a8000d;margin:0 0 4px">
+        miguelaylwin.com${prioridad ? ` · ${escaparHtml(prioridad)}` : ""}
+      </p>
+      <h2 style="font-size:20px;margin:0 0 16px">Nueva consulta</h2>
+      ${
+        lead.urgente
+          ? `<p style="border-left:3px solid #a8000d;padding:8px 12px;background:#fbe9ea;margin:0 0 16px">
+               Marcó <strong>urgente</strong>: hay algo que impedir en los próximos días.
+             </p>`
+          : ""
+      }
+      <table style="border-collapse:collapse;width:100%;margin-bottom:16px">
+        ${filas
+          .map(
+            ([k, v]) =>
+              `<tr>
+                 <td style="padding:6px 12px 6px 0;color:#5f5f5f;vertical-align:top;white-space:nowrap">${escaparHtml(k)}</td>
+                 <td style="padding:6px 0">${escaparHtml(v)}</td>
+               </tr>`,
+          )
+          .join("")}
+      </table>
+      <p style="color:#5f5f5f;margin:0 0 4px">Conflicto descrito:</p>
+      <p style="border-left:3px solid #e3e0dd;padding:8px 12px;margin:0 0 16px;white-space:pre-wrap">${escaparHtml(lead.conflicto)}</p>
+      <p style="margin:0">
+        <a href="mailto:${escaparHtml(lead.correo)}" style="color:#a8000d">Responder a ${escaparHtml(lead.nombre)}</a>
+      </p>
+      ${!stored ? `<p style="color:#a8000d;margin-top:16px"><strong>Atención:</strong> no se guardó en la base de datos. Este correo es el único registro.</p>` : ""}
+    </div>
+  `;
+
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: remitente,
+      to: destino.split(",").map((d) => d.trim()),
+      reply_to: lead.correo,
+      subject: asunto,
+      html,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`resend respondió ${res.status}: ${await res.text()}`);
+  }
+  return true;
 }
 
 export async function POST(request: Request) {
@@ -179,14 +288,30 @@ export async function POST(request: Request) {
     }
   }
 
-  // Same guarantee as the firm's lead route: DB failure never suppresses the alert.
-  try {
-    await sendTelegramAlert(lead, stored);
-  } catch (error) {
-    console.error("miguel-lead telegram alert failed", error);
-    if (!stored) {
-      return NextResponse.json({ error: "delivery failed" }, { status: 502 });
-    }
+  // Misma garantía que la ruta del estudio: un fallo de base de datos nunca
+  // suprime el aviso. Los dos canales van en paralelo y son independientes —
+  // que Telegram falle no puede impedir el correo, ni al revés.
+  const [telegram, email] = await Promise.allSettled([
+    sendTelegramAlert(lead, stored),
+    sendEmailAlert(lead, stored),
+  ]);
+
+  if (telegram.status === "rejected") {
+    console.error("miguel-lead telegram alert failed", telegram.reason);
+  }
+  if (email.status === "rejected") {
+    console.error("miguel-lead email alert failed", email.reason);
+  }
+
+  // Se responde 502 solo si el lead no quedó en ninguna parte: ni en la base
+  // de datos ni en ningún canal de aviso. Así el visitante ve el error y puede
+  // reintentar, en vez de creer que su consulta llegó.
+  const avisado =
+    (telegram.status === "fulfilled" && telegram.value) ||
+    (email.status === "fulfilled" && email.value);
+
+  if (!stored && !avisado) {
+    return NextResponse.json({ error: "delivery failed" }, { status: 502 });
   }
 
   return NextResponse.json({ ok: true });
