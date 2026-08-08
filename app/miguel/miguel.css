@@ -212,6 +212,69 @@
   background: color-mix(in srgb, var(--miguel-accent) 8%, transparent);
 }
 
+/* --- Gráfico de cuantías ---------------------------------------------- */
+.site-miguel .miguel-grafico {
+  margin: 2rem 0;
+}
+
+.site-miguel .miguel-grafico ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.site-miguel .miguel-grafico li {
+  display: grid;
+  grid-template-columns: 10.5rem 1fr 3.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--miguel-sans);
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.site-miguel .miguel-grafico-etiqueta {
+  color: var(--miguel-muted);
+  white-space: nowrap;
+}
+
+.site-miguel .miguel-grafico-pista {
+  display: block;
+  background: var(--miguel-panel);
+  height: 1.4rem;
+}
+
+.site-miguel .miguel-grafico-barra {
+  display: block;
+  height: 100%;
+  background: var(--miguel-accent);
+}
+
+.site-miguel .miguel-grafico-valor {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.site-miguel .miguel-grafico figcaption {
+  font-family: var(--miguel-sans);
+  font-size: 0.8rem;
+  color: var(--miguel-muted);
+  margin-top: 1rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+@media (max-width: 560px) {
+  .site-miguel .miguel-grafico li {
+    grid-template-columns: 7.5rem 1fr 3rem;
+    font-size: 0.78rem;
+    gap: 0.5rem;
+  }
+}
+
 .site-miguel table {
   width: 100%;
   border-collapse: collapse;
@@ -220,15 +283,42 @@
   font-size: 0.875rem;
 }
 
+/* Solo filetes horizontales: la rejilla completa pesaba más que los datos.
+ * Es la convención de tabla editorial —el ojo sigue la fila sin necesidad de
+ * que cada celda esté encajonada. */
 .site-miguel th,
 .site-miguel td {
-  border: 1px solid var(--miguel-line);
-  padding: 0.6rem 0.9rem;
+  border: 0;
+  border-bottom: 1px solid var(--miguel-line);
+  padding: 0.55rem 0.9rem 0.55rem 0;
   text-align: left;
 }
 
 .site-miguel th {
-  background: var(--miguel-panel);
+  background: transparent;
+  font-weight: 600;
+  border-bottom: 2px solid var(--miguel-ink);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Las columnas numéricas van a la derecha y con cifras de ancho fijo, para
+ * que los órdenes de magnitud se comparen de un vistazo. */
+.site-miguel td:not(:first-child),
+.site-miguel th:not(:first-child) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.site-miguel tbody tr:last-child td {
+  border-bottom: 2px solid var(--miguel-ink);
+}
+
+/* Fila destacada: las materias que sostienen el argumento del sitio no pueden
+ * verse igual que las que aportan un 2%. */
+.site-miguel tr.miguel-fila-clave td {
+  background: color-mix(in srgb, var(--miguel-accent) 7%, transparent);
   font-weight: 600;
 }
 
