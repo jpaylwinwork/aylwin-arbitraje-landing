@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import GraficoCuantias from "@/components/miguel/GraficoCuantias";
 import Link from "next/link";
 import { JsonLd, datasetSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
@@ -47,8 +48,8 @@ export default function Estadisticas() {
       <table>
         <thead><tr><th>Materia</th><th>Solicitudes</th><th>%</th></tr></thead>
         <tbody>
-          <tr><td>Inmobiliario</td><td>151</td><td>34,2%</td></tr>
-          <tr><td>Construcción / Infraestructura</td><td>92</td><td>20,9%</td></tr>
+          <tr className="miguel-fila-clave"><td>Inmobiliario</td><td>151</td><td>34,2%</td></tr>
+          <tr className="miguel-fila-clave"><td>Construcción / Infraestructura</td><td>92</td><td>20,9%</td></tr>
           <tr><td>Sociedades comerciales</td><td>39</td><td>8,8%</td></tr>
           <tr><td>Energía</td><td>39</td><td>8,8%</td></tr>
           <tr><td>Servicios profesionales</td><td>17</td><td>3,9%</td></tr>
@@ -87,7 +88,9 @@ export default function Estadisticas() {
         <strong>157 indeterminada (35%)</strong>.
       </p>
       <p>El reporte separa según la nómina del árbitro designado, y esa separación muestra dos mercados distintos:</p>
+      <GraficoCuantias />
       <table>
+
         <thead><tr><th>Tramo UF</th><th>Nómina General</th><th>Árbitro Joven</th><th>Total</th><th>%</th><th>Acumulado</th></tr></thead>
         <tbody>
           <tr><td>0 – 500</td><td>10</td><td>20</td><td>30</td><td>10,6%</td><td>10,6%</td></tr>
