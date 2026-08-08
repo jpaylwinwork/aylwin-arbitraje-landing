@@ -143,3 +143,52 @@ export async function getLeadsTable(range: Range, materia?: string, status?: str
     [isHomeFilter, isHomeFilter ? null : (sqlMateria ?? null), status ?? null],
   )) as unknown as Lead[];
 }
+
+// --- Consultas de miguelaylwin.com -------------------------------------
+//
+// Viven en otra tabla (`leads_miguelaylwin`) con otro esquema, porque es otro
+// embudo: distinto sitio, distinto destinatario y campos de calificación
+// propios. No se unen con `leads` a propósito —mezclarlas obligaría a inventar
+// un mapeo entre columnas que significan cosas distintas—; se muestran en su
+// propia sección.
+export type LeadMiguel = {
+  id: number;
+  created_at: string;
+  fuente: string;
+  nombre: string;
+  empresa: string | null;
+  cargo: string | null;
+  correo: string;
+  telefono: string | null;
+  conflicto: string;
+  tipo_conflicto: string | null;
+  cuantia_tramo: string | null;
+  urgente: boolean;
+  estado_conflicto: string | null;
+  click_id: string | null;
+  prioridad: string;
+  status: string;
+};
+
+export async function getLeadsMiguel(range: Range): Promise<LeadMiguel[]> {
+  const sql = neon(process.env.DATABASE_URL!);
+  const { from, to } = rangeToSqlBounds(range);
+
+  try {
+    return (await sql.query(
+      `SELECT id, created_at, fuente, nombre, empresa, cargo, correo, telefono,
+              conflicto, tipo_conflicto, cuantia_tramo, urgente, estado_conflicto,
+              click_id, prioridad, status
+       FROM leads_miguelaylwin
+       WHERE created_at >= (${from}) AND created_at < (${to})
+       ORDER BY
+         CASE prioridad WHEN 'urgente' THEN 0 WHEN 'alta' THEN 1 ELSE 2 END,
+         created_at DESC
+       LIMIT 200`,
+    )) as unknown as LeadMiguel[];
+  } catch {
+    // La tabla se crea con la primera consulta recibida. Mientras no llegue
+    // ninguna no existe, y eso no debe tumbar el dashboard entero.
+    return [];
+  }
+}

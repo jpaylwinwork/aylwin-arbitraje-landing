@@ -33,14 +33,18 @@ export default function PoliticaPrivacidad() {
           su cuantía estimada y su estado procesal, que sirven para evaluar si puedo ayudarte.
         </li>
         <li>
-          <strong>Datos de navegación.</strong> Dirección IP, tipo de navegador y páginas visitadas,
-          recogidos mediante cookies y tecnologías equivalentes.
+          <strong>Registros técnicos del servidor.</strong> Como cualquier sitio, el proveedor de
+          alojamiento registra datos técnicos de las solicitudes —dirección IP, tipo de navegador,
+          página solicitada— necesarios para servir la página y mantenerla operativa. Este sitio{" "}
+          <strong>no utiliza herramientas de analítica</strong> ni perfila tu navegación.
         </li>
         <li>
           <strong>Identificadores de campaña.</strong> Si llegas desde un anuncio, el identificador
           de clic que asigna Google (<code>gclid</code>, <code>wbraid</code> o <code>gbraid</code>) y
-          los parámetros de origen de la visita. Se guardan en tu navegador y se envían junto con el
-          formulario para medir qué campañas generan consultas reales.
+          los parámetros de origen de la visita se guardan en una cookie propia de este sitio
+          (<code>miguel_click_id</code>, 90 días) y se envían junto con el formulario, para saber qué
+          campañas generan consultas reales. Es la única cookie que instala el sitio, y solo se
+          instala si llegas por esa vía.
         </li>
       </ul>
       <p>
@@ -59,8 +63,8 @@ export default function PoliticaPrivacidad() {
           asociados a la prestación de servicios legales.
         </li>
         <li>
-          <strong>Análisis y medición:</strong> entender cómo se usa el sitio y qué campañas
-          publicitarias generan consultas, para no gastar en las que no sirven.
+          <strong>Medición de campañas:</strong> saber qué campañas publicitarias generan
+          consultas reales, para no gastar en las que no sirven.
         </li>
       </ul>
       <p>
@@ -99,10 +103,6 @@ export default function PoliticaPrivacidad() {
           <strong>Telegram</strong> — canal por el que recibo el aviso inmediato de cada consulta
           nueva, para poder responder dentro del plazo comprometido.
         </li>
-        <li>
-          <strong>Google</strong> — analítica del sitio (Google Analytics y Tag Manager) y medición
-          de campañas publicitarias (Google Ads).
-        </li>
       </ul>
       <p>
         Algunos de estos proveedores operan servidores fuera de Chile, de modo que el tratamiento
@@ -115,8 +115,9 @@ export default function PoliticaPrivacidad() {
         Las consultas que no derivan en un encargo se conservan mientras sean necesarias para dar
         seguimiento al contacto, y luego se eliminan a tu solicitud. Si el contacto deriva en un
         mandato, los antecedentes se conservan por el plazo que exigen las obligaciones
-        profesionales y legales aplicables al ejercicio de la abogacía. Los datos de analítica se
-        conservan según los plazos de retención configurados en las herramientas de medición.
+        profesionales y legales aplicables al ejercicio de la abogacía. La cookie de campaña caduca
+        sola a los 90 días, y los registros técnicos del servidor se conservan según los plazos del
+        proveedor de alojamiento.
       </p>
 
       <h2>7. Seguridad</h2>
@@ -154,9 +155,11 @@ export default function PoliticaPrivacidad() {
 
       <h2>9. Cookies</h2>
       <p>
-        Puedes bloquear o eliminar las cookies desde la configuración de tu navegador. Si lo haces,
-        el sitio sigue funcionando: las cookies aquí sirven para medir el uso y el rendimiento de
-        las campañas, no para darte acceso a contenido.
+        Este sitio instala una sola cookie, propia, y solo si llegas desde un anuncio:{" "}
+        <code>miguel_click_id</code>, que caduca a los 90 días y sirve para atribuir tu consulta a
+        la campaña por la que llegaste. No hay cookies de analítica ni de terceros. Puedes
+        bloquearla o eliminarla desde la configuración de tu navegador: el sitio sigue funcionando
+        igual, porque ninguna cookie condiciona el acceso al contenido.
       </p>
 
       <h2>10. Vigencia y cambios</h2>

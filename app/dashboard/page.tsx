@@ -2,7 +2,8 @@ import StatusSelect from "@/components/dashboard/StatusSelect";
 import DateRangeFilter from "@/components/dashboard/DateRangeFilter";
 import CommercialFunnel from "@/components/dashboard/CommercialFunnel";
 import TrafficFunnel from "@/components/dashboard/TrafficFunnel";
-import { getCommercialFunnel, getLeadsTable, type Range } from "@/lib/dashboard";
+import LeadsMiguel from "@/components/dashboard/LeadsMiguel";
+import { getCommercialFunnel, getLeadsTable, getLeadsMiguel, type Range } from "@/lib/dashboard";
 import { getTrafficFunnel } from "@/lib/ga4";
 
 export const dynamic = "force-dynamic";
@@ -25,10 +26,11 @@ export default async function DashboardPage(props: PageProps<"/dashboard">) {
   const materia = typeof params.materia === "string" && params.materia ? params.materia : undefined;
   const status = typeof params.status === "string" && params.status ? params.status : undefined;
 
-  const [commercial, leads, traffic] = await Promise.all([
+  const [commercial, leads, traffic, leadsMiguel] = await Promise.all([
     getCommercialFunnel(range, materia),
     getLeadsTable(range, materia, status),
     getTrafficFunnel(range, materia).catch(() => null),
+    getLeadsMiguel(range),
   ]);
 
   return (
@@ -99,6 +101,15 @@ export default async function DashboardPage(props: PageProps<"/dashboard">) {
           </table>
         </div>
         <p className="mt-3 text-xs text-muted">Mostrando hasta 200 leads más recientes del período.</p>
+
+        <section className="mt-12">
+          <h2 className="font-serif text-xl font-semibold">Consultas de miguelaylwin.com</h2>
+          <p className="mt-1 mb-4 text-xs text-muted">
+            Embudo separado, con sus propios campos de calificación. Ordenadas por prioridad y
+            luego por fecha.
+          </p>
+          <LeadsMiguel leads={leadsMiguel} />
+        </section>
       </main>
     </div>
   );
