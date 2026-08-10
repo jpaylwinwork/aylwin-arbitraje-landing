@@ -38,5 +38,3 @@ Se suma un régimen de tramitación **abreviado y voluntario**, que limita las i
 - **Invalidación** (Ley 19.880): el plazo baja de dos años a uno.
 - La **indemnización por RCA anulada** queda más restringida que en la propuesta original: solo procedería ante error del Estado, y ni siquiera entonces si el titular actuó con dolo, culpa o entregó antecedentes falsos.
 - Parte de la compensación a los municipios quedará **condicionada a que reduzcan los plazos** de tramitación de permisos municipales.
-
-El detalle completo de la entrevista y las cifras de inversión están en la fuente.

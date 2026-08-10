@@ -15,8 +15,8 @@ export default function MiguelBoletinDestacado({ maximo = 3 }: { maximo?: number
         <p className="miguel-label">Boletín</p>
         <h2 className="miguel-display-title">Novedades y publicaciones</h2>
         <p className="miguel-boletin-bajada">
-          Jurisprudencia, cambios normativos y las publicaciones del estudio, siempre con la fuente
-          a la vista.
+          Jurisprudencia, cambios normativos y publicaciones sobre arbitraje inmobiliario y de
+          construcción.
         </p>
 
         <ul className="miguel-destacados">

@@ -31,6 +31,6 @@ El panel abordó después la expansión de la arbitrabilidad, los desafíos que 
 
 La razón de su permanencia es prosaica: el libro trata, una por una, las cuestiones que hoy siguen decidiendo cómo termina un arbitraje. Sus capítulos cubren las fuentes del arbitraje, el compromiso y la cláusula compromisoria, el nombramiento de árbitros, la aceptación y el juramento, la competencia, las implicancias y recusaciones, la sentencia arbitral y —el punto que más consecuencias prácticas tiene para quien firma un contrato de obra— **el juicio seguido ante árbitros de derecho, arbitradores y mixtos**.
 
-Esa distinción no es doctrinal. Determina con qué reglas se tramitará el conflicto y qué recursos quedarán disponibles, y se fija en dos líneas de la cláusula arbitral que casi nadie lee al firmar. Es el mismo punto que en este sitio se explica en [Árbitro de derecho, arbitrador o mixto: cuál conviene](/arbitro-derecho-arbitrador-mixto).
+Esa distinción no es doctrinal. Determina con qué reglas se tramitará el conflicto y qué recursos quedarán disponibles, y se fija en dos líneas de la cláusula arbitral que casi nadie lee al firmar. → [Árbitro de derecho, arbitrador o mixto: cuál conviene](/arbitro-derecho-arbitrador-mixto)
 
 En 2023, en el marco del Primer Encuentro Nacional de Arbitraje del CAM Santiago, el centro ya había rendido homenaje a la obra.

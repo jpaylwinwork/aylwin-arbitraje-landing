@@ -22,4 +22,4 @@ La sentencia dejó planteada, además, una cuestión de alcance general sobre la
 
 ## El comentario
 
-Analizamos la sentencia con Vicente Aylwin en un artículo publicado en **Diario Constitucional**, centrado en esa discusión sobre los límites del control constitucional frente a la interpretación legal. El texto completo, con las citas de cada voto, está disponible en la fuente.
+Analizamos la sentencia con Vicente Aylwin en un artículo publicado en **Diario Constitucional**, centrado en esa discusión sobre los límites del control constitucional frente a la interpretación legal.
