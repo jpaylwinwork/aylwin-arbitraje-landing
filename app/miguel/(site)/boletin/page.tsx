@@ -7,7 +7,7 @@ const entradas = getEntradas();
 export const metadata: Metadata = {
   title: "Boletín: novedades, jurisprudencia y publicaciones",
   description:
-    "Jurisprudencia relevante, cambios normativos y publicaciones en arbitraje inmobiliario y de construcción, con la fuente siempre a la vista.",
+    "Jurisprudencia relevante, cambios normativos y publicaciones en arbitraje inmobiliario y de construcción en Chile.",
   // Mientras no haya entradas la página es contenido delgado: no conviene que
   // la indexen. Se vuelve indexable sola en cuanto se publica la primera.
   robots: entradas.length === 0 ? { index: false, follow: false } : undefined,
@@ -22,8 +22,8 @@ export default function Boletin() {
       </div>
 
       <p>
-        Jurisprudencia relevante, cambios normativos y las publicaciones y actuaciones del estudio,
-        con la fuente siempre a la vista para que puedas ir al documento original.
+        Jurisprudencia relevante, cambios normativos y publicaciones sobre arbitraje inmobiliario
+        y de construcción.
       </p>
 
       {entradas.length === 0 ? (
