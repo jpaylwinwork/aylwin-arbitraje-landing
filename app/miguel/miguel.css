@@ -16,11 +16,8 @@
    * cálidos, de la paleta hueso— porque el beige riñe con el carmesí. */
   --miguel-bg: #f9f9f9;
   --miguel-text: #1a1a1a;
-  /* PRUEBA TEMPORAL — paleta turquesa. Reemplaza el rojo institucional
-   * (#a8000d / #c41320) solo para evaluarla. Revertir este commit para
-   * devolver el acento del estudio. */
-  --miguel-accent: #0d6e70;
-  --miguel-accent-hover: #0a5c60;
+  --miguel-accent: #a8000d;
+  --miguel-accent-hover: #c41320;
   --miguel-muted: #5f5f5f;
   --miguel-line: #e3e0dd;
   --miguel-panel: #f1f1f1;
