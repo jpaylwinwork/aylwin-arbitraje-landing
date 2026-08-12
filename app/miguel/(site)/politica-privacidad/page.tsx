@@ -100,8 +100,8 @@ export default function PoliticaPrivacidad() {
           <strong>Neon</strong> — base de datos donde se almacenan las consultas recibidas.
         </li>
         <li>
-          <strong>Telegram</strong> — canal por el que recibo el aviso inmediato de cada consulta
-          nueva, para poder responder dentro del plazo comprometido.
+          <strong>Google (Gmail)</strong> — canal por el que recibo el aviso inmediato de cada
+          consulta nueva, para poder responder dentro del plazo comprometido.
         </li>
       </ul>
       <p>

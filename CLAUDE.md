@@ -23,19 +23,17 @@ Landing pages + funnel de captación de clientes para **Aylwin Matta Abogados** 
 
 ### Avisos de leads de miguelaylwin.com
 
-`app/api/miguel-lead/route.ts` guarda en la tabla `leads_miguelaylwin` y avisa por **dos canales independientes**: Telegram y correo. Van en paralelo con `Promise.allSettled` — que falle uno no impide el otro, y un fallo de base de datos nunca suprime el aviso. Solo se responde 502 si el lead no quedó en ninguna parte.
+`app/api/miguel-lead/route.ts` guarda en la tabla `leads_miguelaylwin` y avisa por **correo, único canal**, vía SMTP de Gmail (cuenta `mp@aylwin.cl`) con `nodemailer` — no Telegram, no un proveedor transaccional como Resend. Un fallo de base de datos nunca suprime el aviso. Solo se responde 502 si el lead no quedó en ninguna parte (ni BD ni correo).
 
-Cada canal se activa solo si tiene sus variables; si faltan, no hace nada y el despliegue no falla.
+Si faltan las variables, la función no hace nada y el despliegue no falla — el canal queda inerte, no roto.
 
 | Variable | Para qué |
 |---|---|
-| `RESEND_API_KEY` | Clave de API de Resend |
+| `GMAIL_USER` | Cuenta de Gmail que envía, p. ej. `mp@aylwin.cl` |
+| `GMAIL_APP_PASSWORD` | Contraseña de aplicación de esa cuenta (Google Account → Seguridad → Verificación en dos pasos → Contraseñas de aplicaciones) |
 | `LEAD_EMAIL_TO` | Destinatario(s), separados por coma |
-| `LEAD_EMAIL_FROM` | Remitente, p. ej. `Avisos <avisos@miguelaylwin.com>` |
 
-**Para activar el correo:** crear cuenta en Resend, verificar el dominio `miguelaylwin.com` con los registros DNS que indica (no tocar el DNS de aylwin.cl), y definir las tres variables en Vercel.
-
-**Al activarlo hay que actualizar `/politica-privacidad`**: la sección «Con quién se comparten» enumera los encargados de tratamiento y hoy no incluye al proveedor de correo. Los datos que viajan incluyen la descripción del conflicto.
+Se eligió Gmail SMTP sobre un proveedor como Resend para no crear una cuenta nueva ni verificar el dominio por DNS: basta una contraseña de aplicación de una cuenta de Gmail que ya existe.
 
 WhatsApp queda pendiente: requiere API de WhatsApp Business de Meta, número dedicado y **plantillas aprobadas** (los mensajes iniciados por la empresa no admiten texto libre fuera de la ventana de 24 horas).
 

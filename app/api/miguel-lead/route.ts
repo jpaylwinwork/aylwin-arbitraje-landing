@@ -1,5 +1,6 @@
 import { neon } from "@neondatabase/serverless";
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 import { priorityFromLead, tierFromCuantia } from "@/lib/leads-miguel";
 
 const CREATE_TABLE = `
@@ -55,49 +56,14 @@ type Lead = {
   prioridad: string;
 };
 
+// Único canal de aviso: correo por SMTP de Gmail (cuenta mp@aylwin.cl). Se
+// eligió sobre un proveedor transaccional (Resend, SendGrid...) para no
+// depender de una cuenta nueva ni de verificar el dominio por DNS — basta
+// una contraseña de aplicación de la cuenta de Gmail ya existente.
+//
 // Devuelve true solo si el aviso se envió de verdad. Que la función termine
 // sin excepción no basta: si faltan las variables de entorno sale sin hacer
 // nada, y eso no puede contarse como lead entregado.
-async function sendTelegramAlert(lead: Lead, stored: boolean): Promise<boolean> {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (!token || !chatId) return false;
-
-  const prioridadEmoji = lead.prioridad === "urgente" ? "🔴 URGENTE" : lead.prioridad === "alta" ? "🟠 LEAD CALIENTE" : "";
-  const tier = tierFromCuantia(lead.cuantia_tramo);
-
-  const lines = [
-    `📐 miguelaylwin.com — Nuevo lead (${lead.fuente})`,
-    prioridadEmoji && prioridadEmoji,
-    `Nombre: ${lead.nombre}`,
-    lead.empresa && `Empresa: ${lead.empresa}`,
-    lead.cargo && `Cargo: ${lead.cargo}`,
-    `Correo: ${lead.correo}`,
-    lead.telefono && `Teléfono: ${lead.telefono}`,
-    `Conflicto: ${lead.conflicto}`,
-    lead.tipo_conflicto && `Tipo: ${lead.tipo_conflicto}`,
-    lead.cuantia_tramo && `Cuantía: ${lead.cuantia_tramo} → ${tier}`,
-    lead.estado_conflicto && `Estado: ${lead.estado_conflicto}`,
-    lead.urgente && "⚠️ Marcó URGENTE — algo que impedir en los próximos días",
-    lead.utm_source && `Fuente ads: ${lead.utm_source} / ${lead.utm_medium || "-"} / ${lead.utm_campaign || "-"}`,
-    lead.click_id && `Ref: ${lead.click_id}`,
-    !stored && "⚠️ NO GUARDADO EN BD",
-  ].filter(Boolean);
-
-  await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ chat_id: chatId, text: lines.join("\n") }),
-  });
-  return true;
-}
-
-// Aviso por correo, en paralelo al de Telegram. Se usa la API REST de Resend
-// con fetch —sin dependencia nueva—, igual que la alerta de Telegram.
-//
-// Si RESEND_API_KEY no está definida la función no hace nada: el canal se
-// activa solo cuando alguien con acceso a Vercel configure la clave, sin que
-// el despliegue falle mientras tanto.
 function escaparHtml(texto: string): string {
   return texto
     .replace(/&/g, "&amp;")
@@ -107,10 +73,10 @@ function escaparHtml(texto: string): string {
 }
 
 async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
-  const apiKey = process.env.RESEND_API_KEY;
+  const gmailUser = process.env.GMAIL_USER;
+  const gmailPass = process.env.GMAIL_APP_PASSWORD;
   const destino = process.env.LEAD_EMAIL_TO;
-  const remitente = process.env.LEAD_EMAIL_FROM;
-  if (!apiKey || !destino || !remitente) return false;
+  if (!gmailUser || !gmailPass || !destino) return false;
 
   const tier = tierFromCuantia(lead.cuantia_tramo);
   const prioridad =
@@ -176,24 +142,18 @@ async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
     </div>
   `;
 
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: remitente,
-      to: destino.split(",").map((d) => d.trim()),
-      reply_to: lead.correo,
-      subject: asunto,
-      html,
-    }),
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: { user: gmailUser, pass: gmailPass },
   });
 
-  if (!res.ok) {
-    throw new Error(`resend respondió ${res.status}: ${await res.text()}`);
-  }
+  await transporter.sendMail({
+    from: gmailUser,
+    to: destino.split(",").map((d) => d.trim()),
+    replyTo: lead.correo,
+    subject: asunto,
+    html,
+  });
   return true;
 }
 
@@ -289,27 +249,17 @@ export async function POST(request: Request) {
   }
 
   // Misma garantía que la ruta del estudio: un fallo de base de datos nunca
-  // suprime el aviso. Los dos canales van en paralelo y son independientes —
-  // que Telegram falle no puede impedir el correo, ni al revés.
-  const [telegram, email] = await Promise.allSettled([
-    sendTelegramAlert(lead, stored),
-    sendEmailAlert(lead, stored),
-  ]);
-
-  if (telegram.status === "rejected") {
-    console.error("miguel-lead telegram alert failed", telegram.reason);
-  }
-  if (email.status === "rejected") {
-    console.error("miguel-lead email alert failed", email.reason);
+  // suprime el aviso.
+  let avisado = false;
+  try {
+    avisado = await sendEmailAlert(lead, stored);
+  } catch (error) {
+    console.error("miguel-lead email alert failed", error);
   }
 
   // Se responde 502 solo si el lead no quedó en ninguna parte: ni en la base
-  // de datos ni en ningún canal de aviso. Así el visitante ve el error y puede
+  // de datos ni en el aviso por correo. Así el visitante ve el error y puede
   // reintentar, en vez de creer que su consulta llegó.
-  const avisado =
-    (telegram.status === "fulfilled" && telegram.value) ||
-    (email.status === "fulfilled" && email.value);
-
   if (!stored && !avisado) {
     return NextResponse.json({ error: "delivery failed" }, { status: 502 });
   }
