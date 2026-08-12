@@ -107,10 +107,15 @@ function escaparHtml(texto: string): string {
 }
 
 async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
-  const apiKey = process.env.RESEND_API_KEY;
   const destino = process.env.LEAD_EMAIL_TO;
   const remitente = process.env.LEAD_EMAIL_FROM;
-  if (!apiKey || !destino || !remitente) return false;
+  if (!destino || !remitente) return false;
+
+  const apiKey = process.env.RESEND_API_KEY;
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASSWORD;
+  // Sin ninguna de las dos vías configuradas no hay nada que hacer.
+  if (!apiKey && !(smtpUser && smtpPass)) return false;
 
   const tier = tierFromCuantia(lead.cuantia_tramo);
   const prioridad =
@@ -176,6 +181,30 @@ async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
     </div>
   `;
 
+  const destinatarios = destino.split(",").map((d) => d.trim());
+
+  // SMTP tiene prioridad si está configurado. Es la vía que usa una contraseña
+  // de aplicación de Gmail; Resend queda como alternativa por si más adelante
+  // se prefiere enviar desde el dominio propio.
+  if (smtpUser && smtpPass) {
+    const nodemailer = (await import("nodemailer")).default;
+    const transporte = nodemailer.createTransport({
+      host: process.env.SMTP_HOST ?? "smtp.gmail.com",
+      port: Number(process.env.SMTP_PORT ?? 465),
+      secure: (process.env.SMTP_PORT ?? "465") === "465",
+      auth: { user: smtpUser, pass: smtpPass },
+    });
+
+    await transporte.sendMail({
+      from: remitente,
+      to: destinatarios,
+      replyTo: lead.correo,
+      subject: asunto,
+      html,
+    });
+    return true;
+  }
+
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -184,7 +213,7 @@ async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
     },
     body: JSON.stringify({
       from: remitente,
-      to: destino.split(",").map((d) => d.trim()),
+      to: destinatarios,
       reply_to: lead.correo,
       subject: asunto,
       html,
