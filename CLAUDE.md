@@ -23,15 +23,16 @@ Landing pages + funnel de captación de clientes para **Aylwin Matta Abogados** 
 
 ### Avisos de leads de miguelaylwin.com
 
-`app/api/miguel-lead/route.ts` guarda en la tabla `leads_miguelaylwin` y avisa por **correo, único canal**, vía SMTP de Gmail (cuenta `mp@aylwin.cl`) con `nodemailer` — no Telegram, no un proveedor transaccional como Resend. Un fallo de base de datos nunca suprime el aviso. Solo se responde 502 si el lead no quedó en ninguna parte (ni BD ni correo).
+`app/api/miguel-lead/route.ts` guarda en la tabla `leads_miguelaylwin` y avisa por **correo, único canal**, vía SMTP de Gmail (cuenta `mpaylwin@gmail.com`, gestionada por Vicente) con `nodemailer` — no Telegram, no un proveedor transaccional como Resend. Un fallo de base de datos nunca suprime el aviso. Solo se responde 502 si el lead no quedó en ninguna parte (ni BD ni correo).
 
 Si faltan las variables, la función no hace nada y el despliegue no falla — el canal queda inerte, no roto.
 
 | Variable | Para qué |
 |---|---|
-| `GMAIL_USER` | Cuenta de Gmail que envía, p. ej. `mp@aylwin.cl` |
-| `GMAIL_APP_PASSWORD` | Contraseña de aplicación de esa cuenta (Google Account → Seguridad → Verificación en dos pasos → Contraseñas de aplicaciones) |
-| `LEAD_EMAIL_TO` | Destinatario(s), separados por coma |
+| `SMTP_USER` | Cuenta de Gmail que envía, `mpaylwin@gmail.com` |
+| `SMTP_PASSWORD` | Contraseña de aplicación de esa cuenta (Google Account → Seguridad → Verificación en dos pasos → Contraseñas de aplicaciones) |
+| `LEAD_EMAIL_TO` | Destinatario(s), separados por coma — `mp@aylwin.cl` |
+| `LEAD_EMAIL_FROM` | Remitente que se muestra, formato `Nombre <direccion@dominio>`; si falta, se usa `SMTP_USER` tal cual |
 
 Se eligió Gmail SMTP sobre un proveedor como Resend para no crear una cuenta nueva ni verificar el dominio por DNS: basta una contraseña de aplicación de una cuenta de Gmail que ya existe.
 

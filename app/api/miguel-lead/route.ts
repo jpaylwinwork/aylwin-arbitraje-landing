@@ -56,10 +56,11 @@ type Lead = {
   prioridad: string;
 };
 
-// Único canal de aviso: correo por SMTP de Gmail (cuenta mp@aylwin.cl). Se
-// eligió sobre un proveedor transaccional (Resend, SendGrid...) para no
-// depender de una cuenta nueva ni de verificar el dominio por DNS — basta
-// una contraseña de aplicación de la cuenta de Gmail ya existente.
+// Único canal de aviso: correo por SMTP de Gmail (cuenta mpaylwin@gmail.com,
+// gestionada por Vicente). Se eligió sobre un proveedor transaccional (Resend,
+// SendGrid...) para no depender de una cuenta nueva ni de verificar el
+// dominio por DNS — basta una contraseña de aplicación de la cuenta de Gmail
+// ya existente.
 //
 // Devuelve true solo si el aviso se envió de verdad. Que la función termine
 // sin excepción no basta: si faltan las variables de entorno sale sin hacer
@@ -73,10 +74,11 @@ function escaparHtml(texto: string): string {
 }
 
 async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailPass = process.env.GMAIL_APP_PASSWORD;
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASSWORD;
   const destino = process.env.LEAD_EMAIL_TO;
-  if (!gmailUser || !gmailPass || !destino) return false;
+  const remitente = process.env.LEAD_EMAIL_FROM || smtpUser;
+  if (!smtpUser || !smtpPass || !destino) return false;
 
   const tier = tierFromCuantia(lead.cuantia_tramo);
   const prioridad =
@@ -144,11 +146,11 @@ async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    auth: { user: gmailUser, pass: gmailPass },
+    auth: { user: smtpUser, pass: smtpPass },
   });
 
   await transporter.sendMail({
-    from: gmailUser,
+    from: remitente,
     to: destino.split(",").map((d) => d.trim()),
     replyTo: lead.correo,
     subject: asunto,
