@@ -32,7 +32,8 @@ Si faltan las variables, la función no hace nada y el despliegue no falla — e
 | `SMTP_USER` | Cuenta de Gmail que envía, `mpaylwin@gmail.com` |
 | `SMTP_PASSWORD` | Contraseña de aplicación de esa cuenta (Google Account → Seguridad → Verificación en dos pasos → Contraseñas de aplicaciones) |
 | `LEAD_EMAIL_TO` | Destinatario(s), separados por coma — `mp@aylwin.cl` |
-| `LEAD_EMAIL_FROM` | Remitente que se muestra, formato `Nombre <direccion@dominio>`; si falta, se usa `SMTP_USER` tal cual |
+
+El nombre de remitente ("Avisos miguelaylwin.com") va fijo en el código, no en una env var — un valor `Nombre <correo>` con `<`/`>` se guarda vacío al pegarlo en el dashboard de Vercel.
 
 Se eligió Gmail SMTP sobre un proveedor como Resend para no crear una cuenta nueva ni verificar el dominio por DNS: basta una contraseña de aplicación de una cuenta de Gmail que ya existe.
 

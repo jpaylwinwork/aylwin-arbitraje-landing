@@ -77,8 +77,10 @@ async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASSWORD;
   const destino = process.env.LEAD_EMAIL_TO;
-  const remitente = process.env.LEAD_EMAIL_FROM || smtpUser;
   if (!smtpUser || !smtpPass || !destino) return false;
+  // Nombre para mostrar fijo en vez de env var: evita depender de un valor
+  // "Nombre <correo>" con `<`/`>`, que el dashboard de Vercel guarda vacío al pegar.
+  const remitente = `"Avisos miguelaylwin.com" <${smtpUser}>`;
 
   const tier = tierFromCuantia(lead.cuantia_tramo);
   const prioridad =
