@@ -855,3 +855,14 @@
     display: flex;
   }
 }
+
+/* Enlace de vuelta al pilar al pie de cada satélite. */
+.site-miguel .miguel-volver-pilar {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--miguel-line);
+  font-family: var(--miguel-sans);
+  font-size: 0.9rem;
+  color: var(--miguel-muted);
+  text-align: left;
+}
