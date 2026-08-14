@@ -10,17 +10,15 @@ const CLICK_ID_KEYS = ["gclid", "wbraid", "gbraid"] as const;
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
-  const [utm, setUtm] = useState<Record<string, string>>({});
 
+  // El efecto solo persiste lo que venga en la URL. Antes volcaba además el
+  // resultado en un useState, lo que provocaba un render en cascada al montar
+  // sin utilidad: el tracking no se muestra, solo se envía. Se lee al enviar.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const captured: Record<string, string> = {};
     for (const key of UTM_KEYS) {
-      const value = params.get(key) ?? sessionStorage.getItem(key);
-      if (value) {
-        captured[key] = value;
-        sessionStorage.setItem(key, value);
-      }
+      const value = params.get(key);
+      if (value) sessionStorage.setItem(key, value);
     }
     // Click ID persists in localStorage (90-day attribution window outlives the session)
     for (const key of CLICK_ID_KEYS) {
@@ -30,10 +28,18 @@ export default function ContactForm() {
         break;
       }
     }
+  }, []);
+
+  function leerUtm(): Record<string, string> {
+    const captured: Record<string, string> = {};
+    for (const key of UTM_KEYS) {
+      const value = sessionStorage.getItem(key);
+      if (value) captured[key] = value;
+    }
     const clickId = localStorage.getItem("click_id");
     if (clickId) captured.click_id = clickId;
-    setUtm(captured);
-  }, []);
+    return captured;
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -44,7 +50,7 @@ export default function ContactForm() {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, ...utm }),
+        body: JSON.stringify({ ...data, ...leerUtm() }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       pushDataLayerEvent("generate_lead", { lead_channel: "formulario", lead_materia: "home" });
