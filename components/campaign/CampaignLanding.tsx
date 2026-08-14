@@ -23,6 +23,10 @@ const RESPUESTA = "Respondemos en menos de 8 horas hábiles";
 const CLICK_ID_KEYS = ["gclid", "wbraid", "gbraid"] as const;
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term"] as const;
 
+// Aquí el estado sí es necesario, a diferencia de los otros formularios: el
+// click_id se usa al RENDERIZAR, para construir el enlace de WhatsApp con su
+// código de referencia. Leer localStorage durante el render rompería el
+// renderizado en servidor, así que el patrón correcto es efecto + estado.
 function useTracking() {
   const [tracking, setTracking] = useState<Record<string, string>>({});
   useEffect(() => {
@@ -44,6 +48,7 @@ function useTracking() {
     }
     const clickId = localStorage.getItem("click_id");
     if (clickId) captured.click_id = clickId;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- dato de cliente que se pinta (enlace de WhatsApp), no solo se envía
     setTracking(captured);
   }, []);
   return tracking;

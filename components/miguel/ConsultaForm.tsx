@@ -37,8 +37,12 @@ const labelStyle: React.CSSProperties = {
 
 export default function ConsultaForm() {
   const [status, setStatus] = useState<Status>("idle");
-  const [tracking, setTracking] = useState<Record<string, string>>({});
 
+  // El efecto solo escribe cookies: no toca estado. Antes guardaba además los
+  // valores en un useState, lo que disparaba un render en cascada al montar
+  // (react-hooks/set-state-in-effect) sin ninguna necesidad — el tracking no
+  // se pinta en pantalla, solo se envía. Ahora se lee al enviar, que además
+  // garantiza el valor más reciente.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     for (const key of CLICK_ID_KEYS) {
@@ -49,14 +53,17 @@ export default function ConsultaForm() {
       const value = params.get(key);
       if (value) setCookie(key, value, 90);
     }
-    setTracking({
+  }, []);
+
+  function leerTracking(): Record<string, string> {
+    return {
       click_id: getCookie("miguel_click_id"),
       utm_source: getCookie("utm_source"),
       utm_medium: getCookie("utm_medium"),
       utm_campaign: getCookie("utm_campaign"),
       utm_term: getCookie("utm_term"),
-    });
-  }, []);
+    };
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -80,7 +87,7 @@ export default function ConsultaForm() {
           urgente: data.urgente === "sí",
           estado_conflicto: data.estado_conflicto,
           website: data.website, // honeypot
-          ...tracking,
+          ...leerTracking(),
         }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
