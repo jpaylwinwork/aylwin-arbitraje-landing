@@ -33,18 +33,19 @@ export default function PoliticaPrivacidad() {
           su cuantía estimada y su estado procesal, que sirven para evaluar si puedo ayudarte.
         </li>
         <li>
-          <strong>Registros técnicos del servidor.</strong> Como cualquier sitio, el proveedor de
-          alojamiento registra datos técnicos de las solicitudes —dirección IP, tipo de navegador,
-          página solicitada— necesarios para servir la página y mantenerla operativa. Este sitio{" "}
-          <strong>no utiliza herramientas de analítica</strong> ni perfila tu navegación.
+          <strong>Datos de navegación.</strong> El proveedor de alojamiento registra datos técnicos
+          de cada solicitud —dirección IP, tipo de navegador, página solicitada— necesarios para
+          servir la página. Además, este sitio usa <strong>Google Analytics</strong> para saber qué
+          contenidos se leen y por dónde llegan las visitas: recoge datos de uso de forma agregada
+          —páginas vistas, duración, origen del tráfico, tipo de dispositivo y ubicación
+          aproximada—. No se emplea para identificarte ni para elaborar un perfil comercial.
         </li>
         <li>
           <strong>Identificadores de campaña.</strong> Si llegas desde un anuncio, el identificador
           de clic que asigna Google (<code>gclid</code>, <code>wbraid</code> o <code>gbraid</code>) y
           los parámetros de origen de la visita se guardan en una cookie propia de este sitio
           (<code>miguel_click_id</code>, 90 días) y se envían junto con el formulario, para saber qué
-          campañas generan consultas reales. Es la única cookie que instala el sitio, y solo se
-          instala si llegas por esa vía.
+          campañas generan consultas reales. Solo se instala si llegas por esa vía.
         </li>
       </ul>
       <p>
@@ -63,8 +64,8 @@ export default function PoliticaPrivacidad() {
           asociados a la prestación de servicios legales.
         </li>
         <li>
-          <strong>Medición de campañas:</strong> saber qué campañas publicitarias generan
-          consultas reales, para no gastar en las que no sirven.
+          <strong>Medición:</strong> entender qué contenidos se leen y qué campañas publicitarias
+          generan consultas reales, para escribir sobre lo que sirve y no gastar en lo que no.
         </li>
       </ul>
       <p>
@@ -100,8 +101,9 @@ export default function PoliticaPrivacidad() {
           <strong>Neon</strong> — base de datos donde se almacenan las consultas recibidas.
         </li>
         <li>
-          <strong>Google (Gmail)</strong> — canal por el que recibo el aviso inmediato de cada
-          consulta nueva, para poder responder dentro del plazo comprometido.
+          <strong>Google</strong> — Gmail, como canal por el que recibo el aviso inmediato de cada
+          consulta nueva; y Google Analytics, para la medición de uso del sitio. Analytics no
+          recibe los datos de tu consulta: solo información de navegación.
         </li>
       </ul>
       <p>
@@ -116,8 +118,8 @@ export default function PoliticaPrivacidad() {
         seguimiento al contacto, y luego se eliminan a tu solicitud. Si el contacto deriva en un
         mandato, los antecedentes se conservan por el plazo que exigen las obligaciones
         profesionales y legales aplicables al ejercicio de la abogacía. La cookie de campaña caduca
-        sola a los 90 días, y los registros técnicos del servidor se conservan según los plazos del
-        proveedor de alojamiento.
+        sola a los 90 días; los registros técnicos del servidor y los datos de analítica se
+        conservan según los plazos de retención de cada proveedor.
       </p>
 
       <h2>7. Seguridad</h2>
@@ -155,7 +157,8 @@ export default function PoliticaPrivacidad() {
 
       <h2>9. Cookies</h2>
       <p>
-        Este sitio instala una sola cookie, propia, y solo si llegas desde un anuncio:{" "}
+        Google Analytics instala cookies para distinguir visitas y sesiones. Además, si llegas
+        desde un anuncio, este sitio instala una cookie propia:{" "}
         <code>miguel_click_id</code>, que caduca a los 90 días y sirve para atribuir tu consulta a
         la campaña por la que llegaste. No hay cookies de analítica ni de terceros. Puedes
         bloquearla o eliminarla desde la configuración de tu navegador: el sitio sigue funcionando
