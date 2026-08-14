@@ -1,5 +1,6 @@
 import { Source_Serif_4 } from "next/font/google";
 import "./miguel.css";
+import MiguelAnalytics from "@/components/miguel/MiguelAnalytics";
 
 const sourceSerif = Source_Serif_4({
   variable: "--font-source-serif",
@@ -12,5 +13,10 @@ const sourceSerif = Source_Serif_4({
 // sits outside that group so it inherits only fonts + design tokens — the
 // landing spec requires zero navigation exits (no linked logo, no nav).
 export default function MiguelLayout({ children }: { children: React.ReactNode }) {
-  return <div className={`site-miguel ${sourceSerif.variable}`}>{children}</div>;
+  return (
+    <div className={`site-miguel ${sourceSerif.variable}`}>
+      <MiguelAnalytics />
+      {children}
+    </div>
+  );
 }

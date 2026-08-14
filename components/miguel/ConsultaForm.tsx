@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { trackMiguel } from "@/lib/analytics-miguel";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -91,6 +92,9 @@ export default function ConsultaForm() {
         }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      // Se mide antes de navegar: la página de gracias es otra carga y el
+      // evento se perdería si se enviara allí sin control.
+      trackMiguel("generate_lead", { lead_source: "landing-ads" });
       window.location.href = "/consulta/gracias";
     } catch {
       setStatus("error");

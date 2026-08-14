@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { trackMiguel } from "@/lib/analytics-miguel";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -50,6 +51,7 @@ export default function MiguelContactForm() {
         }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      trackMiguel("generate_lead", { lead_source: "web-seo" });
       setStatus("success");
       form.reset();
     } catch {
@@ -170,7 +172,7 @@ export default function MiguelContactForm() {
       {status === "error" && (
         <p role="alert" style={{ color: "var(--miguel-accent)", fontSize: "0.9rem" }}>
           No pudimos enviar tu mensaje. Intenta nuevamente o escribe a{" "}
-          <a href="mailto:contacto@aylwin.cl">contacto@aylwin.cl</a>.
+          <a href="mailto:mp@aylwin.cl">mp@aylwin.cl</a>.
         </p>
       )}
 
