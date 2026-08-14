@@ -24,7 +24,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const e = getEntrada(slug);
   if (!e) return {};
-  return { title: e.title, description: e.description };
+  return {
+    title: e.title,
+    description: e.description,
+    openGraph: {
+      type: "article",
+      title: e.title,
+      description: e.description,
+      publishedTime: e.date || undefined,
+      // Si la entrada trae foto propia, esa es la que se ve al compartirla;
+      // si no, hereda el retrato definido en el layout.
+      ...(e.imagen ? { images: [{ url: e.imagen }] } : {}),
+    },
+  };
 }
 
 export default async function EntradaBoletinPage({
