@@ -5,9 +5,6 @@ date: "2026-07-30"
 categoria: Jurisprudencia
 fuente: "Vicente Aylwin y Miguel Aylwin, «El Tribunal Constitucional y el control de interpretaciones legales. Sentencia TC, rol N°15.066-2023», Diario Constitucional, 31 de marzo de 2025"
 fuenteUrl: "https://www.diarioconstitucional.cl/articulos/el-tribunal-constitucional-y-el-control-de-interpretaciones-legales/"
-imagen: "/miguel/retrato-miguel-aylwin.jpg"
-imagenAlt: "Miguel Aylwin Fernández, abogado"
-imagenCredito: "Miguel Aylwin Fernández, socio de Aylwin Matta Abogados."
 draft: false
 ---
 

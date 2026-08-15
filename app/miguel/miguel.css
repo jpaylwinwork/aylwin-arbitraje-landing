@@ -709,6 +709,9 @@
   width: 100%;
   height: 150px;
   object-fit: cover;
+  /* Recorta desde arriba y no desde el centro: con una foto vertical, el
+   * recorte centrado se comía la cara de quien aparece en ella. */
+  object-position: center 20%;
 }
 
 /* grid-column: 2 fijo, no automático: cuando una entrada no trae imagen, el
