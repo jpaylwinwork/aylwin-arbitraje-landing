@@ -102,7 +102,7 @@ export default function Consulta() {
       </p>
 
       {/* SECCIÓN 4 — Cómo trabajo */}
-      <h2 style={{ marginTop: "4rem" }}>Antes de recomendarte nada, hago este análisis.</h2>
+      <h2 id="analisis" style={{ marginTop: "4rem" }}>Antes de recomendarte nada, hago este análisis.</h2>
       <p>
         No es un método con nombre de marca. Es el orden en que hay que mirar un conflicto de obra
         para no decidir a ciegas. Lo publico porque el orden importa más que la técnica.
@@ -203,7 +203,7 @@ export default function Consulta() {
       )}
 
       {/* SECCIÓN 7 — Con quién no trabajo */}
-      <h2 style={{ marginTop: "4rem" }}>Esto no es para todos.</h2>
+      <h2 id="filtro" style={{ marginTop: "4rem" }}>Esto no es para todos.</h2>
       <p>Prefiero decirlo antes de que agendes:</p>
       <ul>
         <li>
@@ -226,7 +226,7 @@ export default function Consulta() {
         </li>
       </ul>
 
-      <h3>Y trabajo de tres formas distintas</h3>
+      <h3 id="modalidades">Y trabajo de tres formas distintas</h3>
       <p>
         <strong>Entre 1.000 y 8.000 UF</strong> —donde está cerca del 44% de las causas del CAM— el
         servicio es <strong>deliberadamente acotado</strong>: alcance definido por escrito, precio
