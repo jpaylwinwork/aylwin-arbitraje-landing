@@ -14,7 +14,7 @@ import { useEffect } from "react";
 //
 // Con GA4_ID vacío la función no hace nada, de modo que el componente puede
 // desplegarse antes de que exista la propiedad.
-const GA4_ID = "";
+const GA4_ID = "G-BWZSM4YQP1";
 
 const MIGUEL_HOSTS = new Set(["miguelaylwin.com", "www.miguelaylwin.com"]);
 
