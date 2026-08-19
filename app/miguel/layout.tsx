@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Source_Serif_4 } from "next/font/google";
 import "./miguel.css";
 import MiguelAnalytics from "@/components/miguel/MiguelAnalytics";
+import MiguelGtm from "@/components/miguel/MiguelGtm";
 
 const sourceSerif = Source_Serif_4({
   variable: "--font-source-serif",
@@ -34,6 +35,7 @@ export default function MiguelLayout({ children }: { children: React.ReactNode }
   return (
     <div className={`site-miguel ${sourceSerif.variable}`}>
       <MiguelAnalytics />
+      <MiguelGtm />
       {children}
     </div>
   );
