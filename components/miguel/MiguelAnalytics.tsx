@@ -31,9 +31,19 @@ export default function MiguelAnalytics() {
       gtag?: (...args: unknown[]) => void;
     };
     w.dataLayer = w.dataLayer || [];
-    w.gtag = function gtag(...args: unknown[]) {
-      w.dataLayer!.push(args);
-    };
+
+    // Tiene que empujar el objeto `arguments`, no un arreglo. gtag.js
+    // reconoce los comandos por esa forma exacta; con un arreglo normal
+    // los descarta sin avisar y el resultado es el peor posible: la
+    // etiqueta carga, la consola no muestra ningún error y la propiedad
+    // no recibe un solo dato. Es una transcripción literal del snippet
+    // oficial de Google, y conviene que siga siéndolo.
+    function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      w.dataLayer!.push(arguments);
+    }
+    w.gtag = gtag as (...args: unknown[]) => void;
+
     w.gtag("js", new Date());
     w.gtag("config", GA4_ID);
 
