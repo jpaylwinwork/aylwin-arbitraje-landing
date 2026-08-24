@@ -29,9 +29,12 @@ export default function MiguelHeader() {
               {item.label}
             </Link>
           ))}
-          {/* El boletín solo entra al menú cuando tiene al menos una entrada
-           * publicada: un enlace a una sección vacía resta más de lo que suma. */}
-          {hayBoletin() ? <Link href="/boletin">Boletín</Link> : null}
+          {/* El Monitor Jurisprudencial solo entra al menú cuando tiene al menos
+           * una entrada publicada: un enlace a una sección vacía resta más de lo
+           * que suma. En el menú va abreviado a "Monitor": el nombre completo
+           * mide 241 px y, con los otros seis enlaces, desborda la cabecera en
+           * pantallas de 1280. El título completo vive en la página. */}
+          {hayBoletin() ? <Link href="/boletin">Monitor</Link> : null}
         </nav>
       </div>
     </header>

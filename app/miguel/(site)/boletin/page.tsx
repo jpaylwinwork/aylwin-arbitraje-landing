@@ -5,7 +5,7 @@ import { getEntradas, formatearFecha } from "@/lib/boletin-miguel";
 const entradas = getEntradas();
 
 export const metadata: Metadata = {
-  title: "Boletín: novedades, jurisprudencia y publicaciones",
+  title: "Monitor Jurisprudencial",
   description:
     "Jurisprudencia relevante, cambios normativos y publicaciones en arbitraje inmobiliario y de construcción en Chile.",
   // Mientras no haya entradas la página es contenido delgado: no conviene que
@@ -17,8 +17,8 @@ export default function Boletin() {
   return (
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
       <div className="miguel-page-title">
-        <p className="miguel-label">Boletín</p>
-        <h1 className="miguel-display-title">Novedades y publicaciones</h1>
+        <p className="miguel-label">Publicaciones</p>
+        <h1 className="miguel-display-title">Monitor Jurisprudencial</h1>
       </div>
 
       <p>
