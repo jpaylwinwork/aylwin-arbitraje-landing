@@ -12,8 +12,8 @@ export default function MiguelBoletinDestacado({ maximo = 3 }: { maximo?: number
   return (
     <section className="miguel-band miguel-band--tint">
       <div className="miguel-container miguel-wide">
-        <p className="miguel-label">Boletín</p>
-        <h2 className="miguel-display-title">Novedades y publicaciones</h2>
+        <p className="miguel-label">Publicaciones</p>
+        <h2 className="miguel-display-title">Monitor Jurisprudencial</h2>
         <p className="miguel-boletin-bajada">
           Jurisprudencia, cambios normativos y publicaciones sobre arbitraje inmobiliario y de
           construcción.
@@ -51,7 +51,7 @@ export default function MiguelBoletinDestacado({ maximo = 3 }: { maximo?: number
 
         <p style={{ marginTop: "2rem", marginBottom: 0 }}>
           <Link href="/boletin" className="miguel-btn miguel-btn-outline">
-            Ver todo el boletín
+            Ver todo el Monitor
           </Link>
         </p>
       </div>

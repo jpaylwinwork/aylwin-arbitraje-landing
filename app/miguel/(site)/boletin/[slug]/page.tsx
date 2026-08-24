@@ -64,7 +64,7 @@ export default async function EntradaBoletinPage({
 
       <div className="miguel-page-title">
         <p className="miguel-label">
-          Boletín · {entrada.categoria}
+          Monitor Jurisprudencial · {entrada.categoria}
           {entrada.date ? ` · ${formatearFecha(entrada.date)}` : ""}
         </p>
         <h1 className="miguel-display-title">{entrada.title}</h1>
@@ -98,7 +98,7 @@ export default async function EntradaBoletinPage({
       </p>
 
       <p style={{ marginTop: "2.5rem" }}>
-        <Link href="/boletin">← Volver al boletín</Link>
+        <Link href="/boletin">← Volver al Monitor Jurisprudencial</Link>
       </p>
     </div>
       <MiguelCierreCta />
