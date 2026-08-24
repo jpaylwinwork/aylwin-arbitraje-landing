@@ -1,10 +1,10 @@
 ---
 title: "Cuando el mandante entrega mala mecánica de suelos y después multa por atraso"
 description: "Contraloría aplicó el principio de razonabilidad: la información técnica que el servicio incorpora a las bases debe ser coherente y no inducir a error. Pero puso una condición al contratista que conviene leer con atención."
-date: "2026-08-24"
+date: "2026-09-28"
 categoria: Jurisprudencia
 fuente: "Contraloría General de la República, oficio OF72769N26, de 15 de abril de 2026, sobre la presentación de Constructora e Ingeniería Ingesep Ltda. ante el Instituto Nacional del Deporte"
-draft: true
+draft: false
 ---
 
 ## El estudio que venía en las bases

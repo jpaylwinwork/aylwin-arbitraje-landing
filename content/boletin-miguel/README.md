@@ -60,17 +60,30 @@ Mientras no haya ninguna entrada publicada, `/boletin` va `noindex`, queda fuera
 del sitemap y no aparece en el menú. Los tres se activan solos con la primera
 entrada.
 
-## Las dieciséis entradas en borrador (24-08-2026)
+## Publicación programada, una por semana
 
-Hay dieciséis entradas convertidas desde `CONTENIDO/postparaelsitio`, todas con
-`draft: true`. **Ninguna se publica hasta que MAF confirme la cita del fallo o
-dictamen que cada una invoca.** El campo `fuente` está completo en las
-dieciséis, pero identificar una fuente no es lo mismo que verificarla, y el
-riesgo aquí es el que este archivo ya advierte: una cita equivocada en el sitio
-de un abogado.
+Las dieciséis entradas convertidas desde `CONTENIDO/postparaelsitio` salen **a
+razón de una por semana, los lunes**, desde el 24-08-2026 hasta el 07-12-2026.
+MAF confirmó las citas de fallos y dictámenes el 24-08-2026.
 
-Se publican de a poco, no las dieciséis juntas: una sección que se llama
-"Monitor" y descarga dieciséis notas el mismo día y después enmudece es lo
-contrario de un monitor. Al publicar cada una, poner en `date` el día real de
-publicación —hoy todas traen la fecha de conversión— y cambiar `draft` a
-`false`.
+No hay nada que hacer cada semana. El mecanismo es:
+
+1. Cada entrada trae su fecha de publicación en `date`.
+2. `estaPublicada()` en `lib/boletin-miguel.ts` oculta las de fecha futura,
+   comparando contra la fecha de hoy **en Santiago** (no en UTC: si no, una
+   entrada aparecería de madrugada el día anterior).
+3. Como el sitio es estático, esa comparación solo se evalúa al construir. El
+   workflow `.github/workflows/publicar-monitor.yml` corre los lunes a las
+   08:00 de Santiago, comprueba si alguna entrada estrena ese día y, solo en
+   ese caso, fuerza un despliegue.
+
+Después del 07-12-2026 el workflow deja de hacer nada solo, porque ya no
+encuentra fechas que estrenen. Para reanudar basta agregar entradas nuevas con
+fecha futura.
+
+`dynamicParams` está en `false` en la página de entrada: una entrada aún no
+publicada devuelve 404 aunque alguien acierte la URL.
+
+Para adelantar o atrasar una entrada, se cambia su `date`. Para publicar fuera
+de calendario, se lanza el workflow a mano desde la pestaña Actions
+(`workflow_dispatch`).

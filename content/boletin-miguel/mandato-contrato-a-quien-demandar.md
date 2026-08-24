@@ -1,10 +1,10 @@
 ---
 title: "En la obra pública por mandato, antes de demandar sepa quién quedó obligado a pagarle"
 description: "Cinco fallos muestran que la respuesta no es automática: a veces responden los dos organismos, a veces solo uno, y a veces ninguno de los que usted pensaba."
-date: "2026-08-24"
+date: "2026-11-16"
 categoria: Jurisprudencia
 fuente: "C.A. de Valdivia, «Obras y Montajes Vial con Gobierno Regional de Los Lagos y Municipalidad de Osorno», rol 1715-2024, sentencia de 9 de junio de 2025; C.S., «Copasa con Municipalidad de La Serena y otros», rol 218042-2023; C.S., «Besalco con Municipalidad de Viña del Mar y otros», rol 73356-2020; y C.S., «Montajes Eléctricos con Servicio de Salud de Antofagasta», rol 149119-2020"
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier contratista de obra pública
