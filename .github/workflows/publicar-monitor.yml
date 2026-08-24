@@ -13,7 +13,11 @@ name: Publicar entrada del Monitor
 # según el autor del commit, no según quién disparó la acción.
 on:
   schedule:
-    - cron: "0 12 * * 1"   # lunes 12:00 UTC = 08:00 en Santiago
+    # Lunes 12:00 UTC. En Santiago son las 08:00 en horario de invierno y las
+    # 09:00 en verano: cron no entiende de husos, así que la hora local se
+    # corre una hora con el cambio de septiembre. Da igual para lo que hace
+    # —publicar temprano un lunes—, pero que no sorprenda a nadie después.
+    - cron: "0 12 * * 1"
   workflow_dispatch:        # para publicar a mano si hiciera falta
 
 permissions:
