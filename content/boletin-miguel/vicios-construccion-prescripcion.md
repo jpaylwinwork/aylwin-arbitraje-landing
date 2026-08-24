@@ -1,10 +1,10 @@
 ---
 title: "Vicios de construcción: por qué la discusión sobre el plazo de prescripción se pierde en primera instancia"
 description: "La Corte Suprema dejó firme una condena solidaria de $50 millones contra la constructora y la inmobiliaria. Toda la defensa de prescripción dependía de cómo se calificaran los defectos, y eso ya estaba decidido cuando el perito entregó su informe."
-date: "2026-08-24"
+date: "2026-09-21"
 categoria: Jurisprudencia
 fuente: "C.A. de San Miguel, «Los Nogales con Empresa Constructora Ormuz Limitada e Inmobiliaria Nataniel Limitada»; casaciones en el fondo rechazadas por la C.S. el 10 de julio de 2026"
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier inmobiliaria

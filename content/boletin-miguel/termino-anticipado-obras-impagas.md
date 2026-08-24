@@ -1,10 +1,10 @@
 ---
 title: "Término anticipado del contrato de obra pública: mientras el acto siga vigente, no hay demanda que prospere"
 description: "La Corte Suprema recordó que la Administración pone término sin pasar por un tribunal. Pero abrió la puerta que sí sirve: la acción indemnizatoria es autónoma y las obras ejecutadas en beneficio fiscal deben pagarse."
-date: "2026-08-24"
+date: "2026-11-02"
 categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Constructora Cónsul S.A. con Ministerio de Obras Públicas», rol 2465-2018, sentencia de reemplazo de 26 de agosto de 2019"
-draft: true
+draft: false
 ---
 
 ## La resolución que llega un viernes

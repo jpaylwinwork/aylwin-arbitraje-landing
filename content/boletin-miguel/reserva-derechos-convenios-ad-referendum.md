@@ -1,10 +1,10 @@
 ---
 title: "Firmar el convenio ad referéndum sin reserva de derechos puede costarle la indemnización completa"
 description: "La Corte Suprema dejó firme el criterio de que la reserva estampada por el contratista impide tener por renunciados los mayores gastos. El caso: un contrato cuyo plazo se extendió en más de un 85%."
-date: "2026-08-24"
+date: "2026-08-31"
 categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Constructora Internacional S.A. con Fisco de Chile», rol 152953-2022, sentencia de 2 de agosto de 2023"
-draft: true
+draft: false
 ---
 
 ## Una firma que se pide en la faena

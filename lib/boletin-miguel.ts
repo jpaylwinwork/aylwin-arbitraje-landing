@@ -78,10 +78,31 @@ export function getEntrada(slug: string): EntradaBoletin | null {
   };
 }
 
+// Fecha de hoy en Santiago, en ISO, comparable como texto contra el campo
+// `date`. Deliberadamente no se usa toISOString(): devuelve UTC, y con Chile
+// en UTC-3/-4 una entrada programada para mañana aparecería hasta cuatro
+// horas antes de tiempo, de noche.
+function hoyEnSantiago(): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Santiago" }).format(new Date());
+}
+
+// Publicación programada: el Monitor sale una entrada por semana y las
+// dieciséis ya están escritas con su fecha. Una entrada con fecha futura
+// existe en disco pero no en el sitio.
+//
+// Ojo: el sitio es estático, así que esto solo se evalúa al construir. Lo que
+// hace aparecer la entrada del lunes es el rebuild semanal de
+// .github/workflows/publicar-monitor.yml, no el paso del tiempo.
+export function estaPublicada(e: EntradaBoletin): boolean {
+  if (e.draft) return false;
+  if (!e.date) return false;
+  return e.date <= hoyEnSantiago();
+}
+
 export function getEntradas(): EntradaBoletin[] {
   return getBoletinSlugs()
     .map((slug) => getEntrada(slug))
-    .filter((e): e is EntradaBoletin => e !== null && !e.draft)
+    .filter((e): e is EntradaBoletin => e !== null && estaPublicada(e))
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 

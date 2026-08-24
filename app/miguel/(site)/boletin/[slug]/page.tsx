@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getEntrada, getEntradas, formatearFecha } from "@/lib/boletin-miguel";
+import { getEntrada, getEntradas, formatearFecha, estaPublicada } from "@/lib/boletin-miguel";
 import { JsonLd, articleSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
@@ -15,6 +15,12 @@ const MIGUEL_AUTHOR = {
 export function generateStaticParams() {
   return getEntradas().map((e) => ({ slug: e.slug }));
 }
+
+// Solo existen las rutas que generateStaticParams devuelve. Sin esto, una
+// entrada aún no publicada se intentaría renderizar a demanda si alguien
+// acierta la URL, y el markdown que necesita leer no está garantizado dentro
+// del bundle serverless. Con dynamicParams en false devuelve 404 y listo.
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
@@ -46,7 +52,7 @@ export default async function EntradaBoletinPage({
 }) {
   const { slug } = await params;
   const entrada = getEntrada(slug);
-  if (!entrada || entrada.draft) notFound();
+  if (!entrada || !estaPublicada(entrada)) notFound();
 
   const schema = articleSchema({
     headline: entrada.title,
