@@ -1,0 +1,52 @@
+name: Publicar entrada del Monitor
+
+# El Monitor Jurisprudencial sale una entrada por semana. Las entradas ya
+# están escritas en content/boletin-miguel con su fecha de publicación, y
+# lib/boletin-miguel.ts oculta las que tienen fecha futura.
+#
+# Pero el sitio es estático: esa comparación de fechas solo se evalúa al
+# construir. Sin este workflow, la entrada del lunes seguiría invisible hasta
+# que alguien tocara el repositorio por otro motivo. Esto fuerza el rebuild.
+#
+# Empuja a main bajo la identidad del dueño por la misma razón que
+# auto-deploy-collaborators.yml: el plan Hobby de Vercel bloquea el despliegue
+# según el autor del commit, no según quién disparó la acción.
+on:
+  schedule:
+    - cron: "0 12 * * 1"   # lunes 12:00 UTC = 08:00 en Santiago
+  workflow_dispatch:        # para publicar a mano si hiciera falta
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: ¿Hay una entrada que estrene hoy?
+        id: chequeo
+        run: |
+          HOY=$(TZ=America/Santiago date +%F)
+          echo "Fecha en Santiago: $HOY"
+          if grep -qE "^date: \"$HOY\"" content/boletin-miguel/*.md; then
+            echo "Estrena hoy:"
+            grep -lE "^date: \"$HOY\"" content/boletin-miguel/*.md
+            echo "publicar=si" >> "$GITHUB_OUTPUT"
+          else
+            echo "Ninguna entrada estrena hoy. No se despliega."
+            echo "publicar=no" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Desplegar
+        if: steps.chequeo.outputs.publicar == 'si'
+        run: |
+          git config user.name "jpaylwinwork"
+          git config user.email "jp.aylwin.work@gmail.com"
+          git commit --allow-empty -m "Publicar entrada del Monitor ($(TZ=America/Santiago date +%F))"
+          git push origin HEAD:main
