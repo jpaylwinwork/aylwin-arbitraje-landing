@@ -1,8 +1,13 @@
-# Boletín — miguelaylwin.com
+# Monitor Jurisprudencial — miguelaylwin.com
 
 Novedades de arbitraje inmobiliario y de construcción: cambios normativos,
 jurisprudencia y datos institucionales. Una entrada = un archivo `.md` en esta
 carpeta.
+
+La sección se llama **Monitor Jurisprudencial** en el sitio. La ruta sigue
+siendo `/boletin` y los nombres internos (`boletin-miguel`, `.miguel-boletin-*`)
+tampoco cambiaron: mover la ruta rompería los enlaces ya publicados sin ganar
+nada.
 
 ## Regla de origen (no negociable)
 
@@ -54,3 +59,18 @@ texto y la fuente antes de fusionar.
 Mientras no haya ninguna entrada publicada, `/boletin` va `noindex`, queda fuera
 del sitemap y no aparece en el menú. Los tres se activan solos con la primera
 entrada.
+
+## Las dieciséis entradas en borrador (24-08-2026)
+
+Hay dieciséis entradas convertidas desde `CONTENIDO/postparaelsitio`, todas con
+`draft: true`. **Ninguna se publica hasta que MAF confirme la cita del fallo o
+dictamen que cada una invoca.** El campo `fuente` está completo en las
+dieciséis, pero identificar una fuente no es lo mismo que verificarla, y el
+riesgo aquí es el que este archivo ya advierte: una cita equivocada en el sitio
+de un abogado.
+
+Se publican de a poco, no las dieciséis juntas: una sección que se llama
+"Monitor" y descarga dieciséis notas el mismo día y después enmudece es lo
+contrario de un monitor. Al publicar cada una, poner en `date` el día real de
+publicación —hoy todas traen la fecha de conversión— y cambiar `draft` a
+`false`.
