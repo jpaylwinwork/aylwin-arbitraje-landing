@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MiguelContactForm from "@/components/miguel/MiguelContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contacto" },
   title: "Contacto — Miguel Aylwin Fernández, abogado",
   description:
     "Conversemos sobre tu conflicto inmobiliario o de construcción antes de decidir qué hacer.",

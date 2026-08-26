@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/politica-privacidad" },
   title: "Política de privacidad — Miguel Aylwin Fernández",
   description:
     "Qué datos recopila este sitio, para qué se usan, con quién se comparten y cómo ejercer tus derechos sobre ellos.",

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { esHostDeMiguel } from "@/lib/hosts-miguel";
 
-const MIGUEL_HOSTS = new Set(["miguelaylwin.com", "www.miguelaylwin.com"]);
 
 // Paths that must never be rewritten under the /miguel prefix, even when the
 // request arrives on miguelaylwin.com: API routes (miguel-lead lives at its
@@ -19,7 +19,7 @@ export function proxy(request: NextRequest) {
 
   // Host-based routing: miguelaylwin.com transparently serves app/miguel/*
   // without ever exposing "/miguel" in the URL bar.
-  if (MIGUEL_HOSTS.has(host)) {
+  if (esHostDeMiguel(host)) {
     if (!isPassthrough(pathname)) {
       const url = request.nextUrl.clone();
       url.pathname = `/miguel${pathname}`;

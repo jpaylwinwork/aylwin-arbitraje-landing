@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 const GTM_ID = "GTM-TCSWRPF7";
-const MIGUEL_HOSTS = new Set(["miguelaylwin.com", "www.miguelaylwin.com"]);
+import { esHostDeMiguel } from "@/lib/hosts-miguel";
 
 // Client-side host check (not next/headers) deliberately: reading the
 // request Host in a Server Component forces the entire route tree to
@@ -12,7 +12,7 @@ const MIGUEL_HOSTS = new Set(["miguelaylwin.com", "www.miguelaylwin.com"]);
 // stays statically prerendered.
 export default function GtmLoader() {
   useEffect(() => {
-    if (MIGUEL_HOSTS.has(window.location.hostname)) return;
+    if (esHostDeMiguel(window.location.hostname)) return;
     const w = window as typeof window & { dataLayer?: Record<string, unknown>[] };
     w.dataLayer = w.dataLayer || [];
     w.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });

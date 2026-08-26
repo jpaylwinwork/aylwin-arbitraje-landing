@@ -23,7 +23,11 @@ export async function generateMetadata({
   const { satelite } = await params;
   const data = getSatelite(satelite);
   if (!data) return {};
-  return { title: data.title, description: data.metaDescription };
+  return {
+    alternates: { canonical: `/${satelite}` },
+    title: data.title,
+    description: data.metaDescription,
+  };
 }
 
 export default async function SatelitePage({

@@ -6,7 +6,7 @@ import { getEntradas } from "@/lib/boletin-miguel";
 
 const FIRM_BASE_URL = "https://aylwin-arbitraje-landing.vercel.app";
 const MIGUEL_BASE_URL = "https://miguelaylwin.com";
-const MIGUEL_HOSTS = new Set(["miguelaylwin.com", "www.miguelaylwin.com"]);
+import { esHostDeMiguel } from "@/lib/hosts-miguel";
 
 const MIGUEL_STATIC_PAGES = [
   "",
@@ -23,7 +23,7 @@ const MIGUEL_STATIC_PAGES = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const host = (await headers()).get("host") ?? "";
 
-  if (MIGUEL_HOSTS.has(host.split(":")[0])) {
+  if (esHostDeMiguel(host)) {
     const satelites = getSateliteSlugs().map((slug) => ({ url: `${MIGUEL_BASE_URL}/${slug}` }));
     // El boletín entra al sitemap solo cuando tiene entradas: mientras esté
     // vacío la portada va noindex y no debe anunciarse.

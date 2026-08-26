@@ -6,6 +6,7 @@ import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 assertTransversalLinking();
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/arbitraje-inmobiliario-chile" },
   title: "Arbitraje en conflictos inmobiliarios en Chile",
   description:
     "Conflictos inmobiliarios en Chile: promesas de compraventa, vicios de construcción, terrenos y disputas entre socios de proyectos.",

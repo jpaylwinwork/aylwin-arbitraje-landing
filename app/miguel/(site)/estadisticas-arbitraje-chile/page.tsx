@@ -5,6 +5,7 @@ import { JsonLd, datasetSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/estadisticas-arbitraje-chile" },
   title: "Estadísticas del arbitraje en Chile: CAM Santiago 2025",
   description:
     "Qué materias concentran el arbitraje en Chile y cuáles son las cuantías reales de las causas, según la Memoria del CAM Santiago.",
