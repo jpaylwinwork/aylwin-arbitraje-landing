@@ -60,30 +60,31 @@ Mientras no haya ninguna entrada publicada, `/boletin` va `noindex`, queda fuera
 del sitemap y no aparece en el menú. Los tres se activan solos con la primera
 entrada.
 
-## Publicación programada, una por semana
+## Las dieciséis entradas de construcción y obra pública
 
-Las dieciséis entradas convertidas desde `CONTENIDO/postparaelsitio` salen **a
-razón de una por semana, los lunes**, desde el 24-08-2026 hasta el 07-12-2026.
-MAF confirmó las citas de fallos y dictámenes el 24-08-2026.
+Convertidas desde `CONTENIDO/postparaelsitio`. MAF confirmó las citas de
+fallos y dictámenes antes de publicarlas.
 
-No hay nada que hacer cada semana. El mecanismo es:
+Se publicaron **todas juntas el 26-08-2026**, por decisión de VAF. El plan
+anterior era una por semana hasta diciembre; se descartó. Todas llevan esa
+fecha, así que en el listado aparecen juntas y su orden relativo lo decide el
+nombre de archivo, no un criterio editorial.
 
-1. Cada entrada trae su fecha de publicación en `date`.
-2. `estaPublicada()` en `lib/boletin-miguel.ts` oculta las de fecha futura,
-   comparando contra la fecha de hoy **en Santiago** (no en UTC: si no, una
-   entrada aparecería de madrugada el día anterior).
-3. Como el sitio es estático, esa comparación solo se evalúa al construir. El
-   workflow `.github/workflows/publicar-monitor.yml` corre los lunes a las
-   08:00 de Santiago, comprueba si alguna entrada estrena ese día y, solo en
-   ese caso, fuerza un despliegue.
+## Publicación programada (el mecanismo sigue disponible)
 
-Después del 07-12-2026 el workflow deja de hacer nada solo, porque ya no
-encuentra fechas que estrenen. Para reanudar basta agregar entradas nuevas con
-fecha futura.
+Aunque hoy no haya nada en cola, la maquinaria de publicación diferida sigue
+montada y sirve para entradas futuras:
+
+1. Una entrada con `date` futura existe en disco pero no en el sitio.
+2. `estaPublicada()` en `lib/boletin-miguel.ts` la oculta, comparando contra
+   la fecha de hoy **en Santiago** (no en UTC: si no, aparecería de madrugada
+   el día anterior).
+3. Como el sitio es estático, esa comparación solo corre al construir. El
+   workflow `.github/workflows/publicar-monitor.yml` se ejecuta los lunes,
+   comprueba si alguna entrada estrena ese día y solo entonces despliega.
+
+Sin fechas futuras en la carpeta, ese workflow corre y no hace nada, que es lo
+correcto. Para volver a programar basta poner una fecha futura.
 
 `dynamicParams` está en `false` en la página de entrada: una entrada aún no
 publicada devuelve 404 aunque alguien acierte la URL.
-
-Para adelantar o atrasar una entrada, se cambia su `date`. Para publicar fuera
-de calendario, se lanza el workflow a mano desde la pestaña Actions
-(`workflow_dispatch`).

@@ -1,7 +1,7 @@
 ---
 title: "No pague la multa por atraso si el atraso no fue suyo"
 description: "Contraloría descarta la multa cuando el contratista estuvo impedido de ejecutar por causa del mandante, y descuenta del cómputo los días de recepción y de subsanación de observaciones menores."
-date: "2026-11-23"
+date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "Contraloría General de la República, dictamen N° 47.594 de 2013, sobre el contrato de Constructora Nogal Ltda. para el Retén de Carabineros de Angostura"
 draft: false

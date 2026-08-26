@@ -1,7 +1,7 @@
 ---
 title: "Si la adjudicación se demora más de 60 días, el precio de su oferta se puede actualizar"
 description: "Contraloría reitera que la demora atribuible a la Administración obliga a reajustar el valor de la oferta antes de firmar, aunque el contrato sea no reajustable."
-date: "2026-12-07"
+date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "Contraloría General de la República, dictamen N° 37.397 de 2017 (Palacio Pereira, Consorcio Cosal-Kalam SpA) y dictamen N° E64061 de 2020 (Constructora GHG S.A.)"
 draft: false

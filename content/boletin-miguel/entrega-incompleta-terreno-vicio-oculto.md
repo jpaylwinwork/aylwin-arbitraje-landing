@@ -1,7 +1,7 @@
 ---
 title: "Entrega incompleta del terreno: la Corte Suprema lo trata como vicio oculto y el mandante responde"
 description: "Un municipio licitó una obra sin advertir que seguiría ocupando parte de las dependencias. La Corte aplicó el artículo 2003 N°2 del Código Civil y lo hizo pagar el mayor precio, aunque el contrato era a suma alzada."
-date: "2026-09-07"
+date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Empresa Constructora Santa Elena Limitada con Municipalidad de Buin», rol 63273-2021, sentencia de 9 de mayo de 2022"
 draft: false
