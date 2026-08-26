@@ -18,3 +18,20 @@ export const MIGUEL_HOSTS = new Set([
 export function esHostDeMiguel(host: string): boolean {
   return MIGUEL_HOSTS.has(host.split(":")[0].toLowerCase());
 }
+
+// Origen público del sitio: el que se declara en canonical, sitemap, robots y
+// datos estructurados. Estaba repetido en seis archivos; ahora se cambia aquí
+// y en un solo sitio.
+//
+// LA MIGRACIÓN A .cl ESTÁ DECIDIDA, PERO NO SE ACTIVA AQUÍ TODAVÍA.
+//
+// Hoy Cloudflare redirige todo el .cl a la PORTADA del .com descartando la
+// ruta: www.miguelaylwin.cl/quien-soy termina en www.miguelaylwin.com/, no en
+// /quien-soy. Comprobado. Mientras eso siga así, apuntar esta constante al
+// .cl haría que cada página declarase como canónica una URL que acaba en la
+// portada, y Google puede colapsar el sitio entero a una sola página.
+//
+// Se cambia a "https://www.miguelaylwin.cl" cuando, y solo cuando:
+//   1. Vercel sirva www.miguelaylwin.cl (dominio de producción), y
+//   2. la redirección de Cloudflare esté invertida y conserve la ruta.
+export const SITIO_MIGUEL = "https://miguelaylwin.com";

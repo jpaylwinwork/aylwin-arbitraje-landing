@@ -5,11 +5,12 @@ import { notFound } from "next/navigation";
 import { getEntrada, getEntradas, formatearFecha, estaPublicada } from "@/lib/boletin-miguel";
 import { JsonLd, articleSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
+import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
 
 const MIGUEL_AUTHOR = {
   "@type": "Person" as const,
   name: "Miguel Aylwin Fernández",
-  url: "https://miguelaylwin.com/quien-soy",
+  url: `${SITIO_MIGUEL}/quien-soy`,
 };
 
 export function generateStaticParams() {
@@ -60,7 +61,7 @@ export default async function EntradaBoletinPage({
     description: entrada.description,
     datePublished: entrada.date,
     slug: `boletin/${entrada.slug}`,
-    baseUrl: "https://miguelaylwin.com",
+    baseUrl: SITIO_MIGUEL,
     author: MIGUEL_AUTHOR,
   });
 

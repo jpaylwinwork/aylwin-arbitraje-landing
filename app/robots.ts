@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { headers } from "next/headers";
 
-import { esHostDeMiguel } from "@/lib/hosts-miguel";
+import { esHostDeMiguel, SITIO_MIGUEL } from "@/lib/hosts-miguel";
 
 export default async function robots(): Promise<MetadataRoute.Robots> {
   const host = ((await headers()).get("host") ?? "").split(":")[0];
@@ -9,7 +9,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   if (esHostDeMiguel(host)) {
     return {
       rules: { userAgent: "*", allow: "/", disallow: ["/consulta", "/consulta/gracias"] },
-      sitemap: "https://miguelaylwin.com/sitemap.xml",
+      sitemap: `${SITIO_MIGUEL}/sitemap.xml`,
     };
   }
 

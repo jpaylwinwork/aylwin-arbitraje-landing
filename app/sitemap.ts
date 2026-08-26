@@ -5,8 +5,8 @@ import { getSateliteSlugs } from "@/lib/satelites-miguel";
 import { getEntradas } from "@/lib/boletin-miguel";
 
 const FIRM_BASE_URL = "https://aylwin-arbitraje-landing.vercel.app";
-const MIGUEL_BASE_URL = "https://miguelaylwin.com";
-import { esHostDeMiguel } from "@/lib/hosts-miguel";
+
+import { esHostDeMiguel, SITIO_MIGUEL as MIGUEL_BASE_URL } from "@/lib/hosts-miguel";
 
 const MIGUEL_STATIC_PAGES = [
   "",
