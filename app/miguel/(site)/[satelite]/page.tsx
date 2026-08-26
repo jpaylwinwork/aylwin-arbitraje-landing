@@ -4,11 +4,12 @@ import { notFound } from "next/navigation";
 import { getSatelite, getSateliteSlugs } from "@/lib/satelites-miguel";
 import { JsonLd, articleSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
+import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
 
 const MIGUEL_AUTHOR = {
   "@type": "Person" as const,
   name: "Miguel Aylwin Fernández",
-  url: "https://miguelaylwin.com/quien-soy",
+  url: `${SITIO_MIGUEL}/quien-soy`,
 };
 
 export function generateStaticParams() {
@@ -44,7 +45,7 @@ export default async function SatelitePage({
     description: data.metaDescription,
     datePublished: "2026-01-01",
     slug: data.slug,
-    baseUrl: "https://miguelaylwin.com",
+    baseUrl: SITIO_MIGUEL,
     author: MIGUEL_AUTHOR,
   });
 

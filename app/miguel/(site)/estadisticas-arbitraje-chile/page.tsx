@@ -3,6 +3,7 @@ import GraficoCuantias from "@/components/miguel/GraficoCuantias";
 import Link from "next/link";
 import { JsonLd, datasetSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
+import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/estadisticas-arbitraje-chile" },
@@ -15,7 +16,7 @@ const schema = datasetSchema({
   name: "Estadísticas del arbitraje en Chile 2025 (CAM Santiago)",
   description:
     "Materias, cuantías, tipos de árbitro y resultados de las 489 solicitudes de arbitraje ingresadas al CAM Santiago en 2025.",
-  url: "https://miguelaylwin.com/estadisticas-arbitraje-chile",
+  url: `${SITIO_MIGUEL}/estadisticas-arbitraje-chile`,
 });
 
 export default function Estadisticas() {

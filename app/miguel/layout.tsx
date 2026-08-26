@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Source_Serif_4 } from "next/font/google";
 import "./miguel.css";
 import MiguelAnalytics from "@/components/miguel/MiguelAnalytics";
+import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
 import MiguelGtm from "@/components/miguel/MiguelGtm";
 
 const sourceSerif = Source_Serif_4({
@@ -18,7 +19,7 @@ const sourceSerif = Source_Serif_4({
 // metadataBase es imprescindible: sin él Next no puede convertir la ruta
 // relativa de la imagen en la URL absoluta que exigen las redes sociales.
 export const metadata: Metadata = {
-  metadataBase: new URL("https://miguelaylwin.com"),
+  metadataBase: new URL(SITIO_MIGUEL),
   openGraph: {
     type: "website",
     locale: "es_CL",
