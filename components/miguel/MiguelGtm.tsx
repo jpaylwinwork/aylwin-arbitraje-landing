@@ -14,7 +14,7 @@ import { useEffect } from "react";
 // Google Ads, que se administran sin tocar código.
 const GTM_ID = "GTM-WBBB8VSD";
 
-const MIGUEL_HOSTS = new Set(["miguelaylwin.com", "www.miguelaylwin.com"]);
+import { esHostDeMiguel } from "@/lib/hosts-miguel";
 
 // Se carga en cliente y no como <script> en el <head> del layout por la misma
 // razón documentada en GtmLoader: leer el Host en un Server Component obliga a
@@ -23,7 +23,7 @@ const MIGUEL_HOSTS = new Set(["miguelaylwin.com", "www.miguelaylwin.com"]);
 export default function MiguelGtm() {
   useEffect(() => {
     if (!GTM_ID) return;
-    if (!MIGUEL_HOSTS.has(window.location.hostname)) return;
+    if (!esHostDeMiguel(window.location.hostname)) return;
 
     const w = window as typeof window & { dataLayer?: Record<string, unknown>[] };
     w.dataLayer = w.dataLayer || [];

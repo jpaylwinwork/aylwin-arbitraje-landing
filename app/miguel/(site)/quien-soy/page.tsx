@@ -5,6 +5,7 @@ import { JsonLd, personSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/quien-soy" },
   title: "Miguel Aylwin Fernández — Abogado de arbitraje",
   description:
     "Abogado en conflictos de contratos inmobiliarios, de construcción e infraestructura, en arbitraje y en sede judicial. Socio de Aylwin Matta.",

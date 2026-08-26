@@ -3,6 +3,7 @@ import { JsonLd, faqPageSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/preguntas-frecuentes" },
   title: "Arbitraje de construcción: preguntas frecuentes",
   description:
     "Respuestas directas sobre arbitraje en construcción e inmobiliario: cláusula arbitral, costos, tipos de árbitro y plazos.",

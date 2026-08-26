@@ -6,6 +6,7 @@ import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 assertTransversalLinking();
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/arbitraje-construccion-chile" },
   title: "Arbitraje en contratos de construcción en Chile",
   description:
     "Cómo funciona el arbitraje en contratos de construcción en Chile: cláusula arbitral, tipos de árbitro, plazos y costos.",

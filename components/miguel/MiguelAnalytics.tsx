@@ -16,7 +16,7 @@ import { useEffect } from "react";
 // desplegarse antes de que exista la propiedad.
 const GA4_ID = "G-BWZSM4YQP1";
 
-const MIGUEL_HOSTS = new Set(["miguelaylwin.com", "www.miguelaylwin.com"]);
+import { esHostDeMiguel } from "@/lib/hosts-miguel";
 
 export default function MiguelAnalytics() {
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function MiguelAnalytics() {
     // Doble resguardo: el componente solo se monta bajo /miguel, pero esas
     // rutas también son alcanzables desde el dominio del estudio, y ahí no
     // debe medir esta propiedad.
-    if (!MIGUEL_HOSTS.has(window.location.hostname)) return;
+    if (!esHostDeMiguel(window.location.hostname)) return;
 
     const w = window as typeof window & {
       dataLayer?: unknown[];

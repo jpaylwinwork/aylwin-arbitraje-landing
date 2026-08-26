@@ -3,6 +3,7 @@ import Link from "next/link";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/como-trabajo" },
   title: "Cómo trabajo: tres vías según el tamaño del conflicto",
   description:
     "Tres modalidades de trabajo según el tamaño y la urgencia del conflicto: vía acotada, vía completa y vía de urgencia para arbitraje de emergencia.",

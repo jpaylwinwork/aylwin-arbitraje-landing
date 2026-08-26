@@ -5,6 +5,7 @@ import { getEntradas, formatearFecha } from "@/lib/boletin-miguel";
 const entradas = getEntradas();
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/boletin" },
   title: "Monitor Jurisprudencial",
   description:
     "Jurisprudencia relevante, cambios normativos y publicaciones en arbitraje inmobiliario y de construcción en Chile.",

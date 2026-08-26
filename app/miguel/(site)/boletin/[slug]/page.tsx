@@ -31,6 +31,7 @@ export async function generateMetadata({
   const e = getEntrada(slug);
   if (!e) return {};
   return {
+    alternates: { canonical: `/boletin/${slug}` },
     title: e.title,
     description: e.description,
     openGraph: {

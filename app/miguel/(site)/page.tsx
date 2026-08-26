@@ -4,6 +4,7 @@ import MiguelBoletinDestacado from "@/components/miguel/MiguelBoletinDestacado";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/" },
   title: "Arbitraje inmobiliario y de construcción en Chile",
   description:
     "Cómo se resuelven en Chile los conflictos de contratos inmobiliarios y de construcción: arbitraje, cláusulas, cuantías y costos reales.",
