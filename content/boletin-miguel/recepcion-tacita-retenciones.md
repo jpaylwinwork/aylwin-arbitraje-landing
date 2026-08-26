@@ -1,7 +1,7 @@
 ---
 title: "Poner la obra a disposición del público equivale a recepción: qué pasa con las retenciones"
 description: "La Corte Suprema resolvió que si el mandante abre la obra al uso, hay recepción tácita, y las retenciones de los estados de pago quedan sin objeto. En el mismo fallo descartó que la suma alzada haga invariable el precio."
-date: "2026-10-12"
+date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Constructora Pehuenche con Municipalidad de Macul y Gobierno Regional Metropolitano de Santiago», rol 8040-2018, sentencia de 19 de agosto de 2019"
 draft: false

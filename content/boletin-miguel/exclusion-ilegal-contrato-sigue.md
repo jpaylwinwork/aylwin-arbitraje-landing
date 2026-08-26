@@ -1,7 +1,7 @@
 ---
 title: "Lo declararon ilegalmente excluido de la licitación y el contrato siguió adelante igual"
 description: "La Corte confirmó que la exclusión fue ilegal, pero mantuvo el contrato con el tercero adjudicatario. Al excluido le quedó la indemnización. La lección no es de fondo, es de oportunidad."
-date: "2026-10-26"
+date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.A. de Santiago, Séptima Sala, «Asesorías Smartagro Limitada con Instituto de Desarrollo Agropecuario», rol 313-2026, sentencia de 4 de agosto de 2026 (en el Tribunal de Contratación Pública, rol 207-2025-A)"
 draft: false
