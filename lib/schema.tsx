@@ -107,3 +107,38 @@ export function JsonLd({ data }: { data: object }) {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
   );
 }
+
+// Ficha profesional de Miguel para su propio sitio. No se reutiliza la del
+// estudio: aquella lleva el teléfono y el correo de la firma, y aquí deben ir
+// los que el sitio publica de verdad.
+//
+// Es además la señal de país más explícita que puede dar el .com. Google dejó
+// de ofrecer la segmentación por país en Search Console en 2022 y hoy deduce
+// la relevancia geográfica del dominio, del contenido y de datos estructurados
+// como este: dirección en Chile y areaServed Chile.
+export function abogadoMiguelSchema(input: { url: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Attorney",
+    name: "Miguel Aylwin Fernández",
+    description:
+      "Abogado dedicado a arbitraje inmobiliario y de construcción en Chile.",
+    url: input.url,
+    areaServed: { "@type": "Country", name: "Chile" },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Av. Apoquindo 3910, Piso 3",
+      addressLocality: "Las Condes",
+      addressRegion: "Región Metropolitana",
+      addressCountry: "CL",
+    },
+    telephone: "+56969080084",
+    email: "mp@aylwin.cl",
+    knowsLanguage: "es-CL",
+    parentOrganization: {
+      "@type": "Organization",
+      name: "Aylwin Matta Abogados",
+      url: "https://aylwin.cl",
+    },
+  };
+}
