@@ -13,8 +13,29 @@ function isPassthrough(pathname: string) {
   return PASSTHROUGH_PREFIXES.some((p) => pathname === p || pathname.startsWith(`${p}/`) || pathname.startsWith(p));
 }
 
+// Dominio real de la visita.
+//
+// Cuando Cloudflare sirve www.miguelaylwin.cl no puede pasar ese Host a
+// Vercel: Vercel enruta por Host y devuelve 404 ante uno que no tiene
+// registrado. Así que Cloudflare reescribe Host al dominio de Vercel y manda
+// el original en X-Original-Host. Sin leer esa cabecera, una visita al .cl
+// llegaría aquí como si fuera del estudio y recibiría el sitio equivocado.
+//
+// Solo se acepta si el valor es uno de los dominios de Miguel que ya
+// conocemos. Es una cabecera que cualquiera puede enviar, y lo único que
+// puede conseguir quien la falsifique es ver el sitio de Miguel —que es
+// público— desde otra dirección. En particular NO abre el panel: /dashboard
+// no está en la lista de rutas exentas, así que con un host de Miguel
+// falsificado se reescribe a /miguel/dashboard, que no existe, y termina en
+// 404 sin llegar nunca a la comprobación de contraseña.
+function dominioDeLaVisita(request: NextRequest): string {
+  const declarado = (request.headers.get("x-original-host") ?? "").split(":")[0].toLowerCase();
+  if (declarado && esHostDeMiguel(declarado)) return declarado;
+  return (request.headers.get("host") ?? "").split(":")[0];
+}
+
 export function proxy(request: NextRequest) {
-  const host = (request.headers.get("host") ?? "").split(":")[0];
+  const host = dominioDeLaVisita(request);
   const { pathname } = request.nextUrl;
 
   // Host-based routing: miguelaylwin.com transparently serves app/miguel/*
