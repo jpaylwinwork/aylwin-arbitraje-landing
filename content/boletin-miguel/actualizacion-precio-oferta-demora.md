@@ -4,6 +4,8 @@ description: "Contraloría reitera que la demora atribuible a la Administración
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "Contraloría General de la República, dictamen N° 37.397 de 2017 (Palacio Pereira, Consorcio Cosal-Kalam SpA) y dictamen N° E64061 de 2020 (Constructora GHG S.A.)"
+pilares: ["construccion"]
+relacionados: ["cuanto-cuesta-arbitraje-chile"]
 draft: false
 ---
 

@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import type { Pilar } from "./satelites-miguel";
 
 // Boletín de miguelaylwin.com: novedades legislativas y jurisprudenciales en
 // arbitraje. Misma mecánica que lib/recursos.ts y lib/satelites-miguel.ts —
@@ -25,6 +26,12 @@ export type EntradaBoletin = {
   categoria: CategoriaBoletin;
   fuente: string;
   fuenteUrl?: string;
+  // Pilar al que pertenece y satélites que desarrollan el tema de fondo.
+  // Las entradas nacieron sin enlaces internos: diecinueve páginas que no
+  // repartían nada al resto del sitio, y un lector que terminaba una nota no
+  // tenía adónde seguir salvo volver al listado.
+  pilares: Pilar[];
+  relacionados: string[];
   imagen?: string;
   imagenAlt?: string;
   imagenCredito?: string;
@@ -70,6 +77,8 @@ export function getEntrada(slug: string): EntradaBoletin | null {
     categoria: (data.categoria as CategoriaBoletin) ?? "Institucional",
     fuente,
     fuenteUrl: typeof data.fuenteUrl === "string" ? data.fuenteUrl : undefined,
+    pilares: Array.isArray(data.pilares) ? (data.pilares as Pilar[]) : [],
+    relacionados: Array.isArray(data.relacionados) ? (data.relacionados as string[]) : [],
     imagen: typeof data.imagen === "string" ? data.imagen : undefined,
     imagenAlt: typeof data.imagenAlt === "string" ? data.imagenAlt : undefined,
     imagenCredito: typeof data.imagenCredito === "string" ? data.imagenCredito : undefined,

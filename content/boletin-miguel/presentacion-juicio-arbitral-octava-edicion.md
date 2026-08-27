@@ -8,6 +8,8 @@ fuenteUrl: "https://www.ccs.cl/camsantiago/el-juicio-arbitral-2026/"
 imagen: "/miguel/presentacion-juicio-arbitral-cam.jpg"
 imagenAlt: "Miguel Aylwin Fernández durante la presentación de «El Juicio Arbitral» en el CAM Santiago"
 imagenCredito: "Miguel Aylwin Fernández en la presentación de las obras, en las dependencias del CAM Santiago. Fotografía: CAM Santiago."
+pilares: ["inmobiliario", "construccion"]
+relacionados: ["arbitro-derecho-arbitrador-mixto", "cuanto-cuesta-arbitraje-chile"]
 draft: false
 ---
 

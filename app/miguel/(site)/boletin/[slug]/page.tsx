@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { getEntrada, getEntradas, formatearFecha, estaPublicada } from "@/lib/boletin-miguel";
 import { JsonLd, articleSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
+import MiguelRelacionados, { type EnlaceRelacionado } from "@/components/miguel/MiguelRelacionados";
+import { getSatelite } from "@/lib/satelites-miguel";
 import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
 
 const MIGUEL_AUTHOR = {
@@ -56,6 +58,24 @@ export default async function EntradaBoletinPage({
   const entrada = getEntrada(slug);
   if (!entrada || !estaPublicada(entrada)) notFound();
 
+  // El satélite explica el tema de fondo; esta nota trae el fallo. Se enlaza
+  // el pilar primero y después los satélites, de lo general a lo concreto.
+  const relacionados: EnlaceRelacionado[] = [
+    ...entrada.pilares.map((p) => ({
+      href: p === "construccion" ? "/arbitraje-construccion-chile" : "/arbitraje-inmobiliario-chile",
+      label:
+        p === "construccion"
+          ? "Arbitraje en contratos de construcción"
+          : "Arbitraje en conflictos inmobiliarios",
+    })),
+    ...entrada.relacionados
+      .map((slug) => {
+        const sat = getSatelite(slug);
+        return sat ? { href: `/${slug}`, label: sat.title } : null;
+      })
+      .filter((e): e is EnlaceRelacionado => e !== null),
+  ];
+
   const schema = articleSchema({
     headline: entrada.title,
     description: entrada.description,
@@ -104,6 +124,8 @@ export default async function EntradaBoletinPage({
           entrada.fuente
         )}
       </p>
+
+      <MiguelRelacionados titulo="Sobre este tema" enlaces={relacionados} />
 
       <p style={{ marginTop: "2.5rem" }}>
         <Link href="/boletin">← Volver al Monitor Jurisprudencial</Link>

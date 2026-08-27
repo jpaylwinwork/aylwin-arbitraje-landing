@@ -4,6 +4,8 @@ description: "La Corte Suprema dejó firme el criterio de que la reserva estampa
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Constructora Internacional S.A. con Fisco de Chile», rol 152953-2022, sentencia de 2 de agosto de 2023"
+pilares: ["construccion"]
+relacionados: ["obras-extraordinarias-mayores-costos"]
 draft: false
 ---
 

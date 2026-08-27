@@ -4,6 +4,8 @@ description: "La Corte Suprema confirma que el reclamo de ilegalidad procede aun
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Inmobiliaria y Constructora Brinker S.A. con Vallejo», rol 29032-2025"
+pilares: ["inmobiliario"]
+relacionados: ["compra-terreno-sujeta-permiso-condicion"]
 draft: false
 ---
 

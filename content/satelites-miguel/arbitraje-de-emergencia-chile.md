@@ -4,6 +4,7 @@ title: "Arbitraje de emergencia: cómo parar el daño en días"
 metaDescription: "Qué es el arbitraje de emergencia del CAM Santiago, qué medidas permite pedir, cuánto demora y por qué la mitad de estas solicitudes son de construcción."
 keyword: "arbitraje de emergencia Chile · medida prejudicial precautoria construcción"
 pilares: ["construccion"]
+jurisprudencia: ["boleta-garantia-primer-requerimiento", "suspension-cautelar-tribunal-contratacion"]
 ---
 
 > **Base normativa (verificada).** Arbitraje de emergencia del CAM Santiago: Art. 21 bis y Título IX (arts. 53-58) del Reglamento de Arbitraje Nacional, vigente desde el 1 de septiembre de 2023.

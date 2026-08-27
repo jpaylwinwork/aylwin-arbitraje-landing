@@ -4,6 +4,7 @@ title: "Obras extraordinarias y mayores costos: cómo se prueban"
 metaDescription: "Cómo se acredita que un trabajo fue extraordinario y no parte del alcance contratado, y qué documentación decide estas controversias."
 keyword: "obras extraordinarias construcción reclamación"
 pilares: ["construccion"]
+jurisprudencia: ["mayores-gastos-generales-aumento-plazo", "reserva-derechos-convenios-ad-referendum"]
 ---
 
 Es la controversia más frecuente en construcción y la que peor se documenta. El contratista sostiene que ejecutó algo que no estaba en el alcance; el mandante, que sí lo estaba. Ambos suelen tener buenos argumentos y documentación mediocre, y gana el que tenga la menos mediocre.

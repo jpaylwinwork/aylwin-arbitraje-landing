@@ -4,6 +4,7 @@ title: "Cláusula arbitral: cómo redactarla y los errores que se pagan caros"
 metaDescription: "Qué debe decir la cláusula arbitral de un contrato de construcción o inmobiliario en Chile y los errores de redacción que se pagan caros."
 keyword: "cláusula arbitral contrato construcción"
 pilares: ["inmobiliario", "construccion"]
+jurisprudencia: ["clausula-renuncia-limite"]
 ---
 
 La cláusula de resolución de controversias es, casi siempre, la última que se negocia y la primera que se lee cuando hay problemas. Se copia de un contrato anterior, se acepta la que trae la contraparte, o se deja como venía en el modelo. Es una de las pocas cláusulas cuyo efecto no se siente nunca —hasta que se siente entero.

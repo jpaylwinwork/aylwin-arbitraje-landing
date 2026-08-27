@@ -4,6 +4,8 @@ description: "Un municipio licitó una obra sin advertir que seguiría ocupando 
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Empresa Constructora Santa Elena Limitada con Municipalidad de Buin», rol 63273-2021, sentencia de 9 de mayo de 2022"
+pilares: ["construccion"]
+relacionados: ["obras-extraordinarias-mayores-costos", "compra-terreno-sujeta-permiso-condicion"]
 draft: false
 ---
 

@@ -4,6 +4,8 @@ description: "La Corte de Apelaciones de Santiago confirmó el rechazo de una su
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.A. de Santiago, «Tecnología Asfáltica S.A. con Ilustre Municipalidad de Ñuñoa», rol 1075-2025, sentencia de 4 de agosto de 2026 (en el Tribunal de Contratación Pública, rol 438-2025-A)"
+pilares: ["construccion"]
+relacionados: ["arbitraje-de-emergencia-chile"]
 draft: false
 ---
 

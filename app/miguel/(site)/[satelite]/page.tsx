@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { getSatelite, getSateliteSlugs } from "@/lib/satelites-miguel";
 import { JsonLd, articleSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
+import MiguelRelacionados, { type EnlaceRelacionado } from "@/components/miguel/MiguelRelacionados";
+import { getEntrada } from "@/lib/boletin-miguel";
 import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
 
 const MIGUEL_AUTHOR = {
@@ -40,6 +42,15 @@ export default async function SatelitePage({
   const data = getSatelite(satelite);
   if (!data) notFound();
 
+  // Fallos del Monitor que desarrollan este mismo tema. Sin esto, la página
+  // corta y la nota extensa competían por la misma búsqueda.
+  const jurisprudencia: EnlaceRelacionado[] = data.jurisprudencia
+    .map((slug) => {
+      const e = getEntrada(slug);
+      return e ? { href: `/boletin/${slug}`, label: e.title } : null;
+    })
+    .filter((e): e is EnlaceRelacionado => e !== null);
+
   const schema = articleSchema({
     headline: data.title,
     description: data.metaDescription,
@@ -66,6 +77,8 @@ export default async function SatelitePage({
         * enlazado era de ida y no de vuelta. Se genera del campo `pilares`, así
         * que los cuatro satélites transversales enlazan a los dos pilares y los
         * que se añadan en el futuro lo heredan sin tener que acordarse. */}
+      <MiguelRelacionados titulo="Jurisprudencia sobre esto" enlaces={jurisprudencia} />
+
       <p className="miguel-volver-pilar">
         {data.pilares.length > 1 ? "Este tema aparece en los dos pilares: " : "Forma parte de: "}
         {data.pilares.map((p, i) => (

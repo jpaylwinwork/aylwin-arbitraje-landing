@@ -4,6 +4,8 @@ description: "La Corte Suprema resolvió que si el mandante abre la obra al uso,
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Constructora Pehuenche con Municipalidad de Macul y Gobierno Regional Metropolitano de Santiago», rol 8040-2018, sentencia de 19 de agosto de 2019"
+pilares: ["construccion"]
+relacionados: ["cobro-estados-de-pago-retenidos"]
 draft: false
 ---
 

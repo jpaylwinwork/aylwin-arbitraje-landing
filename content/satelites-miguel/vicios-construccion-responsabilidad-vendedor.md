@@ -4,6 +4,7 @@ title: "Vicios de construcción: quién responde y por cuánto tiempo"
 metaDescription: "Responsabilidad del vendedor por vicios de construcción, plazos aplicables, y cómo se distribuye la responsabilidad entre inmobiliaria, constructora y proyectistas."
 keyword: "vicios de construcción responsabilidad"
 pilares: ["inmobiliario"]
+jurisprudencia: ["vicios-construccion-prescripcion"]
 ---
 
 Cuando aparece una filtración en un edificio de tres años, la primera pregunta no es técnica sino de reparto: quién responde frente al comprador, y contra quién puede repetir el que respondió. La respuesta rara vez está en un solo contrato.

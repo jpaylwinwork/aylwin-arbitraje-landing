@@ -4,6 +4,7 @@ title: "Estados de pago retenidos: cómo se cobran"
 metaDescription: "Qué hacer cuando el mandante retiene u observa estados de pago en un contrato de construcción: vías de cobro, prueba necesaria y errores frecuentes."
 keyword: "cobro estados de pago construcción"
 pilares: ["construccion"]
+jurisprudencia: ["recepcion-tacita-retenciones", "termino-anticipado-obras-impagas"]
 ---
 
 Un estado de pago retenido no es solo un problema de caja. Es un mensaje. Antes de decidir cómo cobrarlo conviene entender qué está diciendo, porque la retención rara vez es la discusión: suele ser el instrumento con que se está discutiendo otra cosa.
