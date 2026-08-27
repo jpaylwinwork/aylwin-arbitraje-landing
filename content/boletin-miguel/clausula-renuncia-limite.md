@@ -4,6 +4,8 @@ description: "Dos fallos —la Corte Suprema en 2021 y la Corte de Copiapó en 2
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.S., «Consorcio Construcciones Kodama Limitada con Fisco de Chile», rol 76398-2020, sentencia de 16 de agosto de 2021; y C.A. de Copiapó, «Arauco S.A. con Ministerio de Obras Públicas», rol 6-2024, sentencia de 10 de enero de 2025"
+pilares: ["construccion"]
+relacionados: ["obras-extraordinarias-mayores-costos", "clausula-arbitral-contrato-construccion"]
 draft: false
 ---
 

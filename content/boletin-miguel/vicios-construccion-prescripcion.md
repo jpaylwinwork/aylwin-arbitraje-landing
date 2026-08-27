@@ -4,6 +4,8 @@ description: "La Corte Suprema dejó firme una condena solidaria de $50 millones
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.A. de San Miguel, «Los Nogales con Empresa Constructora Ormuz Limitada e Inmobiliaria Nataniel Limitada»; casaciones en el fondo rechazadas por la C.S. el 10 de julio de 2026"
+pilares: ["inmobiliario", "construccion"]
+relacionados: ["vicios-construccion-responsabilidad-vendedor"]
 draft: false
 ---
 

@@ -4,6 +4,7 @@ title: "Compra de terrenos sujeta a permiso: qué pasa si no sale"
 metaDescription: "Condiciones suspensivas en compraventa de terrenos para proyectos inmobiliarios: permisos, factibilidad, due diligence y quién soporta el riesgo."
 keyword: "compraventa terreno condición suspensiva permiso"
 pilares: ["inmobiliario"]
+jurisprudencia: ["reforma-permisos-ley-reconstruccion-nacional", "reclamo-ilegalidad-carta-municipal"]
 ---
 
 Casi ninguna compra de terreno para desarrollo es pura y simple. Se compra sujeto a que salga el permiso, a que la factibilidad sanitaria esté, a que el informe de título no arroje sorpresas. La cláusula que describe esa condición suele ocupar un párrafo y decidir millones.

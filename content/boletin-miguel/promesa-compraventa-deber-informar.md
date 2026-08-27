@@ -4,6 +4,8 @@ description: "La Corte Suprema confirma que la promesa se extiende a todo lo que
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.S., Primera Sala, rol 34305-2025, sentencia de 10 de agosto de 2026"
+pilares: ["inmobiliario"]
+relacionados: ["promesa-compraventa-venta-en-verde-conflictos"]
 draft: false
 ---
 

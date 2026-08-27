@@ -4,6 +4,7 @@ title: "Los primeros 30 días de un conflicto"
 metaDescription: "Qué hacer en las primeras semanas de un conflicto inmobiliario o de construcción para no perder derechos ni deteriorar la posición."
 keyword: "qué hacer conflicto obra construcción"
 pilares: ["inmobiliario", "construccion"]
+jurisprudencia: ["mandato-contrato-a-quien-demandar", "multa-atraso-improcedente"]
 ---
 
 Lo que se hace en las primeras semanas pesa más que casi todo lo que se haga después. No porque haya que actuar rápido —muchas veces conviene no actuar rápido—, sino porque en esas semanas se pierden derechos por omisión y se deteriora la posición por descuido, casi siempre sin que nadie se dé cuenta.

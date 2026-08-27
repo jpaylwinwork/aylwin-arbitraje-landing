@@ -4,6 +4,8 @@ description: "La Corte confirmó que la exclusión fue ilegal, pero mantuvo el c
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.A. de Santiago, Séptima Sala, «Asesorías Smartagro Limitada con Instituto de Desarrollo Agropecuario», rol 313-2026, sentencia de 4 de agosto de 2026 (en el Tribunal de Contratación Pública, rol 207-2025-A)"
+pilares: ["construccion"]
+relacionados: ["primeros-30-dias-conflicto"]
 draft: false
 ---
 

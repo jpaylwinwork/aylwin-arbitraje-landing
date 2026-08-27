@@ -13,6 +13,10 @@ export type Satelite = {
   metaDescription: string;
   keyword: string;
   pilares: Pilar[];
+  // Entradas del Monitor que desarrollan este mismo tema con un fallo
+  // concreto. Sin este enlace, la página corta y la nota extensa competían
+  // por la misma búsqueda sin que nada indicara cuál es cuál.
+  jurisprudencia: string[];
   html: string;
 };
 
@@ -34,6 +38,7 @@ export function getSatelite(slug: string): Satelite | null {
     metaDescription: data.metaDescription ?? "",
     keyword: data.keyword ?? "",
     pilares: (data.pilares ?? []) as Pilar[],
+    jurisprudencia: Array.isArray(data.jurisprudencia) ? (data.jurisprudencia as string[]) : [],
     html: marked.parse(content, { async: false }) as string,
   };
 }

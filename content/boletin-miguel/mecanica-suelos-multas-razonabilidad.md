@@ -4,6 +4,8 @@ description: "Contraloría aplicó el principio de razonabilidad: la informació
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "Contraloría General de la República, oficio OF72769N26, de 15 de abril de 2026, sobre la presentación de Constructora e Ingeniería Ingesep Ltda. ante el Instituto Nacional del Deporte"
+pilares: ["construccion"]
+relacionados: ["obras-extraordinarias-mayores-costos"]
 draft: false
 ---
 

@@ -4,6 +4,8 @@ description: "La Corte de Apelaciones de Santiago confirmó la sanción de la CM
 date: "2026-08-24"
 categoria: Jurisprudencia
 fuente: "C.A. de Santiago, Novena Sala, «AVLA Seguros de Crédito y Garantía S.A. con Comisión para el Mercado Financiero», rol 565-2024, sentencia de 4 de agosto de 2026"
+pilares: ["construccion"]
+relacionados: ["arbitraje-de-emergencia-chile", "primeros-30-dias-conflicto"]
 draft: false
 ---
 

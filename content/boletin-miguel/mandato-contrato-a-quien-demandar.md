@@ -4,6 +4,8 @@ description: "Cinco fallos muestran que la respuesta no es automática: a veces 
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.A. de Valdivia, «Obras y Montajes Vial con Gobierno Regional de Los Lagos y Municipalidad de Osorno», rol 1715-2024, sentencia de 9 de junio de 2025; C.S., «Copasa con Municipalidad de La Serena y otros», rol 218042-2023; C.S., «Besalco con Municipalidad de Viña del Mar y otros», rol 73356-2020; y C.S., «Montajes Eléctricos con Servicio de Salud de Antofagasta», rol 149119-2020"
+pilares: ["construccion"]
+relacionados: ["primeros-30-dias-conflicto"]
 draft: false
 ---
 

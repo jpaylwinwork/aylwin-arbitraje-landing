@@ -869,3 +869,36 @@
   color: var(--miguel-muted);
   text-align: left;
 }
+
+/* --- Bloque de continuidad al pie de una nota ------------------------- */
+.site-miguel .miguel-relacionados {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-relacionados ul {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.site-miguel .miguel-relacionados li {
+  margin: 0;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-relacionados li:last-child {
+  border-bottom: none;
+}
+
+.site-miguel .miguel-relacionados a {
+  font-family: var(--miguel-display);
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
+.site-miguel .miguel-relacionados a:hover {
+  text-decoration: underline;
+}

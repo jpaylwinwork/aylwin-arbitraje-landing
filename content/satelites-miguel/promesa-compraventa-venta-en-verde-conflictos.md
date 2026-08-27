@@ -4,6 +4,7 @@ title: "Promesas de compraventa y ventas en verde: qué pasa cuando se incumplen
 metaDescription: "Incumplimiento del plazo de entrega, resciliación, cláusulas penales y devolución de anticipos en promesas de compraventa de unidades en verde."
 keyword: "incumplimiento promesa de compraventa"
 pilares: ["inmobiliario"]
+jurisprudencia: ["promesa-compraventa-deber-informar"]
 ---
 
 La venta en verde traslada un riesgo que casi nunca se conversa: el comprador paga contra un proyecto que todavía no existe, y la inmobiliaria se obliga a un plazo que depende de variables que no controla del todo. Cuando el plazo se corre, el conflicto no es sobre si hubo retraso —eso es un hecho— sino sobre qué se pactó que pasaría si lo había.

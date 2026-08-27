@@ -4,6 +4,8 @@ description: "La Corte Suprema recordó que la Administración pone término sin
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Constructora Cónsul S.A. con Ministerio de Obras Públicas», rol 2465-2018, sentencia de reemplazo de 26 de agosto de 2019"
+pilares: ["construccion"]
+relacionados: ["cobro-estados-de-pago-retenidos"]
 draft: false
 ---
 

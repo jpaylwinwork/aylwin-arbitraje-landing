@@ -4,6 +4,8 @@ description: "Contraloría descarta la multa cuando el contratista estuvo impedi
 date: "2026-08-26"
 categoria: Jurisprudencia
 fuente: "Contraloría General de la República, dictamen N° 47.594 de 2013, sobre el contrato de Constructora Nogal Ltda. para el Retén de Carabineros de Angostura"
+pilares: ["construccion"]
+relacionados: ["obras-extraordinarias-mayores-costos"]
 draft: false
 ---
 

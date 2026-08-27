@@ -5,6 +5,8 @@ date: "2026-08-06"
 categoria: Legislación
 fuente: "BNamericas, «En medio de impulso a los permisos, gobierno de Kast anticipa récord de US$38.000 millones en proyectos», 3 de agosto de 2026"
 fuenteUrl: "https://www.bnamericas.com/es/reportajes/amid-el-impulso-a-los-permisos-el-gobierno-de-kast-ve-un-record-de-us38000-millones-en-proyectos"
+pilares: ["inmobiliario"]
+relacionados: ["compra-terreno-sujeta-permiso-condicion"]
 draft: false
 ---
 
