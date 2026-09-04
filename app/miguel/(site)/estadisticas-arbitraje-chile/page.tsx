@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import GraficoCuantias from "@/components/miguel/GraficoCuantias";
 import Link from "next/link";
-import { JsonLd, datasetSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
-import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/estadisticas-arbitraje-chile" },
@@ -12,18 +10,10 @@ export const metadata: Metadata = {
     "Qué materias concentran el arbitraje en Chile y cuáles son las cuantías reales de las causas, según la Memoria del CAM Santiago.",
 };
 
-const schema = datasetSchema({
-  name: "Estadísticas del arbitraje en Chile 2025 (CAM Santiago)",
-  description:
-    "Materias, cuantías, tipos de árbitro y resultados de las 489 solicitudes de arbitraje ingresadas al CAM Santiago en 2025.",
-  url: `${SITIO_MIGUEL}/estadisticas-arbitraje-chile`,
-});
-
 export default function Estadisticas() {
   return (
     <>
     <div className="miguel-container miguel-body" style={{ paddingTop: "3rem", paddingBottom: "3rem" }}>
-      <JsonLd data={schema} />
       <div className="miguel-page-title">
         <p className="miguel-label">Datos · CAM Santiago 2025</p>
         <h1 className="miguel-display-title">Cuánto y qué se arbitra en Chile</h1>

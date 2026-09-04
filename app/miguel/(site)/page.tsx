@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import MiguelBoletinDestacado from "@/components/miguel/MiguelBoletinDestacado";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
-import { JsonLd, abogadoMiguelSchema } from "@/lib/schema";
-import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/", languages: { "es-CL": "/" } },
@@ -34,7 +32,6 @@ const RUTAS = [
 export default function MiguelHub() {
   return (
     <>
-      <JsonLd data={abogadoMiguelSchema({ url: SITIO_MIGUEL })} />
       {/* Portada: banda roja a sangre, con el patrón de aylwin.cl */}
       <section className="miguel-hero">
         <div className="miguel-container miguel-wide">
