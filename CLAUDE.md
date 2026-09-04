@@ -66,6 +66,7 @@ npm run build      # SIEMPRE verificar antes de push — nunca pushear build rot
 ```
 
 - Push a `main` → **despliegue automático a producción** en Vercel (~1 min). Para cambios grandes, usar branch + PR (los PRs generan preview deploys).
+- **TODO push llega a producción**: el workflow `auto-deploy-collaborators.yml` mergea a `main` automáticamente cualquier branch pusheado (salvo `recursos/**`). No existen branches ni PRs "en espera" — nunca pushear un cambio que aún no deba desplegarse. (Incidente 2026-09-04: el cambio de dominio canónico a `.cl` se pusheó como PR marcado "no mergear", el workflow lo auto-mergeó y hubo que revertirlo — revert `d84d04e`. Cuando Vercel sirva `www.miguelaylwin.cl` y el `.com` redirija 301 conservando ruta, reaplicar con `git revert d84d04e`.)
 - **No tocar `app/api/lead/route.ts`** sin acuerdo explícito — es el corazón del funnel y está probado end-to-end.
 - No agregar recursos externos (CDNs, fuentes remotas fuera de next/font, scripts de terceros) a las landings de campaña sin discutirlo: afectan velocidad y Quality Score de Ads.
 - Probar el flujo de leads en producción: enviar el formulario con `?gclid=TEST123` en la URL y verificar que llegue la alerta de Telegram con `Ref: gclid:TEST123`.
