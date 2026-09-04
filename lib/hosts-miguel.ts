@@ -4,10 +4,10 @@
 // medición de GA4 o —peor— dejar que el contenedor GTM del estudio se
 // disparara en el sitio de Miguel.
 //
-// Los cuatro dominios siguen aquí aunque el canónico sea el .cl: el .com
-// redirige en Vercel, pero cualquier visita que llegue con ese Host (cachés,
-// enlaces viejos, la redirección apagada por error) debe seguir recibiendo el
-// sitio de Miguel y no el del estudio.
+// miguelaylwin.cl está incluido a propósito aunque hoy no llegue tráfico por
+// ahí: el .cl redirige a .com desde Cloudflare. Tenerlo aquí de antemano hace
+// que el día que se invierta esa redirección el sitio ya sepa responder, en
+// vez de devolver 404 hasta que alguien se acuerde de este archivo.
 export const MIGUEL_HOSTS = new Set([
   "miguelaylwin.com",
   "www.miguelaylwin.com",
@@ -23,11 +23,15 @@ export function esHostDeMiguel(host: string): boolean {
 // datos estructurados. Estaba repetido en seis archivos; ahora se cambia aquí
 // y en un solo sitio.
 //
-// El dominio canónico es el .cl desde que Vercel sirve www.miguelaylwin.cl
-// como dominio de producción y el .com redirige 301 hacia él conservando la
-// ruta. Si alguna vez hay que revertir la migración, basta volver a poner
-// aquí "https://miguelaylwin.com" — pero solo DESPUÉS de revertir también la
-// configuración de dominios en Vercel, o cada página declararía como
-// canónica una URL que redirige y Google puede colapsar el sitio entero a
-// una sola página.
-export const SITIO_MIGUEL = "https://www.miguelaylwin.cl";
+// LA MIGRACIÓN A .cl ESTÁ DECIDIDA, PERO NO SE ACTIVA AQUÍ TODAVÍA.
+//
+// Hoy Cloudflare redirige todo el .cl a la PORTADA del .com descartando la
+// ruta: www.miguelaylwin.cl/quien-soy termina en www.miguelaylwin.com/, no en
+// /quien-soy. Comprobado. Mientras eso siga así, apuntar esta constante al
+// .cl haría que cada página declarase como canónica una URL que acaba en la
+// portada, y Google puede colapsar el sitio entero a una sola página.
+//
+// Se cambia a "https://www.miguelaylwin.cl" cuando, y solo cuando:
+//   1. Vercel sirva www.miguelaylwin.cl (dominio de producción), y
+//   2. la redirección de Cloudflare esté invertida y conserve la ruta.
+export const SITIO_MIGUEL = "https://miguelaylwin.com";
