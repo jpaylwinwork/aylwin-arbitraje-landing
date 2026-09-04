@@ -83,25 +83,6 @@ export function faqPageSchema(items: { pregunta: string; respuesta: string }[]) 
   };
 }
 
-export function datasetSchema(input: {
-  name: string;
-  description: string;
-  url: string;
-  creatorName?: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    name: input.name,
-    description: input.description,
-    url: input.url,
-    creator: { "@type": "Person", name: input.creatorName ?? "Miguel Aylwin Fernández" },
-    isBasedOn: "Reporte Anual CAM Santiago 2025",
-    temporalCoverage: "2025",
-    spatialCoverage: { "@type": "Country", name: "Chile" },
-  };
-}
-
 export function JsonLd({ data }: { data: object }) {
   return (
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
@@ -120,9 +101,9 @@ export function abogadoMiguelSchema(input: { url: string }) {
   return {
     "@context": "https://schema.org",
     "@type": "Attorney",
-    name: "Miguel Aylwin Fernández",
+    name: "Miguel Patricio Aylwin Fernández",
     description:
-      "Abogado dedicado a arbitraje inmobiliario y de construcción en Chile.",
+      "Abogado especialista en litigios civiles complejos, arbitrajes comerciales, disputas en contratos de construcción, infraestructura y recursos naturales en Chile.",
     url: input.url,
     areaServed: { "@type": "Country", name: "Chile" },
     address: {
@@ -135,8 +116,15 @@ export function abogadoMiguelSchema(input: { url: string }) {
     telephone: "+56969080084",
     email: "mp@aylwin.cl",
     knowsLanguage: "es-CL",
-    parentOrganization: {
-      "@type": "Organization",
+    knowsAbout: [
+      "Litigios Civiles y Comerciales",
+      "Arbitraje Comercial (CAM Santiago)",
+      "Contratos de Construcción e Infraestructura",
+      "Derecho Administrativo y Contratación Pública",
+      "Energía y Recursos Naturales",
+    ],
+    memberOf: {
+      "@type": "LegalService",
       name: "Aylwin Matta Abogados",
       url: "https://aylwin.cl",
     },
