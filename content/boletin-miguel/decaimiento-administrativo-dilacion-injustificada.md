@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.A. de Santiago, «Inmobiliaria Parque Cruz de Froward S.A. con Dirección General de Aguas», rol 926-2025, sentencia de 7 de agosto de 2026; y «Hospital Clínico de la Universidad de Chile con Superintendencia de Salud», rol 414-2026, sentencia de 28 de agosto de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion"]
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier empresa con un trámite abierto ante el Estado

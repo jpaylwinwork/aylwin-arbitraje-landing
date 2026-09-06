@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.S., «Inmobiliaria Cumming SpA con Universidad San Sebastián», rol 5.292-2025, sentencia de 3 de agosto de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["promesa-compraventa-venta-en-verde-conflictos", "clausula-arbitral-contrato-construccion"]
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier desarrollador que estructura un negocio en varios documentos
