@@ -5,7 +5,7 @@ import { getSatelite, getSateliteSlugs } from "@/lib/satelites-miguel";
 import { JsonLd, articleSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
 import MiguelRelacionados, { type EnlaceRelacionado } from "@/components/miguel/MiguelRelacionados";
-import { getEntrada } from "@/lib/boletin-miguel";
+import { getEntrada, estaPublicada } from "@/lib/boletin-miguel";
 import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
 
 const MIGUEL_AUTHOR = {
@@ -47,7 +47,9 @@ export default async function SatelitePage({
   const jurisprudencia: EnlaceRelacionado[] = data.jurisprudencia
     .map((slug) => {
       const e = getEntrada(slug);
-      return e ? { href: `/boletin/${slug}`, label: e.title } : null;
+      // Una entrada en borrador existe en disco pero devuelve 404 en el sitio:
+      // enlazarla desde aquí mandaría al lector a una página que no está.
+      return e && estaPublicada(e) ? { href: `/boletin/${slug}`, label: e.title } : null;
     })
     .filter((e): e is EnlaceRelacionado => e !== null);
 
