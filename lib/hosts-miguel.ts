@@ -23,15 +23,10 @@ export function esHostDeMiguel(host: string): boolean {
 // datos estructurados. Estaba repetido en seis archivos; ahora se cambia aquí
 // y en un solo sitio.
 //
-// LA MIGRACIÓN A .cl ESTÁ DECIDIDA, PERO NO SE ACTIVA AQUÍ TODAVÍA.
-//
-// Hoy Cloudflare redirige todo el .cl a la PORTADA del .com descartando la
-// ruta: www.miguelaylwin.cl/quien-soy termina en www.miguelaylwin.com/, no en
-// /quien-soy. Comprobado. Mientras eso siga así, apuntar esta constante al
-// .cl haría que cada página declarase como canónica una URL que acaba en la
-// portada, y Google puede colapsar el sitio entero a una sola página.
-//
-// Se cambia a "https://www.miguelaylwin.cl" cuando, y solo cuando:
-//   1. Vercel sirva www.miguelaylwin.cl (dominio de producción), y
-//   2. la redirección de Cloudflare esté invertida y conserve la ruta.
-export const SITIO_MIGUEL = "https://miguelaylwin.com";
+// Migrado al .cl el 06-09-2026, una vez comprobado que www.miguelaylwin.cl
+// sirve el sitio desde Vercel con certificado válido y que el apex redirige
+// al www conservando la ruta. Antes de eso apuntaba al .com: mientras
+// Cloudflare mandaba todo el .cl a la portada, declarar el .cl como canónico
+// habría hecho que cada página señalara como preferida una URL que acababa
+// en la portada.
+export const SITIO_MIGUEL = "https://www.miguelaylwin.cl";
