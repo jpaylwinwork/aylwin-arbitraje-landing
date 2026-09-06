@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "Tribunal de Contratación Pública, «Peña, Spoerer y Cía S.A. con Ilustre Municipalidad de Colina», rol 20-2025-A, sentencia de 9 de julio de 2026"
 pilares: ["construccion"]
 relacionados: ["primeros-30-dias-conflicto"]
-draft: true
+draft: false
 ---
 
 ## La especificación que usted lee distinto que el evaluador

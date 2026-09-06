@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.A. de Santiago, «Sociedad Inmobiliaria Transtar SpA y otra con Municipalidad de Las Condes», rol 54-2025, sentencia de 6 de agosto de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion"]
-draft: true
+draft: false
 ---
 
 ## El terreno vecino que "debería" servir para lo mismo

@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.S., «Demandante con Astilleros Construbar Limitada», rol 10.227-2025, sentencia de 5 de agosto de 2026, que deja firme el fallo de la C.A. de Concepción"
 pilares: ["construccion"]
 relacionados: ["primeros-30-dias-conflicto", "clausula-arbitral-contrato-construccion"]
-draft: true
+draft: false
 ---
 
 ## El encargo que se maneja a punta de confianza y una factura

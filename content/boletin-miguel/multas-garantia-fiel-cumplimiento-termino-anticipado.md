@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.A. de San Miguel, reclamo de ilegalidad rol 80-2025, acumulado al rol 2-2026 (Contencioso Administrativo), sentencia de 18 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["cobro-estados-de-pago-retenidos", "obras-extraordinarias-mayores-costos"]
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier contratista de obra pública
