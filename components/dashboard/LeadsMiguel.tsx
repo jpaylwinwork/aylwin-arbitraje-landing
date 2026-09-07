@@ -1,4 +1,5 @@
 import type { LeadMiguel } from "@/lib/dashboard";
+import { SITIO_MIGUEL_NOMBRE } from "@/lib/hosts-miguel";
 
 // Tabla de consultas entradas por miguelaylwin.com. Hasta ahora estas
 // consultas solo existían en Telegram: el dashboard leía únicamente la tabla
@@ -20,7 +21,7 @@ export default function LeadsMiguel({ leads }: { leads: LeadMiguel[] }) {
   if (leads.length === 0) {
     return (
       <p className="text-sm text-muted">
-        Sin consultas de miguelaylwin.com en este período.
+        {`Sin consultas de ${SITIO_MIGUEL_NOMBRE} en este período.`}
       </p>
     );
   }

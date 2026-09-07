@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getSatelitesByPilar, assertTransversalLinking } from "@/lib/satelites-miguel";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
+import { getEntradasPorPilar } from "@/lib/boletin-miguel";
 
 assertTransversalLinking();
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 
 export default function PilarInmobiliario() {
   const satelites = getSatelitesByPilar("inmobiliario");
+  const entradas = getEntradasPorPilar("inmobiliario");
 
   return (
     <>
@@ -124,6 +126,27 @@ export default function PilarInmobiliario() {
           </li>
         ))}
       </ul>
+
+      {/* Fallos del Monitor de esta materia. Sin esto, veinticinco sentencias
+        * colgaban solo del listado del Monitor: el mejor contenido del sitio,
+        * enlazado desde una única página y sin conexión con el pilar que
+        * concentra la autoridad. */}
+      {entradas.length > 0 ? (
+        <>
+          <h2 style={{ marginTop: "2.5rem" }}>Qué han resuelto los tribunales</h2>
+          <p>
+            Fallos y dictámenes recientes sobre esta materia, con la fuente
+            identificada en cada uno.
+          </p>
+          <ul>
+            {entradas.map((e) => (
+              <li key={e.slug}>
+                <Link href={`/boletin/${e.slug}`}>{e.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
     </div>
       <MiguelCierreCta />
     </>
