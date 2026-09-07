@@ -117,7 +117,7 @@ async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
   const html = `
     <div style="font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.6;color:#1a1a1a;max-width:640px">
       <p style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a8000d;margin:0 0 4px">
-        miguelaylwin.com${prioridad ? ` · ${escaparHtml(prioridad)}` : ""}
+        ${SITIO_MIGUEL_NOMBRE}${prioridad ? ` · ${escaparHtml(prioridad)}` : ""}
       </p>
       <h2 style="font-size:20px;margin:0 0 16px">Nueva consulta</h2>
       ${
