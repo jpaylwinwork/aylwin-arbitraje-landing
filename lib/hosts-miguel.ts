@@ -30,3 +30,8 @@ export function esHostDeMiguel(host: string): boolean {
 // habría hecho que cada página señalara como preferida una URL que acababa
 // en la portada.
 export const SITIO_MIGUEL = "https://www.miguelaylwin.cl";
+
+// Nombre del sitio tal como se muestra a una persona: en el remitente de los
+// avisos de consultas y en el panel. Va aparte de SITIO_MIGUEL porque ahí es
+// texto, no URL, y quedaba con el dominio antiguo tras la migración.
+export const SITIO_MIGUEL_NOMBRE = "miguelaylwin.cl";

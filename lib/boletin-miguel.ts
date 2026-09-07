@@ -128,3 +128,10 @@ export function formatearFecha(iso: string): string {
   if (Number.isNaN(d.getTime())) return texto;
   return d.toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" });
 }
+
+// Entradas del Monitor de un pilar. Las páginas pilar listaban sus satélites
+// pero no las sentencias, que colgaban solo del listado del Monitor: el mejor
+// contenido del sitio, enlazado desde una sola página.
+export function getEntradasPorPilar(pilar: Pilar): EntradaBoletin[] {
+  return getEntradas().filter((e) => e.pilares.includes(pilar));
+}

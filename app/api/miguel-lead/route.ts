@@ -2,6 +2,7 @@ import { neon } from "@neondatabase/serverless";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { priorityFromLead, tierFromCuantia } from "@/lib/leads-miguel";
+import { SITIO_MIGUEL_NOMBRE } from "@/lib/hosts-miguel";
 
 const CREATE_TABLE = `
   CREATE TABLE IF NOT EXISTS leads_miguelaylwin (
@@ -80,7 +81,7 @@ async function sendEmailAlert(lead: Lead, stored: boolean): Promise<boolean> {
   if (!smtpUser || !smtpPass || !destino) return false;
   // Nombre para mostrar fijo en vez de env var: evita depender de un valor
   // "Nombre <correo>" con `<`/`>`, que el dashboard de Vercel guarda vacío al pegar.
-  const remitente = `"Avisos miguelaylwin.com" <${smtpUser}>`;
+  const remitente = `"Avisos ${SITIO_MIGUEL_NOMBRE}" <${smtpUser}>`;
 
   const tier = tierFromCuantia(lead.cuantia_tramo);
   const prioridad =

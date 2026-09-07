@@ -5,6 +5,7 @@ import TrafficFunnel from "@/components/dashboard/TrafficFunnel";
 import LeadsMiguel from "@/components/dashboard/LeadsMiguel";
 import { getCommercialFunnel, getLeadsTable, getLeadsMiguel, type Range } from "@/lib/dashboard";
 import { getTrafficFunnel } from "@/lib/ga4";
+import { SITIO_MIGUEL_NOMBRE } from "@/lib/hosts-miguel";
 
 export const dynamic = "force-dynamic";
 
@@ -103,7 +104,7 @@ export default async function DashboardPage(props: PageProps<"/dashboard">) {
         <p className="mt-3 text-xs text-muted">Mostrando hasta 200 leads más recientes del período.</p>
 
         <section className="mt-12">
-          <h2 className="font-serif text-xl font-semibold">Consultas de miguelaylwin.com</h2>
+          <h2 className="font-serif text-xl font-semibold">{`Consultas de ${SITIO_MIGUEL_NOMBRE}`}</h2>
           <p className="mt-1 mb-4 text-xs text-muted">
             Embudo separado, con sus propios campos de calificación. Ordenadas por prioridad y
             luego por fecha.
