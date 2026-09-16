@@ -4,6 +4,7 @@ title: "Árbitro de derecho, arbitrador o mixto: cuál conviene"
 metaDescription: "Diferencias prácticas entre árbitro de derecho, arbitrador y mixto en Chile, y qué se gana y se pierde con cada uno."
 keyword: "árbitro mixto Chile"
 pilares: ["inmobiliario", "construccion"]
+jurisprudencia: ["arbitro-mixto-arbitrador-apelacion", "clausula-penal-5190-uf-inmobiliaria", "extension-plazo-epc-planta-solar"]
 ---
 
 La diferencia entre los tres tipos de árbitro se explica en cualquier manual. Lo que no se explica es qué significa cada una en un conflicto donde el punto discutido es si un rendimiento de excavación era alcanzable con la maquinaria comprometida.
