@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.A. de Santiago, «Grupo Industrial & Asociados LATAM S.A. con Solek Chile Services SpA», rol 9.385-2025 (arbitraje CAM Santiago rol A-5303-2022), sentencia de 17 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["clausula-arbitral-contrato-construccion", "obras-extraordinarias-mayores-costos"]
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier contratista de un proyecto EPC

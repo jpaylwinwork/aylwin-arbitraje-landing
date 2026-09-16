@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "Contraloría General de la República, dictamen N° OF172526N26, de 2026, sobre las bases de licitación de un servicio del Fondo Nacional de Salud (FONASA)"
 pilares: ["construccion"]
 relacionados: ["primeros-30-dias-conflicto"]
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier empresa que oferta en licitaciones públicas

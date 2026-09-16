@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "Contraloría General de la República, dictamen N° OF172520N26, de 2026, sobre la contratación por trato directo de la asesoría a la inspección fiscal de la Concesión Planta Desaladora de Coquimbo"
 pilares: ["construccion"]
 relacionados: ["dispute-boards-chile"]
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier empresa que presta servicios a una concesión de obra pública
