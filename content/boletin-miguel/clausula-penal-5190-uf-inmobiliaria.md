@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.S., «Inmobiliaria A&S Dos SpA con Inmobiliaria Hub Tres SpA», rol 20.786-2024 y acumulados, sentencia de 17 de agosto de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["arbitro-derecho-arbitrador-mixto", "promesa-compraventa-venta-en-verde-conflictos"]
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier inmobiliaria que pacta una cláusula penal

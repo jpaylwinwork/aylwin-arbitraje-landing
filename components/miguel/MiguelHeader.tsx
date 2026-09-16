@@ -31,10 +31,10 @@ export default function MiguelHeader() {
           ))}
           {/* El Monitor Jurisprudencial solo entra al menú cuando tiene al menos
            * una entrada publicada: un enlace a una sección vacía resta más de lo
-           * que suma. En el menú va abreviado a "Monitor": el nombre completo
-           * mide 241 px y, con los otros seis enlaces, desborda la cabecera en
-           * pantallas de 1280. El título completo vive en la página. */}
-          {hayBoletin() ? <Link href="/boletin">Monitor</Link> : null}
+           * que suma. Va con su nombre completo: abreviado a "Monitor" no se
+           * entendía qué había detrás. El espaciado del menú está ajustado en
+           * miguel.css para que el nombre completo quepa en una sola fila. */}
+          {hayBoletin() ? <Link href="/boletin">Monitor Jurisprudencial</Link> : null}
         </nav>
       </div>
     </header>

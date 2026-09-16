@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.A. de Santiago, «Chubb Seguros Chile S.A. con Inmobiliaria El Remanso de Maipú», rol 20.871-2025, sentencia de 13 de agosto de 2026"
 pilares: ["inmobiliario", "construccion"]
 relacionados: ["arbitro-derecho-arbitrador-mixto", "clausula-arbitral-contrato-construccion"]
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier empresa que pacta arbitraje sin mirar el tipo de árbitro
