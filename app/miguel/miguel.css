@@ -813,6 +813,25 @@
   color: #fff;
 }
 
+/* Logotipo del estudio en el pie. Ancho fijo en vez de porcentaje: es una
+ * marca, no una ilustración, y debe medir lo mismo en cualquier pantalla. */
+.site-miguel .miguel-footer-estudio {
+  display: inline-block;
+  margin-top: 1.1rem;
+  line-height: 0;
+  transition: opacity 0.15s ease;
+}
+
+.site-miguel .miguel-footer-estudio:hover {
+  opacity: 0.78;
+}
+
+.site-miguel .miguel-footer-estudio img {
+  display: block;
+  width: 170px;
+  height: auto;
+}
+
 .site-miguel .miguel-footer .miguel-footer-name {
   font-family: var(--miguel-sans);
   font-weight: 700;
