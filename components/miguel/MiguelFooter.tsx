@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function MiguelFooter() {
@@ -14,6 +15,23 @@ export default function MiguelFooter() {
       >
         <p className="miguel-footer-name">Miguel Aylwin Fernández</p>
         <p style={{ marginTop: "0.5rem", opacity: 0.72 }}>Socio · Aylwin Matta Abogados</p>
+
+        {/* Marca del estudio, enlazada a su sitio. El archivo original venía en
+          * JPG sobre fondo negro: pegado tal cual dejaba un rectángulo visible
+          * sobre el #131313 del pie, así que se convirtió a PNG con fondo
+          * transparente conservando los colores macizos del logotipo. */}
+        <a
+          className="miguel-footer-estudio"
+          href="https://aylwin.cl"
+          rel="noopener"
+        >
+          <Image
+            src="/miguel/logo-aylwin-matta.png"
+            alt="Aylwin Matta Abogados"
+            width={360}
+            height={119}
+          />
+        </a>
         <p style={{ marginTop: "1.25rem", opacity: 0.72 }}>
           Av. Apoquindo 3910, piso 3, Las Condes · Santiago, Chile
         </p>
