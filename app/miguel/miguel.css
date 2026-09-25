@@ -676,6 +676,69 @@
   font-weight: 600;
 }
 
+/* Filtro por materia del Monitor. Veintiocho de las treinta entradas son
+ * "Jurisprudencia", así que el filtro útil es el temático, no el de tipo de
+ * fuente. Chips sobrios: el acento rojo solo marca el activo. */
+.site-miguel .miguel-filtro-temas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0 1rem;
+}
+
+.site-miguel .miguel-filtro-chip {
+  font-family: var(--miguel-sans);
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  color: var(--miguel-text);
+  background: transparent;
+  border: 1px solid var(--miguel-line);
+  border-radius: 999px;
+  /* 44px de alto mínimo: es un control táctil. */
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.site-miguel .miguel-filtro-chip:hover {
+  background: var(--miguel-panel);
+}
+
+.site-miguel .miguel-filtro-chip[aria-pressed="true"] {
+  background: var(--miguel-accent);
+  border-color: var(--miguel-accent);
+  color: #fff;
+}
+
+.site-miguel .miguel-filtro-chip:focus-visible {
+  outline: 2px solid var(--miguel-accent);
+  outline-offset: 2px;
+}
+
+.site-miguel .miguel-filtro-cuenta {
+  opacity: 0.6;
+  margin-left: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.site-miguel .miguel-filtro-resumen {
+  font-family: var(--miguel-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--miguel-muted);
+  margin: 0 0 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-miguel .miguel-filtro-chip {
+    transition: none;
+  }
+}
+
 /* Últimas publicaciones en la portada: miniatura a la izquierda y texto a la
  * derecha, separadas por filete. En móvil la foto va arriba. */
 .site-miguel .miguel-boletin-bajada {

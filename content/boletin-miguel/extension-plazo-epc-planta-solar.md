@@ -3,6 +3,7 @@ title: "Sin apelación pactada, la extensión de plazo que negó el árbitro que
 description: "La Corte de Santiago rechazó la queja de un contratista EPC contra el árbitro del CAM que le negó una extensión de plazo por falta de materiales del propio mandante — la renuncia a recursos operó tal como se firmó."
 date: "2026-09-16"
 categoria: Jurisprudencia
+tema: arbitraje
 fuente: "C.A. de Santiago, «Grupo Industrial & Asociados LATAM S.A. con Solek Chile Services SpA», rol 9.385-2025 (arbitraje CAM Santiago rol A-5303-2022), sentencia de 17 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["clausula-arbitral-contrato-construccion", "obras-extraordinarias-mayores-costos"]

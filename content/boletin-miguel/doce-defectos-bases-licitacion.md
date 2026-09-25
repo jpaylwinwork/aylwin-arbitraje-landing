@@ -3,6 +3,7 @@ title: "Doce defectos en unas bases de licitación pública, uno por uno"
 description: "Contraloría rechazó de plano las bases de un servicio de FONASA por fallas que van desde el plazo de pago de facturas hasta la vigencia de las uniones temporales de proveedores — una lista útil para revisar las suyas antes de ofertar."
 date: "2026-09-16"
 categoria: Jurisprudencia
+tema: licitaciones
 fuente: "Contraloría General de la República, dictamen N° OF172526N26, de 2026, sobre las bases de licitación de un servicio del Fondo Nacional de Salud (FONASA)"
 pilares: ["construccion"]
 relacionados: ["primeros-30-dias-conflicto"]

@@ -3,6 +3,7 @@ title: "Mayores gastos generales por aumento de plazo: basta acreditar la causal
 description: "La Corte Suprema fijó que el artículo 147 del Reglamento se resuelve con una operación aritmética. Y en otro fallo agregó algo más incómodo para el mandante: el atraso indemniza aunque tampoco sea culpa del servicio."
 date: "2026-08-26"
 categoria: Jurisprudencia
+tema: construccion-mop
 fuente: "C.S., «Constructora Alvial S.A. con I. Municipalidad de Peñalolén», rol 5342-2021, sentencia de 24 de enero de 2022; y C.S., «Constructora 3L S.A. con SERVIU O'Higgins», rol 25054-2018, sentencia de 3 de abril de 2019"
 pilares: ["construccion"]
 relacionados: ["obras-extraordinarias-mayores-costos"]

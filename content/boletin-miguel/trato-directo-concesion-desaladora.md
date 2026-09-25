@@ -3,6 +3,7 @@ title: "Cuándo el Estado puede contratar por trato directo un servicio ligado a
 description: "Contraloría cursó el trato directo de la asesoría a la inspección fiscal de la Concesión Planta Desaladora de Coquimbo, pero advirtió al MOP que en adelante debe licitar oportunamente — la urgencia no cubre la falta de planificación."
 date: "2026-09-16"
 categoria: Jurisprudencia
+tema: licitaciones
 fuente: "Contraloría General de la República, dictamen N° OF172520N26, de 2026, sobre la contratación por trato directo de la asesoría a la inspección fiscal de la Concesión Planta Desaladora de Coquimbo"
 pilares: ["construccion"]
 relacionados: ["dispute-boards-chile"]

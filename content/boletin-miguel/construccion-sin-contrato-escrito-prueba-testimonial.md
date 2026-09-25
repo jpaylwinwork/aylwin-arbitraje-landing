@@ -3,6 +3,7 @@ title: "Construyó una embarcación sin firmar nada: la Corte Suprema igual lo c
 description: "Sin contrato escrito, una factura, un registro pesquero y la prueba testimonial bastaron para acreditar el encargo, porque el astillero no logró probar que entregó la nave."
 date: "2026-09-06"
 categoria: Jurisprudencia
+tema: construccion-mop
 fuente: "C.S., «Demandante con Astilleros Construbar Limitada», rol 10.227-2025, sentencia de 5 de agosto de 2026, que deja firme el fallo de la C.A. de Concepción"
 pilares: ["construccion"]
 relacionados: ["primeros-30-dias-conflicto", "clausula-arbitral-contrato-construccion"]

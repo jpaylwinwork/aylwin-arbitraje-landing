@@ -3,6 +3,7 @@ title: "Multas con cargo a la garantía de fiel cumplimiento: cuando el municipi
 description: "La Corte de San Miguel confirmó el cobro de multas y el término anticipado de un contrato de obra municipal tras 195 días de atraso, y tachó a dos de los tres testigos del contratista por falta de imparcialidad."
 date: "2026-09-06"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.A. de San Miguel, reclamo de ilegalidad rol 80-2025, acumulado al rol 2-2026 (Contencioso Administrativo), sentencia de 18 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["cobro-estados-de-pago-retenidos", "obras-extraordinarias-mayores-costos"]
