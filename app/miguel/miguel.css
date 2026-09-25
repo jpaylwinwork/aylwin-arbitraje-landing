@@ -322,6 +322,47 @@
   font-weight: 600;
 }
 
+/* Tabla comparativa de prosa. Las reglas de arriba alinean a la derecha todo
+ * lo que no sea la primera columna porque nacieron para las cifras de
+ * /estadisticas-arbitraje-chile; aplicadas a texto dejan las frases colgando
+ * del borde derecho. Este modificador las devuelve a la izquierda.
+ *
+ * El scroll propio no es opcional: cuatro columnas de texto no entran en
+ * 375px, y sin contenedor la tabla desborda la página entera en vez de
+ * desplazarse ella sola. */
+.site-miguel .miguel-tabla-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+
+.site-miguel .miguel-tabla-comparativa {
+  margin: 0;
+  min-width: 34rem;
+}
+
+.site-miguel .miguel-tabla-comparativa th,
+.site-miguel .miguel-tabla-comparativa td {
+  text-align: left;
+  font-variant-numeric: normal;
+  padding-right: 1.25rem;
+  vertical-align: top;
+}
+
+/* Los encabezados de fila son <th scope="row"> por accesibilidad, pero no
+ * deben verse como los de columna: sin versalitas ni filete grueso. */
+.site-miguel .miguel-tabla-comparativa tbody th {
+  font-size: inherit;
+  text-transform: none;
+  letter-spacing: 0;
+  border-bottom: 1px solid var(--miguel-line);
+  white-space: nowrap;
+}
+
+.site-miguel .miguel-tabla-comparativa tbody tr:last-child th {
+  border-bottom: 2px solid var(--miguel-ink);
+}
+
 /* Sin justificar en móvil: a 375px la columna es demasiado estrecha y la
  * justificación abre huecos entre palabras que la partición no alcanza a
  * compensar. El tamaño de cuerpo ya no varía por ancho (ver .miguel-body
