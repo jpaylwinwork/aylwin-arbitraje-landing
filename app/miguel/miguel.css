@@ -913,8 +913,37 @@
   margin-top: 5rem;
 }
 
-.site-miguel .miguel-footer a {
-  color: #fff;
+/* Sin margen cuando la página ya termina en una banda oscura: ese margen
+ * dejaba asomar el fondo claro como una franja entre dos bloques negros.
+ * Ocurría en nueve de las doce páginas, que cierran con el CTA. Las que
+ * terminan en contenido claro —contacto, boletín, privacidad— sí lo
+ * conservan, porque ahí el aire separa de verdad.
+ *
+ * Hace falta :has() porque la banda no es hermana del pie: el layout envuelve
+ * la página en un <main>, así que hay que preguntar por el último hijo de ese
+ * <main>. Un navegador sin :has() simplemente mantiene el margen de siempre.
+ *
+ * El filete claro evita que las dos zonas oscuras se fundan en un solo bloque
+ * cuando se tocan: comparten el mismo negro. */
+.site-miguel main:has(> .miguel-band--dark:last-child) + .miguel-footer {
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Dos columnas en escritorio: los datos de contacto a la izquierda y la
+ * marca del estudio a la derecha, en vez de una lista donde el logotipo
+ * quedaba encajado entre el cargo y la dirección. */
+.site-miguel .miguel-footer-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  column-gap: 3rem;
+  row-gap: 2.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
+  font-family: var(--miguel-sans);
+  font-size: 0.85rem;
+  line-height: 1.8;
 }
 
 .site-miguel .miguel-footer .miguel-footer-name {
@@ -924,6 +953,68 @@
   letter-spacing: 0.16em;
   font-size: 0.95rem;
 }
+
+.site-miguel .miguel-footer-cargo {
+  margin-top: 0.35rem;
+  opacity: 0.72;
+}
+
+.site-miguel .miguel-footer-datos {
+  margin-top: 1.25rem;
+  font-style: normal;
+  opacity: 0.72;
+}
+
+/* Logotipo del estudio. Ancho fijo en vez de porcentaje: es una marca, no
+ * una ilustración, y debe medir lo mismo en cualquier pantalla. */
+.site-miguel .miguel-footer-estudio {
+  display: inline-block;
+  justify-self: end;
+  line-height: 0;
+  transition: opacity 0.15s ease;
+}
+
+.site-miguel .miguel-footer-estudio:hover {
+  opacity: 0.78;
+}
+
+.site-miguel .miguel-footer-estudio img {
+  display: block;
+  width: 170px;
+  height: auto;
+}
+
+/* Línea legal, separada por un filete y en un tamaño menor: es lo último
+ * que alguien necesita, y antes competía en peso con el teléfono. */
+.site-miguel .miguel-footer-legal {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+
+.site-miguel .miguel-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-miguel .miguel-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .site-miguel .miguel-footer-inner {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .site-miguel .miguel-footer-estudio {
+    justify-self: start;
+  }
+}
+
 
 @media (max-width: 1000px) {
   /* El menú envolvía en tres filas y el cabezal ocupaba ~460px de los 812 de
