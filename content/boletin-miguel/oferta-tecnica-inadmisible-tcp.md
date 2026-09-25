@@ -3,6 +3,7 @@ title: "Por qué el Tribunal de Contratación Pública validó el rechazo de su 
 description: "Ofertó una caja recolectora de 15,4 metros cúbicos cuando las bases exigían 17: sumar la tolva de carga no le alcanzó para salvar la licitación."
 date: "2026-09-06"
 categoria: Jurisprudencia
+tema: licitaciones
 fuente: "Tribunal de Contratación Pública, «Peña, Spoerer y Cía S.A. con Ilustre Municipalidad de Colina», rol 20-2025-A, sentencia de 9 de julio de 2026"
 pilares: ["construccion"]
 relacionados: ["primeros-30-dias-conflicto"]

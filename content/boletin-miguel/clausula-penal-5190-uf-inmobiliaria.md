@@ -3,6 +3,7 @@ title: "5.190 UF de cláusula penal que un árbitro fijó y nadie logró revisar
 description: "La Corte Suprema rechazó la casación y dos recursos de queja cruzados en una disputa inmobiliaria por la resciliación de una promesa y un arrendamiento — la multa pactada quedó firme tal como la calculó el árbitro arbitrador."
 date: "2026-09-16"
 categoria: Jurisprudencia
+tema: arbitraje
 fuente: "C.S., «Inmobiliaria A&S Dos SpA con Inmobiliaria Hub Tres SpA», rol 20.786-2024 y acumulados, sentencia de 17 de agosto de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["arbitro-derecho-arbitrador-mixto", "promesa-compraventa-venta-en-verde-conflictos"]

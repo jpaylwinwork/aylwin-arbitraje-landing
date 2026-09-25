@@ -3,6 +3,7 @@ title: "Lo que promete en una promesa de compraventa lo obliga aunque no lo escr
 description: "La Corte Suprema confirma que la promesa se extiende a todo lo que emana de la naturaleza de la obligación, aunque no conste en cláusula expresa."
 date: "2026-08-26"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.S., Primera Sala, rol 34305-2025, sentencia de 10 de agosto de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["promesa-compraventa-venta-en-verde-conflictos"]

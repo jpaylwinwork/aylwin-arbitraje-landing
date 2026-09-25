@@ -108,7 +108,7 @@ export default function PilarConstruccion() {
         → <Link href="/clausula-arbitral-contrato-construccion">Cláusula arbitral: cómo redactarla y los errores que se pagan caros</Link>
       </p>
 
-      <h2>4. Los tres tipos de árbitro</h2>
+      <h2>4. Árbitro de derecho, arbitrador o mixto: ¿cuál conviene en un contrato de construcción?</h2>
       <p>
         <strong>Árbitro de derecho.</strong> Tramita conforme a las reglas del procedimiento civil y
         falla conforme a la ley. Máxima certeza jurídica, mínima flexibilidad procesal.
@@ -159,7 +159,7 @@ export default function PilarConstruccion() {
         como cuantía indeterminada.
       </p>
 
-      <h2>6. Antes del arbitraje: los mecanismos que evitan llegar ahí</h2>
+      <h2>6. Dispute Boards, negociación y mediación: cómo evitar llegar al arbitraje</h2>
       <p>
         <strong>Dispute Boards.</strong> Paneles de expertos independientes constituidos al inicio
         del contrato, que resuelven las discrepancias a medida que aparecen. Su virtud es que
@@ -176,7 +176,7 @@ export default function PilarConstruccion() {
         ambas partes quieren cerrar y no encuentran cómo.
       </p>
 
-      <h2>7. Costos, plazos y primeros pasos</h2>
+      <h2>7. ¿Cuánto cuesta un arbitraje de construcción, cuánto demora y por dónde empezar?</h2>
       <p>
         → <Link href="/cuanto-cuesta-arbitraje-chile">Cuánto cuesta y cuánto dura un arbitraje</Link> ·{" "}
         <Link href="/primeros-30-dias-conflicto">Los primeros 30 días de un conflicto de obra</Link>

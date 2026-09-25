@@ -3,6 +3,7 @@ title: "Firmó un memorándum y una promesa el mismo día: para la Corte Suprema
 description: "La Corte Suprema anuló un fallo que condenaba a pagar 18.000 UF por incumplir una promesa sobre terrenos avaluados en 180.000 UF, porque ignoró el laudo arbitral que calificó esa promesa como parte de un proyecto mayor que nunca se concretó."
 date: "2026-09-06"
 categoria: Jurisprudencia
+tema: arbitraje
 fuente: "C.S., «Inmobiliaria Cumming SpA con Universidad San Sebastián», rol 5.292-2025, sentencia de 3 de agosto de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["promesa-compraventa-venta-en-verde-conflictos", "clausula-arbitral-contrato-construccion"]

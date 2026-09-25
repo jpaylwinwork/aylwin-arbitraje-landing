@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { getEntradas, formatearFecha } from "@/lib/boletin-miguel";
+import MiguelFiltroBoletin, { type EntradaListada } from "@/components/miguel/MiguelFiltroBoletin";
 
 const entradas = getEntradas();
+
+// La fecha se formatea acá, en el servidor: formatearFecha vive en el módulo
+// que lee disco y no puede cruzar al cliente. Se manda ya legible junto con
+// la ISO, que el <time> necesita para dateTime.
+const listado: EntradaListada[] = entradas.map((e) => ({
+  slug: e.slug,
+  title: e.title,
+  description: e.description,
+  date: e.date,
+  fechaLegible: e.date ? formatearFecha(e.date) : "",
+  categoria: e.categoria,
+  tema: e.tema,
+}));
 
 export const metadata: Metadata = {
   alternates: { canonical: "/boletin" },
@@ -27,25 +40,12 @@ export default function Boletin() {
         y de construcción.
       </p>
 
-      {entradas.length === 0 ? (
+      {listado.length === 0 ? (
         <p style={{ color: "var(--miguel-muted)" }}>
           La primera entrada está en preparación.
         </p>
       ) : (
-        <ul className="miguel-boletin-lista">
-          {entradas.map((e) => (
-            <li key={e.slug}>
-              <p className="miguel-boletin-meta">
-                <span className="miguel-boletin-categoria">{e.categoria}</span>
-                {e.date ? <time dateTime={e.date}>{formatearFecha(e.date)}</time> : null}
-              </p>
-              <h2>
-                <Link href={`/boletin/${e.slug}`}>{e.title}</Link>
-              </h2>
-              {e.description ? <p>{e.description}</p> : null}
-            </li>
-          ))}
-        </ul>
+        <MiguelFiltroBoletin entradas={listado} />
       )}
     </div>
   );

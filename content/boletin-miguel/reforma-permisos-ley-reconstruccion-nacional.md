@@ -3,6 +3,7 @@ title: "La reforma de permisos de la Ley de Reconstrucción Nacional: qué cambi
 description: "BNamericas consultó a Miguel Aylwin sobre los cambios en permisos y evaluación ambiental del proyecto de ley: plazos, reclamaciones, silencio administrativo y un límite de seis meses a las cautelares que paralizan una RCA."
 date: "2026-08-06"
 categoria: Legislación
+tema: garantias
 fuente: "BNamericas, «En medio de impulso a los permisos, gobierno de Kast anticipa récord de US$38.000 millones en proyectos», 3 de agosto de 2026"
 fuenteUrl: "https://www.bnamericas.com/es/reportajes/amid-el-impulso-a-los-permisos-el-gobierno-de-kast-ve-un-record-de-us38000-millones-en-proyectos"
 pilares: ["inmobiliario"]

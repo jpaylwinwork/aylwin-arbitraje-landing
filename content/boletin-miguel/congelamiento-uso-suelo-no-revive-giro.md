@@ -3,6 +3,7 @@ title: "El \"congelamiento\" de uso de suelo no revive un giro que el plan regul
 description: "La Corte de Santiago confirma que el artículo 62 de la LGUC protege el volumen ya construido, no el permiso para ejercer una actividad que nunca tuvo permiso."
 date: "2026-09-06"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.A. de Santiago, «Sociedad Inmobiliaria Transtar SpA y otra con Municipalidad de Las Condes», rol 54-2025, sentencia de 6 de agosto de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion"]

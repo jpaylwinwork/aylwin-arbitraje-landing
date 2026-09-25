@@ -3,6 +3,7 @@ title: "La boleta de garantía a primer requerimiento no admite discusión: 5.50
 description: "La Corte de Apelaciones de Santiago confirmó la sanción de la CMF contra una compañía que se negó a pagar invocando el incumplimiento del tomador. En este tipo de pólizas el asegurador paga contra el solo requerimiento, y el conflicto de fondo se ventila después."
 date: "2026-08-24"
 categoria: Jurisprudencia
+tema: garantias
 fuente: "C.A. de Santiago, Novena Sala, «AVLA Seguros de Crédito y Garantía S.A. con Comisión para el Mercado Financiero», rol 565-2024, sentencia de 4 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["arbitraje-de-emergencia-chile", "primeros-30-dias-conflicto"]

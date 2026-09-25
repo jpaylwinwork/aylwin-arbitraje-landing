@@ -3,6 +3,7 @@ title: "Árbitro mixto o arbitrador: la diferencia que decidió si una inmobilia
 description: "La Corte de Santiago le devolvió a una inmobiliaria el derecho a apelar que un árbitro le había negado, porque la restricción del artículo 642 del Código de Procedimiento Civil solo opera frente a un árbitro arbitrador — no frente a uno mixto."
 date: "2026-09-16"
 categoria: Jurisprudencia
+tema: arbitraje
 fuente: "C.A. de Santiago, «Chubb Seguros Chile S.A. con Inmobiliaria El Remanso de Maipú», rol 20.871-2025, sentencia de 13 de agosto de 2026"
 pilares: ["inmobiliario", "construccion"]
 relacionados: ["arbitro-derecho-arbitrador-mixto", "clausula-arbitral-contrato-construccion"]

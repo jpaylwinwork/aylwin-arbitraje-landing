@@ -3,6 +3,7 @@ title: "Una carta municipal que le impone una multa también se puede reclamar"
 description: "La Corte Suprema confirma que el reclamo de ilegalidad procede aunque el acto municipal no tenga forma de resolución."
 date: "2026-08-26"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.S., Tercera Sala, «Inmobiliaria y Constructora Brinker S.A. con Vallejo», rol 29032-2025"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion"]

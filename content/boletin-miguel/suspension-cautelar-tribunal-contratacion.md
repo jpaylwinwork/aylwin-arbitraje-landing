@@ -3,6 +3,7 @@ title: "Suspender una licitación ante el Tribunal de Contratación Pública: el
 description: "La Corte de Apelaciones de Santiago confirmó el rechazo de una suspensión cautelar contra una licitación municipal. El fallo deja claro que desarrollar los vicios no basta: hay que acreditarlos de entrada."
 date: "2026-08-26"
 categoria: Jurisprudencia
+tema: licitaciones
 fuente: "C.A. de Santiago, «Tecnología Asfáltica S.A. con Ilustre Municipalidad de Ñuñoa», rol 1075-2025, sentencia de 4 de agosto de 2026 (en el Tribunal de Contratación Pública, rol 438-2025-A)"
 pilares: ["construccion"]
 relacionados: ["arbitraje-de-emergencia-chile"]

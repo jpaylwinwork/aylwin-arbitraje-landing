@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import type { Pilar } from "./satelites-miguel";
+import { normalizarTema, type TemaBoletin } from "./boletin-temas";
 
 // Boletín de miguelaylwin.com: novedades legislativas y jurisprudenciales en
 // arbitraje. Misma mecánica que lib/recursos.ts y lib/satelites-miguel.ts —
@@ -18,12 +19,19 @@ const CONTENT_DIR = path.join(process.cwd(), "content", "boletin-miguel");
 
 export type CategoriaBoletin = "Legislación" | "Jurisprudencia" | "Institucional";
 
+// El eje temático vive en lib/boletin-temas.ts porque el filtro del listado
+// es un componente cliente y este archivo lee disco: importarlo desde el
+// navegador arrastraría node:fs al bundle. Se re-exporta para que quien ya
+// usa este módulo no tenga que saberlo.
+export { TEMA_LABEL, TEMAS, type TemaBoletin } from "./boletin-temas";
+
 export type EntradaBoletin = {
   slug: string;
   title: string;
   description: string;
   date: string;
   categoria: CategoriaBoletin;
+  tema?: TemaBoletin;
   fuente: string;
   fuenteUrl?: string;
   // Pilar al que pertenece y satélites que desarrollan el tema de fondo.
@@ -75,6 +83,7 @@ export function getEntrada(slug: string): EntradaBoletin | null {
     // renderizarlo y el build cae entero.
     date: normalizarFecha(data.date),
     categoria: (data.categoria as CategoriaBoletin) ?? "Institucional",
+    tema: normalizarTema(data.tema),
     fuente,
     fuenteUrl: typeof data.fuenteUrl === "string" ? data.fuenteUrl : undefined,
     pilares: Array.isArray(data.pilares) ? (data.pilares as Pilar[]) : [],
