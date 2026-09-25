@@ -53,7 +53,7 @@ export default function PilarInmobiliario() {
         hay forma de reconstruirlos después.
       </p>
 
-      <h2>2. Las cuatro controversias que concentran la materia</h2>
+      <h2>2. Promesas, vicios, terrenos y conflictos entre socios: las cuatro controversias inmobiliarias</h2>
       <p>
         <strong>Promesas de compraventa y ventas en verde.</strong> Incumplimiento del plazo de
         entrega, resciliación unilateral, cláusulas penales, devolución de anticipos, cambios en el
