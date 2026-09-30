@@ -1,12 +1,12 @@
 ---
 title: "El plazo para apelar ante el Tribunal de Contratación Pública corre aunque nadie le avise directamente"
 description: "22 días hábiles después de notificada por el estado diario, una apelación llegó tarde, aunque la parte recién entonces se dio por \"enterada\"."
-date: "2026-09-28"
+date: "2026-09-30"
 categoria: Jurisprudencia
 fuente: "C.A. de Santiago, recurso de hecho en la causa «Scotiabank Chile con Ilustre Municipalidad de Quillota» del Tribunal de Contratación Pública, rol 900-2026, sentencia de 18 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["primeros-30-dias-conflicto"]
-draft: true
+draft: false
 ---
 
 ## La resolución que pasó sin que nadie la viera a tiempo

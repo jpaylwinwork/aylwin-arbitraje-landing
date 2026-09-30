@@ -1,12 +1,12 @@
 ---
 title: "El Estado no puede quedarse con su edificio solo porque cambió quién administra el colegio que funciona ahí"
 description: "La Corte acoge la protección: el traspaso a los SLEP no alcanza a inmuebles arrendados de propietarios privados. La única vía es la subrogación del contrato de arriendo, no la transferencia forzosa de dominio."
-date: "2026-09-28"
+date: "2026-09-30"
 categoria: Jurisprudencia
 fuente: "Recurso de protección sobre el traspaso a un Servicio Local de Educación Pública de inmuebles arrendados por un privado a una municipalidad, rol 7.605-2026"
 pilares: ["inmobiliario"]
 relacionados: ["primeros-30-dias-conflicto"]
-draft: true
+draft: false
 ---
 
 ## El edificio que usted le arrienda a una municipalidad, hasta que cambia la institucionalidad

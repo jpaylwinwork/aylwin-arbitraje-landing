@@ -1,12 +1,12 @@
 ---
 title: "21 compradores demandaron por fallas constructivas: a cuatro casi se les cae el juicio por el tipo de defecto que alegaron"
 description: "La Corte de Santiago confirma $9.000.000 por vivienda y $1.000.000 por daño moral a doce demandantes, pero el fallo se sostuvo en una sola pregunta previa: ¿de qué tipo de falla se trataba?"
-date: "2026-09-28"
+date: "2026-09-30"
 categoria: Jurisprudencia
 fuente: "C.A. de Santiago, Sexta Sala, «Reumay y otros con Vivienda Metropolitana S.A.», rol 7615-2023, sentencia de 2 de septiembre de 2026, que confirma el fallo del 14° Juzgado Civil de Santiago"
 pilares: ["inmobiliario", "construccion"]
 relacionados: ["vicios-construccion-responsabilidad-vendedor"]
-draft: true
+draft: false
 ---
 
 ## La misma vivienda, dos peritos, dos versiones irreconciliables del problema
