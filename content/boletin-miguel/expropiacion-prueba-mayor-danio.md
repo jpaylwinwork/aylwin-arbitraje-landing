@@ -1,12 +1,12 @@
 ---
 title: "Dos expropiados pidieron más que la Comisión de Peritos: a uno se lo dieron, al otro la Corte Suprema se lo quitó"
 description: "La diferencia no fue el monto reclamado, sino qué tan sólida era la prueba detrás de cada cálculo."
-date: "2026-09-28"
+date: "2026-09-30"
 categoria: Jurisprudencia
 fuente: "C.S., causa de Edusalb SpA contra el Serviu Metropolitano, rol 46.389-2025, sentencia de 1 de septiembre de 2026; y C.A. de Talca, causa de Constructora Costa Brava Limitada contra el Fisco, rol 1438-2023, sentencia de 28 de agosto de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion"]
-draft: true
+draft: false
 ---
 
 ## El terreno expropiado vale más de lo que dice la tasación oficial, pero probarlo no es automático

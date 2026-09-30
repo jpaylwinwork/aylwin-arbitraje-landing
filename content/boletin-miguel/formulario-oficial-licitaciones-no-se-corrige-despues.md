@@ -1,12 +1,12 @@
 ---
 title: "En licitaciones públicas, lo que no está en el formulario no se arregla después"
 description: "Dos fallos de este año, en direcciones opuestas, castigan lo mismo: una adjudicación anulada por dejar \"aclarar\" lo no declarado, y un oferente descartado por intentar completarlo con otros papeles."
-date: "2026-09-28"
+date: "2026-09-30"
 categoria: Jurisprudencia
 fuente: "Tribunal de Contratación Pública, impugnación de Construcciones y Varadero S.A. en la licitación de la Dirección de Obras Portuarias del MOP, rol 168-2026-A (2026); e impugnación de Transportes Jaime Menares Pinto E.I.R.L. en la licitación de transporte escolar de la Municipalidad de Conchalí, rol 316-2025-A"
 pilares: ["construccion"]
 relacionados: ["primeros-30-dias-conflicto"]
-draft: true
+draft: false
 ---
 
 ## El formulario que se llena rápido y la sorpresa que llega meses después
