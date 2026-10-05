@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «UTP Sumicar-Mafer con Dirección Logística de Carabineros de Chile», rol 34.469-2025, sentencia de 28 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["exclusion-ilegal-contrato-sigue", "plazo-apelacion-tcp-estado-diario", "lucro-cesante-informe-economico-insuficiente"]
-draft: true
+draft: false
 ---
 
 ## La licitación que le quitaron

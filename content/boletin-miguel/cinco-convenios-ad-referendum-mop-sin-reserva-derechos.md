@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Sociedad Ingeniería Construcción y Maquinaria SpA con Ministerio de Obras Públicas Región de O'Higgins», rol 31.428-2025, sentencia de 30 de septiembre de 2026"
 pilares: ["construccion"]
 relacionados: ["obras-extraordinarias-mayores-costos", "reserva-derechos-convenios-ad-referendum", "mayores-gastos-generales-aumento-plazo", "entrega-incompleta-terreno-vicio-oculto"]
-draft: true
+draft: false
 ---
 
 ## La obra que parte tarde y los convenios que se firman para seguir

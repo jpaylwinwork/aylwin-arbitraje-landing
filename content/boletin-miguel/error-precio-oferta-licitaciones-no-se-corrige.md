@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "Tribunal de Contratación Pública, «Minera y Constructora Río Grande SpA con Ilustre Municipalidad de Vitacura», rol 611-2025-A, sentencia de 26 de agosto de 2026; y «Núcleo Paisajismo SpA con Ilustre Municipalidad de Colina», rol 447-2025-A, sentencia de 31 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["formulario-oficial-licitaciones-no-se-corrige-despues", "oferta-tecnica-inadmisible-tcp", "doce-defectos-bases-licitacion"]
-draft: true
+draft: false
 ---
 
 ## La cifra que "se ve a simple vista"
