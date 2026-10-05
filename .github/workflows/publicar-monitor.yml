@@ -1,11 +1,11 @@
 name: Publicar entrada del Monitor
 
-# El Monitor Jurisprudencial sale una entrada por semana. Las entradas ya
-# están escritas en content/boletin-miguel con su fecha de publicación, y
-# lib/boletin-miguel.ts oculta las que tienen fecha futura.
+# Las entradas del Monitor Jurisprudencial pueden programarse: se escriben en
+# content/boletin-miguel con su fecha de publicación, y lib/boletin-miguel.ts
+# oculta las que tienen fecha futura.
 #
 # Pero el sitio es estático: esa comparación de fechas solo se evalúa al
-# construir. Sin este workflow, la entrada del lunes seguiría invisible hasta
+# construir. Sin este workflow, la entrada programada seguiría invisible hasta
 # que alguien tocara el repositorio por otro motivo. Esto fuerza el rebuild.
 #
 # Empuja a main bajo la identidad del dueño por la misma razón que
@@ -13,11 +13,15 @@ name: Publicar entrada del Monitor
 # según el autor del commit, no según quién disparó la acción.
 on:
   schedule:
-    # Lunes 12:00 UTC. En Santiago son las 08:00 en horario de invierno y las
-    # 09:00 en verano: cron no entiende de husos, así que la hora local se
-    # corre una hora con el cambio de septiembre. Da igual para lo que hace
-    # —publicar temprano un lunes—, pero que no sorprenda a nadie después.
-    - cron: "0 12 * * 1"
+    # De lunes a viernes, 12:00 UTC. Antes corría solo los lunes, y una entrada
+    # fechada un martes esperaba hasta el lunes siguiente. Los días en que nada
+    # estrena, el paso de comprobación termina sin desplegar.
+    #
+    # En Santiago son las 08:00 en horario de invierno y las 09:00 en verano:
+    # cron no entiende de husos, así que la hora local se corre una hora con el
+    # cambio de septiembre. Da igual para lo que hace —publicar temprano en la
+    # mañana—, pero que no sorprenda a nadie después.
+    - cron: "0 12 * * 1-5"
   workflow_dispatch:        # para publicar a mano si hiciera falta
 
 permissions:
