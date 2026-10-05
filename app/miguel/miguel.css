@@ -1103,3 +1103,135 @@
 .site-miguel .miguel-relacionados a:hover {
   text-decoration: underline;
 }
+
+/* --- Listas del cuerpo -------------------------------------------------
+ * El reset de Tailwind quita viñetas, sangría y margen a toda lista. El sitio
+ * del estudio lo restauró en .article-body; el de Miguel nunca, y 118 listas en
+ * 58 páginas —Monitor, satélites, privacidad, la landing— se leían como un
+ * párrafo corrido. Solo afecta a listas sin clase propia: las de navegación y
+ * de componentes (relacionados, gráfico, boletín, rutas) llevan la suya y
+ * siguen sin viñeta. */
+.site-miguel .miguel-body ul:not([class]),
+.site-miguel .miguel-body ol:not([class]) {
+  margin: 1.1rem 0;
+  padding-left: 1.4rem;
+}
+
+.site-miguel .miguel-body ul:not([class]) {
+  list-style: disc;
+}
+
+.site-miguel .miguel-body ol:not([class]) {
+  list-style: decimal;
+}
+
+.site-miguel .miguel-body ul:not([class]) > li,
+.site-miguel .miguel-body ol:not([class]) > li {
+  margin: 0.45rem 0;
+  padding-left: 0.2rem;
+}
+
+.site-miguel .miguel-body ul:not([class]) > li::marker,
+.site-miguel .miguel-body ol:not([class]) > li::marker {
+  color: var(--miguel-accent);
+}
+
+/* --- Landing /consulta: lectura escaneable -----------------------------
+ * La landing tenía 18 bloques de más de cinco líneas en móvil, cuando su
+ * propia especificación (03_LANDING_ADS.md) fija ese límite. Estas piezas
+ * reordenan cómo se presenta el texto sin cambiar una palabra. */
+
+/* Subtítulo de cada punto de una lista argumentativa (los cuatro miedos).
+ * Gana en especificidad a ".miguel-body h3". */
+.site-miguel .miguel-body h3.miguel-punto {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.4rem;
+}
+
+.site-miguel .miguel-body h3.miguel-punto + p {
+  margin-top: 0;
+}
+
+/* Las ocho etapas del método: títulos siempre visibles, detalle plegable.
+ * El marcador es un signo +/– tipográfico y no un ícono, como pide el
+ * sistema de diseño. */
+.site-miguel .miguel-etapas {
+  margin: 1.5rem 0 0;
+  border-top: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-etapas details {
+  border-bottom: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-etapas summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  min-height: 44px;
+  font-family: var(--miguel-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  cursor: pointer;
+  list-style: none;
+}
+
+.site-miguel .miguel-etapas summary::-webkit-details-marker {
+  display: none;
+}
+
+.site-miguel .miguel-etapas summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-family: var(--miguel-sans);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--miguel-accent);
+}
+
+.site-miguel .miguel-etapas details[open] summary::after {
+  content: "–";
+}
+
+.site-miguel .miguel-etapas summary:hover {
+  color: var(--miguel-accent);
+}
+
+.site-miguel .miguel-etapas summary:focus-visible {
+  outline: 2px solid var(--miguel-accent);
+  outline-offset: 3px;
+}
+
+.site-miguel .miguel-etapas details > p {
+  margin: 0 0 1rem;
+}
+
+/* Cifra destacada. Estática: la especificación prohíbe los contadores
+ * animados. El rojo institucional pasa holgado el contraste en este tamaño
+ * sobre el fondo claro. */
+.site-miguel .miguel-cifra {
+  margin: 1.75rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--miguel-line);
+  border-bottom: 1px solid var(--miguel-line);
+}
+
+.site-miguel .miguel-body .miguel-cifra-numero {
+  margin: 0;
+  font-family: var(--miguel-display);
+  font-weight: 600;
+  font-size: clamp(3.5rem, 12vw, 5rem);
+  line-height: 1;
+  color: var(--miguel-accent);
+  text-align: left;
+}
+
+.site-miguel .miguel-cifra figcaption {
+  margin-top: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}

@@ -22,7 +22,7 @@ const MAXIMO = Math.max(...TRAMOS.map((t) => t.pct));
 export default function GraficoCuantias() {
   return (
     <figure className="miguel-grafico">
-      <ul>
+      <ul className="miguel-grafico-lista">
         {TRAMOS.map((t) => (
           <li key={t.rango}>
             <span className="miguel-grafico-etiqueta">{t.rango}</span>

@@ -24,7 +24,7 @@ export default function MiguelRelacionados({
   return (
     <nav className="miguel-relacionados" aria-label={titulo}>
       <p className="miguel-label">{titulo}</p>
-      <ul>
+      <ul className="miguel-relacionados-lista">
         {enlaces.map((e) => (
           <li key={e.href}>
             <Link href={e.href}>{e.label}</Link>
