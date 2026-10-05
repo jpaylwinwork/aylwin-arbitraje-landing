@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.A. de Santiago, Decimocuarta Sala, «Sociedad Inmobiliaria y de Inversiones Pietrasanta SpA con Consejo para la Transparencia», rol 276-2026, sentencia de 24 de septiembre de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["promesa-compraventa-deber-informar", "reforma-permisos-ley-reconstruccion-nacional", "decaimiento-administrativo-dilacion-injustificada"]
-draft: true
+draft: false
 ---
 
 ## Usted postula, y el expediente queda en manos del Estado

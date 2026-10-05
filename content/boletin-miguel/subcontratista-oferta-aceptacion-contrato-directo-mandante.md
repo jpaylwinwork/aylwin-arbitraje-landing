@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.S., Primera Sala, «Powerteck SpA con Interchile S.A.», rol 5.973-2025, sentencia de 26 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["construccion-sin-contrato-escrito-prueba-testimonial", "clausula-renuncia-limite", "mayores-gastos-generales-aumento-plazo"]
-draft: true
+draft: false
 ---
 
 ## El contrato "formal" que se firmaría después

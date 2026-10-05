@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.S., Tercera Sala, «Mecano SpA con Municipalidad de Antofagasta», rol 54.551-2025, sentencia de 28 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["obras-extraordinarias-mayores-costos", "cobro-estados-de-pago-retenidos", "entrega-incompleta-terreno-vicio-oculto", "multas-garantia-fiel-cumplimiento-termino-anticipado"]
-draft: true
+draft: false
 ---
 
 ## El contrato que se firma y la obra que no arranca

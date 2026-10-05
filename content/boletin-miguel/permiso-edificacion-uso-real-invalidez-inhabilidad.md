@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.A. de Rancagua, Segunda Sala, «Alcalá López con Municipalidad de San Francisco de Mostazal», rol 76-2025; y C.A. de Santiago, Segunda Sala, «Inversiones Wilmar SpA con Municipalidad de Santiago», rol 940-2025; ambas sentencias de 29 de septiembre de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["inhabitabilidad-reclamo-alcalde-primero", "caducidad-potestad-invalidatoria-dos-anos", "congelamiento-uso-suelo-no-revive-giro"]
-draft: true
+draft: false
 ---
 
 ## El destino que usted declaró y el que usted opera

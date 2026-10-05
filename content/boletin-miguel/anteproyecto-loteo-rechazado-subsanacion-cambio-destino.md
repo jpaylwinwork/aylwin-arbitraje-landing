@@ -6,7 +6,7 @@ categoria: Jurisprudencia
 fuente: "C.A. de Arica, Primera Sala, «Bu-Autun Karky con Secretaría Regional Ministerial de Vivienda y Urbanismo de Arica y Parinacota», rol 86-2026, sentencia de 25 de septiembre de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion", "congelamiento-uso-suelo-no-revive-giro", "inhabitabilidad-reclamo-alcalde-primero", "reclamo-ilegalidad-carta-municipal"]
-draft: true
+draft: false
 ---
 
 ## La calle que usted ve y la calle que la ley reconoce
