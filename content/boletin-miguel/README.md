@@ -88,3 +88,14 @@ correcto. Para volver a programar basta poner una fecha futura.
 
 `dynamicParams` está en `false` en la página de entrada: una entrada aún no
 publicada devuelve 404 aunque alguien acierte la URL.
+
+## Enlaces entre sentencias
+
+El campo `relacionados` admite dos tipos de dirección: satélites (que se
+muestran en "Sobre este tema", junto al pilar) y otras entradas del Monitor
+(que se muestran en "Jurisprudencia relacionada").
+
+El enlace entre entradas es recíproco sin editar nada: si la entrada nueva
+cita a una antigua, la antigua muestra la nueva en cuanto se publica. Nunca se
+enlaza una entrada en borrador o con fecha futura, y el bloque muestra como
+mucho cinco.

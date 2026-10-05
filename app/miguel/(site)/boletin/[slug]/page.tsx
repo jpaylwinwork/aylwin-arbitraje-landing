@@ -76,6 +76,23 @@ export default async function EntradaBoletinPage({
       .filter((e): e is EnlaceRelacionado => e !== null),
   ];
 
+  // Otras sentencias del Monitor sobre lo mismo. `relacionados` admite
+  // también entradas, y el enlace se hace recíproco solo: si una entrada
+  // nueva cita a una antigua, la antigua la muestra sin tener que editarla.
+  // Solo entradas ya publicadas —una programada para mañana no se enlaza—, y
+  // como mucho cinco, para que el bloque siga siendo una sugerencia y no un
+  // segundo índice.
+  const publicadas = getEntradas();
+  const citadas = entrada.relacionados.filter((s) => publicadas.some((e) => e.slug === s));
+  const queMeCitan = publicadas.filter((e) => e.relacionados.includes(entrada.slug)).map((e) => e.slug);
+  const jurisprudencia: EnlaceRelacionado[] = [...new Set([...citadas, ...queMeCitan])]
+    .filter((s) => s !== entrada.slug)
+    .slice(0, 5)
+    .map((s) => {
+      const e = publicadas.find((x) => x.slug === s)!;
+      return { href: `/boletin/${s}`, label: e.title };
+    });
+
   const schema = articleSchema({
     headline: entrada.title,
     description: entrada.description,
@@ -126,6 +143,7 @@ export default async function EntradaBoletinPage({
       </p>
 
       <MiguelRelacionados titulo="Sobre este tema" enlaces={relacionados} />
+      <MiguelRelacionados titulo="Jurisprudencia relacionada" enlaces={jurisprudencia} />
 
       <p style={{ marginTop: "2.5rem" }}>
         <Link href="/boletin">← Volver al Monitor Jurisprudencial</Link>
