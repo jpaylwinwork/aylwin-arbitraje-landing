@@ -3,6 +3,7 @@ title: "Un decreto municipal de 2018: la Municipalidad quiso anularlo en 2025 y 
 description: "La Corte de Valparaíso confirma que los dos años del artículo 53 son fatales y objetivos: ni un dictamen de Contraloría ni repetir el procedimiento después de una nulidad judicial los reabren."
 date: "2026-09-30"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.A. de Valparaíso, «iCity SpA (ex Citelum Chile SpA) con Ilustre Municipalidad de San Felipe», rol 162-2025, sentencia de 14 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["cobro-estados-de-pago-retenidos", "primeros-30-dias-conflicto"]

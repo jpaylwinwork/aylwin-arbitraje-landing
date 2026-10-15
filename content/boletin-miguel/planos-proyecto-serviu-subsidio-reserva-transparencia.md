@@ -3,6 +3,7 @@ title: "Entregó los planos de su proyecto al SERVIU para un subsidio: ¿puede c
 description: "Un proyecto de 80 viviendas y 43.520 UF en subsidios. El Consejo para la Transparencia ordenó entregar sus planos a un tercero; la Corte de Apelaciones de Santiago dejó sin efecto la orden el 24 de septiembre de 2026."
 date: "2026-10-09"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.A. de Santiago, Decimocuarta Sala, «Sociedad Inmobiliaria y de Inversiones Pietrasanta SpA con Consejo para la Transparencia», rol 276-2026, sentencia de 24 de septiembre de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["promesa-compraventa-deber-informar", "reforma-permisos-ley-reconstruccion-nacional", "decaimiento-administrativo-dilacion-injustificada"]

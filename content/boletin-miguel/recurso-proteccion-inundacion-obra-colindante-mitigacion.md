@@ -3,6 +3,7 @@ title: "Un vecino lo acusó de inundarle el terreno con su obra: lo que lo salv�
 description: "La Corte de Puerto Montt rechaza el recurso de protección: la constructora había ejecutado el drenaje antes de que el municipio se lo exigiera, no después."
 date: "2026-09-30"
 categoria: Jurisprudencia
+tema: construccion-mop
 fuente: "C.A. de Puerto Montt, recurso de protección contra JASA S.A. y la Ilustre Municipalidad de Quellón, rol 1293-2025, sentencia de 23 de abril de 2026"
 pilares: ["construccion"]
 relacionados: ["primeros-30-dias-conflicto"]

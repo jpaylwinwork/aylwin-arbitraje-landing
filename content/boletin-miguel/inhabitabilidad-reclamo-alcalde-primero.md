@@ -3,6 +3,7 @@ title: "La Municipalidad declaró inhabitable su edificio: si no reclamó primer
 description: "La Corte de Santiago rechazó el reclamo sin mirar el fondo: saltarse la etapa administrativa es, dice el fallo, \"un vicio esencial\"."
 date: "2026-09-30"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.A. de Santiago, reclamo de ilegalidad municipal contra la Municipalidad de Santiago, rol 823-2025, sentencia de 4 de septiembre de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion", "primeros-30-dias-conflicto"]

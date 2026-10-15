@@ -3,6 +3,7 @@ title: "Permiso residencial, uso de alojamiento: el municipio puede invalidar el
 description: "El mismo día, 29 de septiembre de 2026, las Cortes de Rancagua y de Santiago rechazaron los reclamos de dos dueños cuyos inmuebles se usaban distinto de lo autorizado. En Santiago, además, el dueño se saltó el reclamo previo ante el alcalde."
 date: "2026-10-06"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.A. de Rancagua, Segunda Sala, «Alcalá López con Municipalidad de San Francisco de Mostazal», rol 76-2025; y C.A. de Santiago, Segunda Sala, «Inversiones Wilmar SpA con Municipalidad de Santiago», rol 940-2025; ambas sentencias de 29 de septiembre de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["inhabitabilidad-reclamo-alcalde-primero", "caducidad-potestad-invalidatoria-dos-anos", "congelamiento-uso-suelo-no-revive-giro"]
