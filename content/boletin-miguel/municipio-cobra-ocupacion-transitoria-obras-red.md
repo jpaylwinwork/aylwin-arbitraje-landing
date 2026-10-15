@@ -3,6 +3,7 @@ title: "Su empresa abre la calle para tender una red: el municipio puede cobrarl
 description: "La Corte Suprema confirma que el cobro por ocupación transitoria de la vía pública durante los trabajos no es un tributo encubierto ni vulnera la concesión."
 date: "2026-09-30"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.S., reclamo de Enel Distribución Chile S.A. contra el Decreto Alcaldicio N° 1788 de 2022 de la Municipalidad de Renca, rol 38.559-2024, sentencia de 9 de septiembre de 2026, que confirma el fallo de la C.A. de Santiago de 22 de julio de 2024"
 pilares: ["construccion"]
 relacionados: ["obras-extraordinarias-mayores-costos"]

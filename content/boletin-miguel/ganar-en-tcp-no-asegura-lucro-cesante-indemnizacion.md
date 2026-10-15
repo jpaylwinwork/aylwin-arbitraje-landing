@@ -3,6 +3,7 @@ title: "Ganó en el Tribunal de Contratación Pública y perdió el lucro cesant
 description: "La licitación se declaró desierta en diciembre de 2015 y el contrato se dio por trato directo a otra empresa. El oferente excluido probó la ilegalidad, pero no que el contrato era suyo. Sin eso, la Corte Suprema dejó firme que no hay utilidad que indemnizar."
 date: "2026-10-06"
 categoria: Jurisprudencia
+tema: licitaciones
 fuente: "C.S., Tercera Sala, «UTP Sumicar-Mafer con Dirección Logística de Carabineros de Chile», rol 34.469-2025, sentencia de 28 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["exclusion-ilegal-contrato-sigue", "plazo-apelacion-tcp-estado-diario", "lucro-cesante-informe-economico-insuficiente"]

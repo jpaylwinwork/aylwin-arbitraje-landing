@@ -3,6 +3,7 @@ title: "Anteproyecto de loteo rechazado: cambiar el destino de los lotes para \"
 description: "La Corte de Arica respaldó el rechazo de un anteproyecto frente a una calle de 420 metros con agua y electricidad: sin recepción definitiva de urbanización no servía de acceso, y rehacer el proyecto en la subsanación abrió observaciones nuevas."
 date: "2026-10-05"
 categoria: Jurisprudencia
+tema: inmobiliario-municipal
 fuente: "C.A. de Arica, Primera Sala, «Bu-Autun Karky con Secretaría Regional Ministerial de Vivienda y Urbanismo de Arica y Parinacota», rol 86-2026, sentencia de 25 de septiembre de 2026"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion", "congelamiento-uso-suelo-no-revive-giro", "inhabitabilidad-reclamo-alcalde-primero", "reclamo-ilegalidad-carta-municipal"]

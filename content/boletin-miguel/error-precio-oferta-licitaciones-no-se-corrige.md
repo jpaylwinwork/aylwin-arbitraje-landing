@@ -3,6 +3,7 @@ title: "Error en el precio de la oferta: ni la comisión ni el tribunal lo arreg
 description: "Una municipalidad corrigió de oficio el total de una oferta —de 4.644 a 46.440 UTM— y su puntaje económico pasó de 6,74 a 67,42. El Tribunal de Contratación Pública anuló la adjudicación. En otra licitación, un portal que solo aceptaba pesos dejó sin efecto el proceso completo."
 date: "2026-10-05"
 categoria: Jurisprudencia
+tema: licitaciones
 fuente: "Tribunal de Contratación Pública, «Minera y Constructora Río Grande SpA con Ilustre Municipalidad de Vitacura», rol 611-2025-A, sentencia de 26 de agosto de 2026; y «Núcleo Paisajismo SpA con Ilustre Municipalidad de Colina», rol 447-2025-A, sentencia de 31 de agosto de 2026"
 pilares: ["construccion"]
 relacionados: ["formulario-oficial-licitaciones-no-se-corrige-despues", "oferta-tecnica-inadmisible-tcp", "doce-defectos-bases-licitacion"]

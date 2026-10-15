@@ -3,6 +3,7 @@ title: "Cinco convenios ad referéndum y ninguna indemnización: lo que se acuer
 description: "Un contratista del MOP reclamó por 154 días de espera del terreno, un proyecto insuficiente y una recepción tardía. La Corte de Apelaciones rechazó todo y la Suprema, el 30 de septiembre de 2026, dejó firme el rechazo."
 date: "2026-10-08"
 categoria: Jurisprudencia
+tema: construccion-mop
 fuente: "C.S., Tercera Sala, «Sociedad Ingeniería Construcción y Maquinaria SpA con Ministerio de Obras Públicas Región de O'Higgins», rol 31.428-2025, sentencia de 30 de septiembre de 2026"
 pilares: ["construccion"]
 relacionados: ["obras-extraordinarias-mayores-costos", "reserva-derechos-convenios-ad-referendum", "mayores-gastos-generales-aumento-plazo", "entrega-incompleta-terreno-vicio-oculto"]
