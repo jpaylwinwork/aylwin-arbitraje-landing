@@ -43,3 +43,6 @@ next-env.d.ts
 # Business/ads strategy docs — not site code, keep out of the deployed repo
 ads/
 **/__pycache__/
+
+# Configuración local de Claude Code: permisos y rutas de cada equipo
+.claude/settings.local.json
