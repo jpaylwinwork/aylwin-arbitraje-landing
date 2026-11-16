@@ -1235,3 +1235,33 @@
   font-size: 1rem;
   line-height: 1.6;
 }
+
+/* --- Cierre contextual de las notas del Monitor ------------------------
+ * Botón de WhatsApp en el verde de reconocimiento de la aplicación: la única
+ * excepción al acento único, la misma que el sistema de diseño del estudio
+ * ya admite para este botón. Blanco sobre #0e7a5f pasa 4.5:1. */
+.site-miguel .miguel-btn.miguel-btn-whatsapp {
+  background: #0e7a5f;
+  color: #fff;
+}
+
+.site-miguel .miguel-btn.miguel-btn-whatsapp:hover {
+  background: #0c6a52;
+}
+
+.site-miguel .miguel-cta-alternativa {
+  margin: 1.25rem 0 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.site-miguel .miguel-cta-alternativa a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-miguel .miguel-cta-reserva {
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
