@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getEntrada, getEntradas, formatearFecha, estaPublicada } from "@/lib/boletin-miguel";
 import { JsonLd, articleSchema } from "@/lib/schema";
 import MiguelCierreCta from "@/components/miguel/MiguelCierreCta";
+import MiguelCtaContextual from "@/components/miguel/MiguelCtaContextual";
 import MiguelRelacionados, { type EnlaceRelacionado } from "@/components/miguel/MiguelRelacionados";
 import { getSatelite } from "@/lib/satelites-miguel";
 import { SITIO_MIGUEL } from "@/lib/hosts-miguel";
@@ -33,14 +34,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const e = getEntrada(slug);
   if (!e) return {};
+  // <title> y meta description cortos para Google; el titular largo se
+  // queda en el H1 y al compartir en redes, donde sí se ve completo y funciona
+  // como gancho (manual de optimización, §1.1).
+  const descripcion = e.seoDescription ?? e.description;
   return {
     alternates: { canonical: `/boletin/${slug}` },
-    title: e.title,
-    description: e.description,
+    title: e.seoTitle ?? e.title,
+    description: descripcion,
     openGraph: {
       type: "article",
       title: e.title,
-      description: e.description,
+      description: descripcion,
       publishedTime: e.date || undefined,
       // Si la entrada trae foto propia, esa es la que se ve al compartirla;
       // si no, hereda el retrato definido en el layout.
@@ -149,7 +154,15 @@ export default async function EntradaBoletinPage({
         <Link href="/boletin">← Volver al Monitor Jurisprudencial</Link>
       </p>
     </div>
-      <MiguelCierreCta />
+      {entrada.ctaTipo ? (
+        <MiguelCtaContextual
+          tipo={entrada.ctaTipo}
+          slug={entrada.slug}
+          tituloNota={entrada.seoTitle ?? entrada.title}
+        />
+      ) : (
+        <MiguelCierreCta />
+      )}
     </>
   );
 }

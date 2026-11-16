@@ -25,10 +25,31 @@ export type CategoriaBoletin = "Legislación" | "Jurisprudencia" | "Instituciona
 // usa este módulo no tenga que saberlo.
 export { TEMA_LABEL, TEMAS, type TemaBoletin } from "./boletin-temas";
 
+// Tipos de cierre contextual (manual de optimización, 31-10-2026, §2.1). Por
+// ahora solo "inmobiliario": los otros cuatro textos del manual traen el
+// marcador [DURACIÓN], que depende de una decisión pendiente de MAF sobre cuánto
+// dura la primera conversación. Un valor desconocido se ignora y la entrada
+// cierra con el bloque genérico.
+export type CtaTipo = "inmobiliario";
+const CTA_TIPOS: readonly CtaTipo[] = ["inmobiliario"];
+
+// Límites que Google respeta antes de cortar el texto en los resultados.
+const MAX_SEO_TITLE = 60;
+const MAX_SEO_DESCRIPTION = 155;
+
 export type EntradaBoletin = {
   slug: string;
+  // H1 de la página y titular al compartir en redes. Suele ser largo: es un
+  // gancho, no un <title>.
   title: string;
+  // Bajada. Se muestra en el listado y en la portada.
   description: string;
+  // <title> y meta description para Google. Separados del H1 y la bajada
+  // porque 54 de 55 notas tenían un <title> de más de 60 caracteres (promedio
+  // 99) y Google lo cortaba. Si faltan, se usan title y description.
+  seoTitle?: string;
+  seoDescription?: string;
+  ctaTipo?: CtaTipo;
   date: string;
   categoria: CategoriaBoletin;
   tema?: TemaBoletin;
@@ -54,6 +75,26 @@ function normalizarFecha(valor: unknown): string {
   return typeof valor === "string" ? valor.trim() : "";
 }
 
+function textoOpcional(valor: unknown): string | undefined {
+  return typeof valor === "string" && valor.trim() ? valor.trim() : undefined;
+}
+
+// Aviso en la compilación, no error: un <title> de 62 caracteres se corta en
+// Google, pero no justifica dejar el sitio sin desplegar. Una vez por entrada.
+const avisadas = new Set<string>();
+function avisarLongitudes(slug: string, seoTitle?: string, seoDescription?: string) {
+  if (avisadas.has(slug)) return;
+  avisadas.add(slug);
+  if (seoTitle && seoTitle.length > MAX_SEO_TITLE) {
+    console.warn(`[monitor] ${slug}: seo_title mide ${seoTitle.length} caracteres (máximo ${MAX_SEO_TITLE}).`);
+  }
+  if (seoDescription && seoDescription.length > MAX_SEO_DESCRIPTION) {
+    console.warn(
+      `[monitor] ${slug}: seo_description mide ${seoDescription.length} caracteres (máximo ${MAX_SEO_DESCRIPTION}).`,
+    );
+  }
+}
+
 export function getBoletinSlugs(): string[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
   return fs
@@ -73,10 +114,15 @@ export function getEntrada(slug: string): EntradaBoletin | null {
   const fuente = typeof data.fuente === "string" ? data.fuente.trim() : "";
   if (!fuente) return null;
 
+  avisarLongitudes(slug, textoOpcional(data.seo_title), textoOpcional(data.seo_description));
+
   return {
     slug,
     title: data.title ?? slug,
     description: data.description ?? "",
+    seoTitle: textoOpcional(data.seo_title),
+    seoDescription: textoOpcional(data.seo_description),
+    ctaTipo: CTA_TIPOS.includes(data.cta_tipo) ? (data.cta_tipo as CtaTipo) : undefined,
     // YAML convierte una fecha sin comillas (date: 2026-07-31) en un objeto
     // Date, no en texto. Se normaliza acá para que el resto del código reciba
     // siempre una cadena ISO: si el objeto llega hasta el JSX, React falla al
