@@ -3,14 +3,14 @@ title: "Dos años de ruido y polvo sobre el vecino: la Corte de Concepción subi
 description: "Inmobiliaria y constructora fueron condenadas solidariamente a pagar $28,2 millones más IVA en reparaciones y $30 millones en daño moral a un matrimonio colindante. La Corte Suprema dejó firme la condena el 15 de octubre de 2026."
 seo_title: "Obra vecina sin mitigación: daño moral de $15 millones"
 seo_description: "La Corte de Concepción elevó a $15 millones por demandante el daño moral por dos años de ruido y polvo de una obra que no mitigó. La Suprema lo dejó firme."
-date: "2026-11-16"
+date: "2026-11-19"
 categoria: Jurisprudencia
 tema: inmobiliario-municipal
 fuente: "C.S., Primera Sala, «Urrutia con Constructora e Inmobiliaria Esperanza S.A. y otra», rol 45.032-2025, sentencia de 15 de octubre de 2026, que deja firme la de la C.A. de Concepción, rol 2662-2023, de 9 de octubre de 2025"
 pilares: ["inmobiliario"]
 relacionados: ["vicios-construccion-responsabilidad-vendedor", "reparar-defectos-interrumpe-prescripcion-lguc-prueba-dano", "recurso-proteccion-inundacion-obra-colindante-mitigacion", "postventa-cosmetica-humedad-dano-moral-16-millones"]
 cta_tipo: inmobiliario
-draft: true
+draft: false
 ---
 
 ## El escenario que conoce cualquier inmobiliaria en altura

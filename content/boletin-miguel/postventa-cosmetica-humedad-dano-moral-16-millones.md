@@ -3,14 +3,14 @@ title: "Pintar sobre el hongo: tres años de respuestas cosméticas de postventa
 description: "Los compradores no probaron un peso de daño material. Les bastaron dos testigos, el perito y su propio historial de reclamos para que la Corte Suprema dejara firme la condena solidaria contra la inmobiliaria y la constructora."
 seo_title: "Postventa cosmética y humedad: $16 millones de daño moral"
 seo_description: "Sin probar daño material, los compradores obtuvieron $16 millones por tres años de arreglos cosméticos a la humedad. La Suprema dejó firme la condena."
-date: "2026-11-16"
+date: "2026-11-20"
 categoria: Jurisprudencia
 tema: inmobiliario-municipal
 fuente: "C.S., Cuarta Sala, «Falcón con Constructora Nueva Uribe Limitada y otro», rol 5.106-2024, sentencia de 12 de mayo de 2026; y C.A. de Antofagasta, rol 854-2023, sentencia de 12 de enero de 2024"
 pilares: ["inmobiliario"]
 relacionados: ["vicios-construccion-responsabilidad-vendedor", "reparar-defectos-interrumpe-prescripcion-lguc-prueba-dano", "defectos-constructivos-plazo-depende-tipo-falla", "vicios-construccion-prescripcion"]
 cta_tipo: inmobiliario
-draft: true
+draft: false
 ---
 
 ## El reclamo que su postventa ya conoce

@@ -3,14 +3,14 @@ title: "La Dirección de Obras le anuló la recepción definitiva sin escucharlo
 description: "Villa Alemana dejó sin efecto la recepción que ella misma había otorgado 44 días antes. La Corte no dijo que la obra cumpliera la norma: dijo que, sin audiencia previa, la anulación no vale."
 seo_title: "Recepción definitiva anulada por la DOM sin audiencia"
 seo_description: "La DOM de Villa Alemana anuló una recepción definitiva sin oír al titular. La Suprema le ordenó abrir un procedimiento de invalidación con audiencia."
-date: "2026-11-16"
+date: "2026-11-24"
 categoria: Jurisprudencia
 tema: inmobiliario-municipal
 fuente: "C.S., Tercera Sala, «Valenzuela Mura con Director de Obras Municipales de Villa Alemana», rol 18.154-2017, sentencia de 3 de agosto de 2017"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion", "certificado-informaciones-previas-no-crea-derechos-seremi", "caducidad-potestad-invalidatoria-dos-anos", "inhabitabilidad-reclamo-alcalde-primero"]
 cta_tipo: inmobiliario
-draft: true
+draft: false
 ---
 
 ## El certificado que creía definitivo
