@@ -1,5 +1,6 @@
 ---
 title: "Cuando el mandante entrega mala mecánica de suelos y después multa por atraso"
+seo_title: "Mecánica de suelos deficiente y multa por atraso"
 description: "Contraloría aplicó el principio de razonabilidad: la información técnica que el servicio incorpora a las bases debe ser coherente y no inducir a error. Pero puso una condición al contratista que conviene leer con atención."
 date: "2026-08-26"
 categoria: Jurisprudencia

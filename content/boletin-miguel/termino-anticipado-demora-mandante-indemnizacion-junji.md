@@ -1,5 +1,6 @@
 ---
 title: "Le terminaron el contrato de obra por incumplimiento, pero el mandante tardó seis meses en aprobarle la modificación: igual puede deber"
+seo_title: "Término del contrato de obra con demora del mandante"
 description: "La Corte de Rancagua mantuvo el término anticipado de una obra de la Junji porque se probaron tres de las cuatro causales, y aun así condenó al servicio a pagar $70.000.000 por demorar más de seis meses en aprobar la modificación del contrato."
 date: "2026-10-14"
 categoria: Jurisprudencia

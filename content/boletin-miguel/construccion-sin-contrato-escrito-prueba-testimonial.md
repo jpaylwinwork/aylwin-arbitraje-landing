@@ -1,5 +1,6 @@
 ---
 title: "Construyó una embarcación sin firmar nada: la Corte Suprema igual lo condenó a devolver $70 millones"
+seo_title: "Contrato sin firma: condena a devolver $70 millones"
 description: "Sin contrato escrito, una factura, un registro pesquero y la prueba testimonial bastaron para acreditar el encargo, porque el astillero no logró probar que entregó la nave."
 date: "2026-09-06"
 categoria: Jurisprudencia

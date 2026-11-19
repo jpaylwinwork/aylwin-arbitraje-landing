@@ -1,5 +1,6 @@
 ---
 title: "No pague la multa por atraso si el atraso no fue suyo"
+seo_title: "Multa por atraso en obra: si el atraso no es suyo, no pague"
 description: "Contraloría descarta la multa cuando el contratista estuvo impedido de ejecutar por causa del mandante, y descuenta del cómputo los días de recepción y de subsanación de observaciones menores."
 date: "2026-08-26"
 categoria: Jurisprudencia

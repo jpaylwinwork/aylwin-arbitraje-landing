@@ -1,5 +1,6 @@
 ---
 title: "Una carta municipal que le impone una multa también se puede reclamar"
+seo_title: "Multa impuesta por carta municipal: también se reclama"
 description: "La Corte Suprema confirma que el reclamo de ilegalidad procede aunque el acto municipal no tenga forma de resolución."
 date: "2026-08-26"
 categoria: Jurisprudencia

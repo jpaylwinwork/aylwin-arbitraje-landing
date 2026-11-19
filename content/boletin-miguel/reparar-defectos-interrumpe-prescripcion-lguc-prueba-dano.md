@@ -1,5 +1,6 @@
 ---
 title: "Reparó los defectos de las viviendas para cerrar el reclamo: esas reparaciones pueden reabrirle el plazo de prescripción"
+seo_title: "Reparar vicios de construcción reabre la prescripción"
 description: "La demanda se notificó seis años después de la recepción definitiva, con un plazo de cinco. La Corte de Rancagua rechazó la prescripción por las reparaciones de la constructora, pero los propietarios perdieron igual: no probaron los $10, $12 y $50 millones que pedían."
 date: "2026-10-19"
 categoria: Jurisprudencia

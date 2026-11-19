@@ -1,5 +1,6 @@
 ---
 title: "La municipalidad firmó su contrato de obra y el Gobierno Regional pone la plata: si le deben $136 millones, demande a quien firmó"
+seo_title: "Contrato de obra por mandato GORE: a quién demandar"
 description: "La Corte de Valparaíso confirmó la condena a la Municipalidad de Papudo por $136.172.233 y dejó fuera al Gobierno Regional que financiaba la obra: el contratista fue condenado en costas frente a este último."
 date: "2026-10-22"
 categoria: Jurisprudencia

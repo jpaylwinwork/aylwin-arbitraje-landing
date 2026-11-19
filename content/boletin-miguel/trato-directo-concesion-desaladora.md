@@ -1,5 +1,6 @@
 ---
 title: "Cuándo el Estado puede contratar por trato directo un servicio ligado a una concesión"
+seo_title: "Trato directo de un servicio ligado a una concesión"
 description: "Contraloría cursó el trato directo de la asesoría a la inspección fiscal de la Concesión Planta Desaladora de Coquimbo, pero advirtió al MOP que en adelante debe licitar oportunamente — la urgencia no cubre la falta de planificación."
 date: "2026-09-16"
 categoria: Jurisprudencia

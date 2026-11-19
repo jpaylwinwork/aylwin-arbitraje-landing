@@ -1,5 +1,6 @@
 ---
 title: "Firmó un memorándum para estudiar el negocio y luego contratos a diez años: si el estudio fracasa, los contratos siguen"
+seo_title: "Memorándum fallido: los contratos definitivos siguen"
 description: "Los permisos nunca se obtuvieron y el memorándum terminó, pero dos arriendos a diez años siguieron vigentes. La Corte de Santiago rechazó la queja el 4 de septiembre de 2026: si la dependencia entre contratos no se pactó, no se presume."
 date: "2026-10-20"
 categoria: Jurisprudencia

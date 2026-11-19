@@ -1,5 +1,6 @@
 ---
 title: "Vicios de construcción: por qué la discusión sobre el plazo de prescripción se pierde en primera instancia"
+seo_title: "Vicios de construcción: la prescripción en primera instancia"
 description: "La Corte Suprema dejó firme una condena solidaria de $50 millones contra la constructora y la inmobiliaria. Toda la defensa de prescripción dependía de cómo se calificaran los defectos, y eso ya estaba decidido cuando el perito entregó su informe."
 date: "2026-08-26"
 categoria: Jurisprudencia

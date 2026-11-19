@@ -1,5 +1,6 @@
 ---
 title: "El plazo para apelar ante el Tribunal de Contratación Pública corre aunque nadie le avise directamente"
+seo_title: "Plazo ante el Tribunal de Contratación Pública"
 description: "22 días hábiles después de notificada por el estado diario, una apelación llegó tarde, aunque la parte recién entonces se dio por \"enterada\"."
 date: "2026-09-30"
 categoria: Jurisprudencia

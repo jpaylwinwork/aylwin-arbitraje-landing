@@ -1,5 +1,6 @@
 ---
 title: "Cinco convenios ad referéndum y ninguna indemnización: lo que se acuerda sin reserva no se cobra después"
+seo_title: "Convenio ad referéndum sin reserva: no hay indemnización"
 description: "Un contratista del MOP reclamó por 154 días de espera del terreno, un proyecto insuficiente y una recepción tardía. La Corte de Apelaciones rechazó todo y la Suprema, el 30 de septiembre de 2026, dejó firme el rechazo."
 date: "2026-10-08"
 categoria: Jurisprudencia

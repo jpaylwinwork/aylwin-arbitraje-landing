@@ -1,5 +1,6 @@
 ---
 title: "Árbitro mixto o arbitrador: la diferencia que decidió si una inmobiliaria podía apelar"
+seo_title: "Árbitro mixto o arbitrador: cuándo se puede apelar"
 description: "La Corte de Santiago le devolvió a una inmobiliaria el derecho a apelar que un árbitro le había negado, porque la restricción del artículo 642 del Código de Procedimiento Civil solo opera frente a un árbitro arbitrador — no frente a uno mixto."
 date: "2026-09-16"
 categoria: Jurisprudencia

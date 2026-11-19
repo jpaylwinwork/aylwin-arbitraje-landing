@@ -1,5 +1,6 @@
 ---
 title: "La reforma de permisos de la Ley de Reconstrucción Nacional: qué cambia para quien tiene un proyecto en evaluación"
+seo_title: "Ley de Reconstrucción Nacional: qué cambia en los permisos"
 description: "BNamericas consultó a Miguel Aylwin sobre los cambios en permisos y evaluación ambiental del proyecto de ley: plazos, reclamaciones, silencio administrativo y un límite de seis meses a las cautelares que paralizan una RCA."
 date: "2026-08-06"
 categoria: Legislación

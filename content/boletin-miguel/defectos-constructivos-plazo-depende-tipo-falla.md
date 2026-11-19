@@ -1,5 +1,6 @@
 ---
 title: "21 compradores demandaron por fallas constructivas: a cuatro casi se les cae el juicio por el tipo de defecto que alegaron"
+seo_title: "Fallas constructivas: el tipo de defecto alegado importa"
 description: "La Corte de Santiago confirma $9.000.000 por vivienda y $1.000.000 por daño moral a doce demandantes, pero el fallo se sostuvo en una sola pregunta previa: ¿de qué tipo de falla se trataba?"
 date: "2026-09-30"
 categoria: Jurisprudencia

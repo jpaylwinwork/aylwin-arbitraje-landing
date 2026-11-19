@@ -1,5 +1,6 @@
 ---
 title: "La Municipalidad declaró inhabitable su edificio: si no reclamó primero ante el alcalde, ya perdió"
+seo_title: "Edificio declarado inhabitable: reclamo previo ante alcalde"
 description: "La Corte de Santiago rechazó el reclamo sin mirar el fondo: saltarse la etapa administrativa es, dice el fallo, \"un vicio esencial\"."
 date: "2026-09-30"
 categoria: Jurisprudencia

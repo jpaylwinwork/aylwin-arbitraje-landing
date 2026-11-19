@@ -1,5 +1,6 @@
 ---
 title: "Ocho años de silencio administrativo: dos Cortes le ponen fecha de vencimiento a la potestad del Estado"
+seo_title: "Ocho años de inactividad: límite a la potestad del Estado"
 description: "La Corte de Santiago anuló una resolución de la Dirección General de Aguas que tardó ocho años en resolver un recurso, y dejó sin efecto una multa de 350 UTM que la Superintendencia de Salud demoró más de un año en confirmar tras formular los cargos."
 date: "2026-09-06"
 categoria: Jurisprudencia

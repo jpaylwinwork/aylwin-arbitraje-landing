@@ -1,5 +1,6 @@
 ---
 title: "Dos expropiados pidieron más que la Comisión de Peritos: a uno se lo dieron, al otro la Corte Suprema se lo quitó"
+seo_title: "Expropiación: pedir más que la Comisión de Peritos"
 description: "La diferencia no fue el monto reclamado, sino qué tan sólida era la prueba detrás de cada cálculo."
 date: "2026-09-30"
 categoria: Jurisprudencia

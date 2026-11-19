@@ -1,5 +1,6 @@
 ---
 title: "Obra municipal que no pudo partir: el contratista obtuvo la resolución del contrato y una condena por lucro cesante"
+seo_title: "Obra municipal que no partió: resolución y lucro cesante"
 description: "La Municipalidad de Antofagasta demoró el anticipo del 10% y las canchas no estaban en condiciones. Más de cuatro años después de firmar, la Corte Suprema dejó firme la resolución del contrato y la condena por daño emergente y lucro cesante."
 date: "2026-10-07"
 categoria: Jurisprudencia

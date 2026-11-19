@@ -1,5 +1,6 @@
 ---
 title: "Entrega incompleta del terreno: la Corte Suprema lo trata como vicio oculto y el mandante responde"
+seo_title: "Entrega incompleta del terreno como vicio oculto"
 description: "Un municipio licitó una obra sin advertir que seguiría ocupando parte de las dependencias. La Corte aplicó el artículo 2003 N°2 del Código Civil y lo hizo pagar el mayor precio, aunque el contrato era a suma alzada."
 date: "2026-08-26"
 categoria: Jurisprudencia

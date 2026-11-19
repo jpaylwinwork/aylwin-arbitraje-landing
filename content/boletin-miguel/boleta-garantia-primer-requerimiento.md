@@ -1,5 +1,6 @@
 ---
 title: "La boleta de garantía a primer requerimiento no admite discusión: 5.500 UF de multa a la aseguradora que quiso discutirla"
+seo_title: "Boleta de garantía a primer requerimiento: 5.500 UF de multa"
 description: "La Corte de Apelaciones de Santiago confirmó la sanción de la CMF contra una compañía que se negó a pagar invocando el incumplimiento del tomador. En este tipo de pólizas el asegurador paga contra el solo requerimiento, y el conflicto de fondo se ventila después."
 date: "2026-08-24"
 categoria: Jurisprudencia

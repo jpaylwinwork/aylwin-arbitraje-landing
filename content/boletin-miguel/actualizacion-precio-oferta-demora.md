@@ -1,5 +1,6 @@
 ---
 title: "Si la adjudicación se demora más de 60 días, el precio de su oferta se puede actualizar"
+seo_title: "Adjudicación tardía: reajuste del precio de la oferta"
 description: "Contraloría reitera que la demora atribuible a la Administración obliga a reajustar el valor de la oferta antes de firmar, aunque el contrato sea no reajustable."
 date: "2026-08-26"
 categoria: Jurisprudencia

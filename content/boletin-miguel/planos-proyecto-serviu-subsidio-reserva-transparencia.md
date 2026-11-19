@@ -1,5 +1,6 @@
 ---
 title: "Entregó los planos de su proyecto al SERVIU para un subsidio: ¿puede cualquiera pedirlos?"
+seo_title: "Planos entregados al SERVIU: ¿cualquiera puede pedirlos?"
 description: "Un proyecto de 80 viviendas y 43.520 UF en subsidios. El Consejo para la Transparencia ordenó entregar sus planos a un tercero; la Corte de Apelaciones de Santiago dejó sin efecto la orden el 24 de septiembre de 2026."
 date: "2026-10-09"
 categoria: Jurisprudencia

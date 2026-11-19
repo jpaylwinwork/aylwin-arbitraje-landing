@@ -1,5 +1,6 @@
 ---
 title: "La cláusula de renuncia a indemnizaciones tiene un límite: no cubre el incumplimiento del propio mandante"
+seo_title: "Cláusula de renuncia a indemnizaciones: su límite"
 description: "Dos fallos —la Corte Suprema en 2021 y la Corte de Copiapó en 2025— acotan la renuncia estándar de los convenios modificatorios. Uno la califica de condonación del dolo futuro; el otro la circunscribe a las partidas que cada modificación detalla."
 date: "2026-08-26"
 categoria: Jurisprudencia

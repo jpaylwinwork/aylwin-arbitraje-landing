@@ -1,5 +1,6 @@
 ---
 title: "Un decreto municipal de 2018: la Municipalidad quiso anularlo en 2025 y llegó siete años tarde"
+seo_title: "Invalidación de un decreto municipal: siete años tarde"
 description: "La Corte de Valparaíso confirma que los dos años del artículo 53 son fatales y objetivos: ni un dictamen de Contraloría ni repetir el procedimiento después de una nulidad judicial los reabren."
 date: "2026-09-30"
 categoria: Jurisprudencia

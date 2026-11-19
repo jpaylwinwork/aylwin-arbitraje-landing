@@ -1,5 +1,6 @@
 ---
 title: "Poner la obra a disposición del público equivale a recepción: qué pasa con las retenciones"
+seo_title: "Obra abierta al público equivale a recepción"
 description: "La Corte Suprema resolvió que si el mandante abre la obra al uso, hay recepción tácita, y las retenciones de los estados de pago quedan sin objeto. En el mismo fallo descartó que la suma alzada haga invariable el precio."
 date: "2026-08-26"
 categoria: Jurisprudencia

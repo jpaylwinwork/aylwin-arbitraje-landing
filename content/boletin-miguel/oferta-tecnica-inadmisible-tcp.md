@@ -1,5 +1,6 @@
 ---
 title: "Por qué el Tribunal de Contratación Pública validó el rechazo de su oferta técnica"
+seo_title: "Oferta técnica rechazada: el criterio del tribunal"
 description: "Ofertó una caja recolectora de 15,4 metros cúbicos cuando las bases exigían 17: sumar la tolva de carga no le alcanzó para salvar la licitación."
 date: "2026-09-06"
 categoria: Jurisprudencia

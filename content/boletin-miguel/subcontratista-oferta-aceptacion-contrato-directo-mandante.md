@@ -1,5 +1,6 @@
 ---
 title: "Cuando el contratista general se va y usted sigue en obra: la oferta y su aceptación pueden ser todo el contrato"
+seo_title: "Subcontratista y mandante: la oferta aceptada es contrato"
 description: "Nueve años después de que Isolux saliera de una línea de transmisión, la Corte Suprema condenó a Interchile a pagar $506.109.386 a un subcontratista que siguió con solo una oferta y una aceptación. El lucro cesante lo perdió: no lo probó."
 date: "2026-10-07"
 categoria: Jurisprudencia

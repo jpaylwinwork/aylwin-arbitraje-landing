@@ -1,5 +1,6 @@
 ---
 title: "El \"congelamiento\" de uso de suelo no revive un giro que el plan regulador ya prohibió"
+seo_title: "Congelamiento de uso de suelo y plan regulador"
 description: "La Corte de Santiago confirma que el artículo 62 de la LGUC protege el volumen ya construido, no el permiso para ejercer una actividad que nunca tuvo permiso."
 date: "2026-09-06"
 categoria: Jurisprudencia

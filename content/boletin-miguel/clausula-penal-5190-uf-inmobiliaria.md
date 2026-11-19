@@ -1,5 +1,6 @@
 ---
 title: "5.190 UF de cláusula penal que un árbitro fijó y nadie logró revisar"
+seo_title: "Cláusula penal de 5.190 UF fijada por árbitro: sin revisión"
 description: "La Corte Suprema rechazó la casación y dos recursos de queja cruzados en una disputa inmobiliaria por la resciliación de una promesa y un arrendamiento — la multa pactada quedó firme tal como la calculó el árbitro arbitrador."
 date: "2026-09-16"
 categoria: Jurisprudencia

@@ -1,5 +1,6 @@
 ---
 title: "Sin apelación pactada, la extensión de plazo que negó el árbitro queda firme"
+seo_title: "Arbitraje sin apelación: la extensión de plazo queda firme"
 description: "La Corte de Santiago rechazó la queja de un contratista EPC contra el árbitro del CAM que le negó una extensión de plazo por falta de materiales del propio mandante — la renuncia a recursos operó tal como se firmó."
 date: "2026-09-16"
 categoria: Jurisprudencia

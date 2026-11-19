@@ -1,5 +1,6 @@
 ---
 title: "Anteproyecto de loteo rechazado: cambiar el destino de los lotes para \"subsanar\" le sale caro"
+seo_title: "Anteproyecto de loteo rechazado: cambiar destino sale caro"
 description: "La Corte de Arica respaldó el rechazo de un anteproyecto frente a una calle de 420 metros con agua y electricidad: sin recepción definitiva de urbanización no servía de acceso, y rehacer el proyecto en la subsanación abrió observaciones nuevas."
 date: "2026-10-05"
 categoria: Jurisprudencia

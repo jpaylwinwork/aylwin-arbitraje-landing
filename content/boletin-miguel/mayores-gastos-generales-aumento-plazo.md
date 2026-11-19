@@ -1,5 +1,6 @@
 ---
 title: "Mayores gastos generales por aumento de plazo: basta acreditar la causal, no el gasto efectivo"
+seo_title: "Mayores gastos generales por aumento de plazo de obra"
 description: "La Corte Suprema fijó que el artículo 147 del Reglamento se resuelve con una operación aritmética. Y en otro fallo agregó algo más incómodo para el mandante: el atraso indemniza aunque tampoco sea culpa del servicio."
 date: "2026-08-26"
 categoria: Jurisprudencia
