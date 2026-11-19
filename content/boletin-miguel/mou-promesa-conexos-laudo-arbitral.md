@@ -1,5 +1,6 @@
 ---
 title: "Firmó un memorándum y una promesa el mismo día: para la Corte Suprema, hay que probar por qué no son el mismo negocio"
+seo_title: "Memorándum y promesa el mismo día: ¿un solo negocio?"
 description: "La Corte Suprema anuló un fallo que condenaba a pagar 18.000 UF por incumplir una promesa sobre terrenos avaluados en 180.000 UF, porque ignoró el laudo arbitral que calificó esa promesa como parte de un proyecto mayor que nunca se concretó."
 date: "2026-09-06"
 categoria: Jurisprudencia

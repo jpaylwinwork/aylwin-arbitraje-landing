@@ -1,5 +1,6 @@
 ---
 title: "Error en el precio de la oferta: ni la comisión ni el tribunal lo arreglan"
+seo_title: "Error en el precio de la oferta en licitación pública"
 description: "Una municipalidad corrigió de oficio el total de una oferta —de 4.644 a 46.440 UTM— y su puntaje económico pasó de 6,74 a 67,42. El Tribunal de Contratación Pública anuló la adjudicación. En otra licitación, un portal que solo aceptaba pesos dejó sin efecto el proceso completo."
 date: "2026-10-05"
 categoria: Jurisprudencia

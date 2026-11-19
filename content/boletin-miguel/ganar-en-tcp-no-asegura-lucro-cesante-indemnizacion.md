@@ -1,5 +1,6 @@
 ---
 title: "Ganó en el Tribunal de Contratación Pública y perdió el lucro cesante casi once años después"
+seo_title: "Tribunal de Contratación Pública: lucro cesante perdido"
 description: "La licitación se declaró desierta en diciembre de 2015 y el contrato se dio por trato directo a otra empresa. El oferente excluido probó la ilegalidad, pero no que el contrato era suyo. Sin eso, la Corte Suprema dejó firme que no hay utilidad que indemnizar."
 date: "2026-10-06"
 categoria: Jurisprudencia

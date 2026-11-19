@@ -1,5 +1,6 @@
 ---
 title: "Un vecino lo acusó de inundarle el terreno con su obra: lo que lo salvó fue el informe que ya tenía"
+seo_title: "Daño al vecino por la obra: el informe previo que lo salvó"
 description: "La Corte de Puerto Montt rechaza el recurso de protección: la constructora había ejecutado el drenaje antes de que el municipio se lo exigiera, no después."
 date: "2026-09-30"
 categoria: Jurisprudencia

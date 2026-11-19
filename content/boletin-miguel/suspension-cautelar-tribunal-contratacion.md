@@ -1,5 +1,6 @@
 ---
 title: "Suspender una licitación ante el Tribunal de Contratación Pública: el estándar real que exige la Corte"
+seo_title: "Suspender una licitación: el estándar que exige la Corte"
 description: "La Corte de Apelaciones de Santiago confirmó el rechazo de una suspensión cautelar contra una licitación municipal. El fallo deja claro que desarrollar los vicios no basta: hay que acreditarlos de entrada."
 date: "2026-08-26"
 categoria: Jurisprudencia

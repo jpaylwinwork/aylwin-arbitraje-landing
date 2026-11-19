@@ -1,5 +1,6 @@
 ---
 title: "En la obra pública por mandato, antes de demandar sepa quién quedó obligado a pagarle"
+seo_title: "Obra pública por mandato: quién está obligado a pagar"
 description: "Cinco fallos muestran que la respuesta no es automática: a veces responden los dos organismos, a veces solo uno, y a veces ninguno de los que usted pensaba."
 date: "2026-08-26"
 categoria: Jurisprudencia

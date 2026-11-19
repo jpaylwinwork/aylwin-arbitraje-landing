@@ -1,5 +1,6 @@
 ---
 title: "En licitaciones públicas, lo que no está en el formulario no se arregla después"
+seo_title: "Licitación: lo que falta en el formulario no se corrige"
 description: "Dos fallos de este año, en direcciones opuestas, castigan lo mismo: una adjudicación anulada por dejar \"aclarar\" lo no declarado, y un oferente descartado por intentar completarlo con otros papeles."
 date: "2026-09-30"
 categoria: Jurisprudencia

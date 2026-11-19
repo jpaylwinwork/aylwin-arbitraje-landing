@@ -1,5 +1,6 @@
 ---
 title: "Ganó el juicio contra la comunidad que le bloqueaba el acceso, y perdió $1.350 millones por el informe con que probó el daño"
+seo_title: "Ganó el juicio y perdió $1.350 MM por su informe de daño"
 description: "La Corte de Santiago confirma la responsabilidad del comité de administración, pero revoca íntegramente el lucro cesante: el informe económico no alcanzó para acreditarlo."
 date: "2026-09-30"
 categoria: Jurisprudencia

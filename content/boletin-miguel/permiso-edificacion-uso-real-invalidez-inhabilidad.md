@@ -1,5 +1,6 @@
 ---
 title: "Permiso residencial, uso de alojamiento: el municipio puede invalidar el permiso o inhabilitar el inmueble"
+seo_title: "Permiso residencial usado como alojamiento: invalidación"
 description: "El mismo día, 29 de septiembre de 2026, las Cortes de Rancagua y de Santiago rechazaron los reclamos de dos dueños cuyos inmuebles se usaban distinto de lo autorizado. En Santiago, además, el dueño se saltó el reclamo previo ante el alcalde."
 date: "2026-10-06"
 categoria: Jurisprudencia

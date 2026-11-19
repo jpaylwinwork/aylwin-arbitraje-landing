@@ -1,5 +1,6 @@
 ---
 title: "Multas con cargo a la garantía de fiel cumplimiento: cuando el municipio gana el reclamo de ilegalidad"
+seo_title: "Multas cobradas con la garantía de fiel cumplimiento"
 description: "La Corte de San Miguel confirmó el cobro de multas y el término anticipado de un contrato de obra municipal tras 195 días de atraso, y tachó a dos de los tres testigos del contratista por falta de imparcialidad."
 date: "2026-09-06"
 categoria: Jurisprudencia

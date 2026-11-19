@@ -1,5 +1,6 @@
 ---
 title: "Firmar el convenio ad referéndum sin reserva de derechos puede costarle la indemnización completa"
+seo_title: "Reserva de derechos en convenio ad referéndum"
 description: "La Corte Suprema dejó firme el criterio de que la reserva estampada por el contratista impide tener por renunciados los mayores gastos. El caso: un contrato cuyo plazo se extendió en más de un 85%."
 date: "2026-08-26"
 categoria: Jurisprudencia

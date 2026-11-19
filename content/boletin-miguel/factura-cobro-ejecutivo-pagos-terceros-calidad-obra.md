@@ -1,5 +1,6 @@
 ---
 title: "Pagó transferencias a su proveedor, pero no dicen a qué factura: en el juicio ejecutivo no cuentan como pago"
+seo_title: "Juicio ejecutivo: transferencias sin imputar no son pago"
 description: "La Corte de Concepción rechazó la excepción de pago de una constructora e inmobiliaria: las transferencias eran de un tercero, anteriores a la factura y sin detalle. Su reclamo por la calidad de la obra quedó para otro juicio."
 date: "2026-10-21"
 categoria: Jurisprudencia

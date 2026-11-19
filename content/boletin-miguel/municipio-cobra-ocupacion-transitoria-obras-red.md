@@ -1,5 +1,6 @@
 ---
 title: "Su empresa abre la calle para tender una red: el municipio puede cobrarle, aunque tenga concesión"
+seo_title: "Abrir la calle para tender redes: cobro municipal"
 description: "La Corte Suprema confirma que el cobro por ocupación transitoria de la vía pública durante los trabajos no es un tributo encubierto ni vulnera la concesión."
 date: "2026-09-30"
 categoria: Jurisprudencia

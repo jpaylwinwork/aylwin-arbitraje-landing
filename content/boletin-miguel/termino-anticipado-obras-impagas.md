@@ -1,5 +1,6 @@
 ---
 title: "Término anticipado del contrato de obra pública: mientras el acto siga vigente, no hay demanda que prospere"
+seo_title: "Término anticipado de obra pública: primero el acto"
 description: "La Corte Suprema recordó que la Administración pone término sin pasar por un tribunal. Pero abrió la puerta que sí sirve: la acción indemnizatoria es autónoma y las obras ejecutadas en beneficio fiscal deben pagarse."
 date: "2026-08-26"
 categoria: Jurisprudencia

@@ -1,5 +1,6 @@
 ---
 title: "Lo declararon ilegalmente excluido de la licitación y el contrato siguió adelante igual"
+seo_title: "Exclusión ilegal de licitación y contrato ya ejecutado"
 description: "La Corte confirmó que la exclusión fue ilegal, pero mantuvo el contrato con el tercero adjudicatario. Al excluido le quedó la indemnización. La lección no es de fondo, es de oportunidad."
 date: "2026-08-26"
 categoria: Jurisprudencia

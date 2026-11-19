@@ -1,5 +1,6 @@
 ---
 title: "Alegato ante el Tribunal Constitucional: acogida la inaplicabilidad del comiso del artículo 448 septies"
+seo_title: "TC: inaplicabilidad del comiso del art. 448 septies"
 description: "Miguel Aylwin Fernández representó y alegó ante el Tribunal Constitucional en el requerimiento que terminó con la inaplicabilidad del comiso que no distingue quién es el dueño de los bienes."
 date: "2026-07-30"
 categoria: Jurisprudencia

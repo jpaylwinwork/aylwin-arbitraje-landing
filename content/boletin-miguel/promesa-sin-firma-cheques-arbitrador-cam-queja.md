@@ -1,5 +1,6 @@
 ---
 title: "Promesa que usted dice no haber firmado y 25 cheques recibidos: el árbitro igual dio el contrato por existente y la queja no prosperó"
+seo_title: "Promesa no firmada y cheques: árbitro CAM y recurso de queja"
 description: "Una promesa por UF 14.003,5 sobre un departamento sin recepción definitiva. El árbitro arbitrador resolvió el contrato con indemnización contra la inmobiliaria, y la Corte de Santiago rechazó la queja el 14 de septiembre de 2026."
 date: "2026-10-16"
 categoria: Jurisprudencia

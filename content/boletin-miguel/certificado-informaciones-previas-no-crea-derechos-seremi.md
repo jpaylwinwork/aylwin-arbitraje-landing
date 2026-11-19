@@ -1,5 +1,6 @@
 ---
 title: "El certificado de informaciones previas de hace años no le asegura la norma de hoy: la municipalidad cambió el criterio y la Corte la respaldó"
+seo_title: "Certificado de informaciones previas: no crea derechos"
 description: "Un lote industrial de 11.615 m² quedó en una subzona que exige predios de 40.000 m² y una constructibilidad de 0,2. La Corte de Santiago rechazó el reclamo de ilegalidad el 2 de septiembre de 2026."
 date: "2026-10-15"
 categoria: Jurisprudencia

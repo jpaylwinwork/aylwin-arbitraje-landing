@@ -1,5 +1,6 @@
 ---
 title: "El Estado no puede quedarse con su edificio solo porque cambió quién administra el colegio que funciona ahí"
+seo_title: "Edificio de un colegio: el Estado no puede quedárselo"
 description: "La Corte acoge la protección: el traspaso a los SLEP no alcanza a inmuebles arrendados de propietarios privados. La única vía es la subrogación del contrato de arriendo, no la transferencia forzosa de dominio."
 date: "2026-09-30"
 categoria: Jurisprudencia
