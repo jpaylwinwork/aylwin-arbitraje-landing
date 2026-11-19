@@ -3,14 +3,14 @@ title: "Condominio de sitios urbanizados: cada sitio tiene deslindes, y las rasa
 description: "La Contraloría ordenó al Minvu corregir la circular DDU 478, que permitía cumplir rasantes y distanciamientos solo hacia el perímetro del condominio tipo B. Según el dictamen de agosto de 2024, rigen también entre sitios y frente a las circulaciones interiores."
 seo_title: "Condominio tipo B: rasantes y distanciamientos entre sitios"
 seo_description: "La Contraloría ordenó corregir la circular DDU 478: en un condominio tipo B, rasantes y distanciamientos rigen entre sitios, no solo hacia el perímetro."
-date: "2026-11-16"
+date: "2026-11-25"
 categoria: Jurisprudencia
 tema: inmobiliario-municipal
 fuente: "Contraloría General de la República, dictamen E533857, de 29 de agosto de 2024, sobre la circular DDU 478 del Ministerio de Vivienda y Urbanismo"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion", "certificado-informaciones-previas-no-crea-derechos-seremi", "anteproyecto-loteo-rechazado-subsanacion-cambio-destino", "permiso-anulado-estudio-sombras-vecinos-proteccion"]
 cta_tipo: inmobiliario
-draft: true
+draft: false
 ---
 
 ## El cálculo de cabida que cambia de un día para otro

@@ -3,14 +3,14 @@ title: "Permiso aprobado, edificio en el aire: la Suprema anuló un permiso de c
 description: "Tres vecinos colindantes lo impugnaron por protección. La Corte dejó sin efecto el permiso por errores en el estudio de sombras, un subterráneo adosado sin proyecto de aguas lluvias y una cubierta ocupada en 27%, cuando el máximo es 20%."
 seo_title: "Permiso de edificación anulado por el estudio de sombras"
 seo_description: "La Suprema acogió la protección de tres vecinos y anuló un permiso de cinco pisos en Ñuñoa: estudio de sombras, aguas lluvias y cubierta sobre el 20%."
-date: "2026-11-16"
+date: "2026-11-23"
 categoria: Jurisprudencia
 tema: inmobiliario-municipal
 fuente: "C.S., Tercera Sala, «Arroyo Melgarejo y otros con Director de Obras de la Municipalidad de Ñuñoa», rol 41.480-2017, sentencia de 29 de mayo de 2018"
 pilares: ["inmobiliario"]
 relacionados: ["compra-terreno-sujeta-permiso-condicion", "certificado-informaciones-previas-no-crea-derechos-seremi", "permiso-edificacion-uso-real-invalidez-inhabilidad", "dom-anula-recepcion-definitiva-sin-audiencia"]
 cta_tipo: inmobiliario
-draft: true
+draft: false
 ---
 
 ## El escenario que ninguna inmobiliaria quiere vivir
